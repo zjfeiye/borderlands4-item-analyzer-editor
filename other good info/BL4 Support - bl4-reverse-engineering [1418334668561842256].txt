@@ -1,0 +1,3964 @@
+==============================================================
+Guild: Borderlands Modding
+Channel: BL4 Support / bl4-reverse-engineering
+==============================================================
+
+[9/18/2025 4:35 PM] lshift
+❤️
+
+
+[9/18/2025 4:35 PM] sairouth
+@uplusion23
+
+
+[9/18/2025 4:37 PM] uplusion23
+@sam. 
+Found this reading some of the .uasset's raw
+**Base_Weight_9**_91E4D12B4319D280C56851907AD21674**Damage_Scale_Level_5**_B5E010D645D41F3AB144E186723BC617**DoublePropertyGbxDefPtrPropertyGrowth_Exponent_7**_B6C170A3461FC939F7CE9980DFB5A036**Local_Modifier_18**_4AEC023C4018EF4CAD6836B20F0D2557**NoneStat_Scale_2**_59F6D7FA40F2D4447260D8B09200155
+
+All one big string, but interesting so far
+
+
+[9/18/2025 4:59 PM] .0x1a
+from today's update
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418340760021106748/ObjectsDump.rar?ex=68e57f44&is=68e42dc4&hm=0f182fc55432060c91992e35428f2dca4e82a76d6a5e9ccfe7caa9666c5dfa5a&
+
+{Reactions}
+👍
+
+[9/18/2025 5:01 PM] .0x1a
+Can upload CVars if needed
+
+
+[9/18/2025 5:11 PM] .0x1a
+Sai make sure i can upload it on discord if it's again discord TOS delete the file
+
+
+[9/18/2025 5:18 PM] uplusion23
+@0x1a Very good upload, digging through it now too
+
+
+[9/18/2025 5:24 PM] uplusion23
+Looks like Gearbox is tracking pickups, currency, and trades. Here's the currency
+```
+[00018672] [42000000] 00007FF4DE401FC0 ScriptStruct GbxGame.GbxAnalyticsTransaction
+Child properties
+00000000CCA101D0 IntProperty tr_id     | Offset in container: 0x0
+00000000CCA10240 NameProperty currency     | Offset in container: 0x4
+00000000CCA102B0 Int64Property spent     | Offset in container: 0x10
+00000000CCA10320 Int64Property balance     | Offset in container: 0x18
+00000000CCA10390 NameProperty Source     | Offset in container: 0x20
+```
+
+
+[9/18/2025 5:27 PM] .0x1a
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418347725086396426/CVarsDump.json?ex=68e585c1&is=68e43441&hm=0a911df9d23e1f56d724b8659a265599e43e56c4f688d8788f2485dabf4ef8bf&
+
+
+[9/18/2025 5:32 PM] .0x1a
+I saw that we could create our own scripts and then run them in the dev console, but the UE5 documentation is so long lol
+But yeah they track all our actions in the game
+
+
+[9/18/2025 5:42 PM] sairouth
+Shown in save files
+
+
+[9/18/2025 5:44 PM] forgottenamnesia
+These achievements for all those things so it’s not entirely surprising for it to be tracked
+
+
+[9/18/2025 6:22 PM] s4mzy.
+good shit :))
+
+
+[9/18/2025 6:22 PM] s4mzy.
+did u find anything else out while i was gone?
+
+
+[9/18/2025 6:35 PM] uplusion23
+Found this method which is definitely interesting `00007FF4DE691140 Function OutputGearStatsToCSV`
+
+{Reactions}
+💯
+
+[9/18/2025 6:38 PM] s4mzy.
+#general seems to be going somewhere with the guns
+
+
+[9/18/2025 7:55 PM] uplusion23
+Don't think I have perms for file uploads, but I generated a possible rainbow table to help decode if anyone needs it
+
+
+[9/18/2025 8:16 PM] sairouth
+You can
+
+
+[9/18/2025 8:28 PM] uplusion23
+https://uplusion23s-organization.gitbook.io/bl4/
+
+
+[9/18/2025 8:31 PM] .0x1a
+```js
+[00031214] [00000000] 00007FF4DE691140 Function OutputGearStatsToCSV     | Flags: 0x04422405 | Func: 0000000148BFF460
+        Child properties
+        00000000CDB0D380 ObjectProperty ContextObject     | Offset in container: 0x0 | Property type: Class CoreUObject.Object | Element size: 0x8
+        00000000CDB0D400 StructProperty LatentInfo     | Offset in container: 0x8 | Property type: ScriptStruct Engine.LatentActionInfo | Element size: 0x18
+        00000000CDB0D480 StructProperty item     | Offset in container: 0x20 | Property type: ScriptStruct GbxGame.InventoryItemSelectionData | Element size: 0x68
+        000000000A928190 IntProperty NumberToGenerate     | Offset in container: 0x88
+        000000000A926520 IntProperty gamestage     | Offset in container: 0x8c
+        000000000A926590 StrProperty OutputFileName     | Offset in container: 0x90
+        00000000CDB0D500 BoolProperty bOutputDefaultStats     | Offset in container: 0xa0 | Fieldsize: 0x1 | Byteoffset: 0x0 | Bytemask: 0x1 | Fieldmask: 0xff
+        00000000CDB0D600 ArrayProperty Columns     | Offset in container: 0xa8 | Array dimensions: 1 | Element size: 0x30 | Element type: ScriptStruct GbxGame.CSVStatColumn
+        000000000A926600 IntProperty usemodebitmask     | Offset in container: 0xb8
+        00000000CDB0B600 EnumProperty OutputIdentityFormat     | Offset in container: 0xbc | Property type: Enum ECSVIdentityFormat (ByteProperty) | Element size: 0x1
+
+[00018721] [42000000] 00007FF4DE404480 ScriptStruct GbxGame.CSVStatColumn
+    Child properties
+    00000000CCA23D80 EnumProperty summary     | Offset in container: 0x0 | Property type: Enum ECSVSummaryStatType (ByteProperty) | Element size: 0x1
+    00000000CCA23E00 GameDataHandleProperty attribute     | Offset in container: 0x8
+    00000000CCA14610 StrProperty ColumnName     | Offset in container: 0x20
+```
+
+
+[9/18/2025 8:31 PM] .0x1a
+With GbxGame.CSVStatColumn + NumberToGenerate, we should be able to understand what each part represents because we can even extract the weapon code before it is encoded
+
+Still need to be tested
+
+
+[9/18/2025 8:35 PM] .0x1a
+Since it's based on what you found earlier, I hope it can help you in your research
+
+
+[9/18/2025 8:41 PM] .0x1a
+```js
+[00012035] [42000000] 00007FF4DE2D6250 ScriptStruct GbxGame.ItemPoolInstanceData
+    Child properties
+    00000000CB438D80 GameDataHandleProperty SharedPool     | Offset in container: 0x0
+    00000000CB437400 StructProperty item     | Offset in container: 0x18 | Property type: ScriptStruct GbxGame.InventoryItemSelectionData | Element size: 0x68
+----
+[00018681] [42000000] 00007FF4DE402680 ScriptStruct GbxGame.ItemPoolInfo
+    Child properties
+    00000000CC9CAD80 StructProperty itempool     | Offset in container: 0x0 | Property type: ScriptStruct GbxGame.InventoryItemSelectionData | Element size: 0x68
+    00000000CC9CAE00 StructProperty probability     | Offset in container: 0x68 | Property type: ScriptStruct GbxEngine.GbxAttributeInit | Element size: 0x50
+    00000000CC9CAE80 StructProperty NumberOfTimesToSelectFromThisPool     | Offset in container: 0xb8 | Property type: ScriptStruct GbxEngine.GbxAttributeInit | Element size: 0x50
+    00000000CC9CAF80 ArrayProperty PreferredPartsList     | Offset in container: 0x108 | Array dimensions: 1 | Element size: 0x18 | Element type: 
+    00000000CC9CB080 ArrayProperty CustomizationList     | Offset in container: 0x118 | Array dimensions: 1 | Element size: 0x70 | Element type: ScriptStruct GbxGame.ItemPoolCustomizationInfo
+
+```
+Some about item pool with StructProperty item
+
+
+[9/18/2025 8:43 PM] uplusion23
+Levelless
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418397057626018003/image.png?ex=68e5b3b3&is=68e46233&hm=af9b7af3f19d60f0ffebffd157cda14e415f2624241f6a84565042baf29e321e&
+
+{Reactions}
+❤️
+
+[9/18/2025 8:44 PM] s4mzy.
+did u just delete the fme! ?
+
+
+[9/18/2025 8:51 PM] s4mzy.
+@uplusion23
+
+
+[9/18/2025 8:52 PM] uplusion23
+No, I saw that changing the level of the item sometimes breaks, unless you remove the flag. Once removed it finally spawned but it spawned without a level
+
+
+[9/18/2025 8:52 PM] s4mzy.
+do u still have the item code?
+
+
+[9/18/2025 8:53 PM] s4mzy.
+it would be good to see the item code beforehand and after with the pictures corresponding to what has changed
+
+
+[9/18/2025 9:22 PM] uplusion23
+The command  `oak.ui.displaylootfeedsorted` will crash everything lmao
+
+
+[9/18/2025 9:23 PM] uplusion23
+There's also flags for prohibiting save files
+
+
+[9/18/2025 9:34 PM] uplusion23
+Can't figure out what the NCS files are, but this is from todays patch if anyone more skilled wants to take a crack at it
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418409936848818408/Nexus-Data-inv.ncs?ex=68e5bfb1&is=68e46e31&hm=72257a8386724f6d04706fe99991cb66570fa644e06e3f58501845f59c48b0ce&
+
+
+[9/18/2025 9:44 PM] uplusion23
+`DumpCCmds`
+
+
+[9/18/2025 9:45 PM] uplusion23
+`gbx.SerialNumbers.Dump` doesn't fail instantly, but no idea if it's dumping anything, and where
+
+
+[9/18/2025 9:48 PM] uplusion23
+`camera 3rd` does work
+
+
+[9/19/2025 9:10 AM] uplusion23
+Thinking it could be Base85 still but maybe with a custom alphabet?
+
+{Reactions}
+👍
+
+[9/19/2025 9:13 AM] uplusion23
+The CRC32 idea still seems promising, was getting high confidence on running wheels on it, but maybe it's only used for transactions
+
+
+[9/19/2025 9:18 AM] long.drive.champ
+Which is the local player in this game AOakCharacter or AOakPlayerCharacter idk why im struggling to locate myself in game
+
+
+[9/19/2025 9:23 AM] uplusion23
+To further validate this, GBX has multiple CRC32 dependencies in their .pak's
+
+
+[9/19/2025 9:44 AM] uplusion23
+There is a common occourence with `)}}` for non-weapons being level 50, and `TYg` and `e!K` for weapons that are level 50
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418593630054252806/image.png?ex=68e5c205&is=68e47085&hm=16ad05b4047b936db87b7c7f48a516199d59bc83150c91929fe5557ad75618d1&
+
+{Reactions}
+❤️
+
+[9/19/2025 10:45 AM] akamoden
+look it over. let me know. it works. but im not a genius. sorry.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418609064228683827/batch_mutator.py?ex=68e5d065&is=68e47ee5&hm=1576bff78e040a7fadfb8b582fb3a819c637d3a4a31de63edcabd2d980efd598&
+
+{Reactions}
+❤️
+
+[9/19/2025 10:54 AM] uplusion23
+```
+EOodleNetResult::OodleDecodeFailed
+EOodleNetResult::OodleSerializePayloadFail
+EOodleNetResult::OodleBadDecompressedLength
+EOodleNetResult::OodleNoDictionary
+```
+Some enums that make me think they *could* use oodle compression also for serial numbers, but doubtful
+
+Found this FName which could be helpful for smarter people
+`Input.Action.Equip.CopyFocusedItemSerialNumber`
+
+
+[9/19/2025 10:58 AM] uplusion23
+Don't have python installed just yet, but here's a list of ~10k serials you could try it with
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418612339418071060/serials.txt?ex=68e5d372&is=68e481f2&hm=0aebe77123b512decbe9bd217c17df42bebeae8ce378fddb902efc211569b741&
+
+
+[9/19/2025 11:02 AM] uplusion23
+Figured I would install python. The output seems correct so I'm testing one now
+
+
+[9/19/2025 11:06 AM] uplusion23
+Sadly no joy, time to get invasive
+
+
+[9/19/2025 11:16 AM] akamoden
+validator and repair
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418616816523153518/repair_serials.py?ex=68e5d79d&is=68e4861d&hm=aa488e163633cc7a54f3368c126089b6eaba0ade9b190d7a7a730ab47d7366e2&
+
+
+[9/19/2025 11:19 AM] cr4nkst4r
+Got some good progress on grenade ordnance 👍
+
+{Reactions}
+🎉 (2)
+
+[9/19/2025 11:20 AM] cr4nkst4r
+The copyFocusedItemSerialNumber would prob be the same as the Shared ce table
+
+
+[9/19/2025 11:31 AM] flicqt
+anyone else working on the .ncs files?
+
+
+[9/19/2025 11:44 AM] sairouth
+What are .ncs files?
+
+
+[9/19/2025 11:51 AM] flicqt
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418625619146833951/image.png?ex=68e5dfd0&is=68e48e50&hm=e552bfa9d0cea9be15a085bd07d47ce2b8a7dd88613c579a08d1b84956452d7a&
+
+
+[9/19/2025 11:52 AM] flicqt
+not entirely sure *new to borderlands modding* it appears to be their container stuff similar to UE's pak system? but they're full binary
+
+
+[9/19/2025 11:52 AM] flicqt
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418625903256277032/image.png?ex=68e5e014&is=68e48e94&hm=3256251b1644fb4edc63e0c6e5c9111b4e41d81913a39bd4aa406442821b98dd&
+
+
+[9/19/2025 11:53 AM] flicqt
+it has some interesting stuff tho at least for the naming
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418626081120063600/image.png?ex=68e5e03e&is=68e48ebe&hm=2837d7f743cf83c5d5ab4305bdc365c0e1f332c6502bcbbdac4179dcbd267513&
+
+
+[9/19/2025 11:54 AM] rockstvr710
+Wonder if thats what wemod and the dll hook into to force spawn legendaries
+
+
+[9/19/2025 11:54 AM] rockstvr710
+Well the dll triggers an event i think
+
+
+[9/19/2025 11:54 AM] flicqt
+it might be
+
+
+[9/19/2025 11:54 AM] rockstvr710
+We mod tho
+
+
+[9/19/2025 11:54 AM] flicqt
+these clearly hold some form of data related to items
+
+{Reactions}
+👍
+
+[9/19/2025 11:54 AM] flicqt
+well everything
+
+
+[9/19/2025 11:54 AM] rockstvr710
+Or atleast the creation of them
+
+
+[9/19/2025 11:54 AM] flicqt
+yeah could be the rules for the items
+
+{Reactions}
+🔥
+
+[9/19/2025 11:55 AM] rockstvr710
+If thats what it is we need it in readable form asap 😭
+
+
+[9/19/2025 11:55 AM] flicqt
+it's not just items tho, its got everything lol
+
+
+[9/19/2025 11:55 AM] rockstvr710
+My brain not strong enough for that tho
+
+
+[9/19/2025 11:55 AM] rockstvr710
+😔
+
+
+[9/19/2025 11:55 AM] flicqt
+if anyone else is wanting to explore with some coffee
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418626639335784558/image.png?ex=68e5e0c3&is=68e48f43&hm=a7aa6998052424670734c65aa969a3d81a38d2773920459aade7d6de7f4c76a3&
+
+
+[9/19/2025 11:56 AM] rockstvr710
+Vr editor?
+
+
+[9/19/2025 11:56 AM] flicqt
+I'm gonna try and wrap my brain around it
+
+
+[9/19/2025 11:56 AM] rockstvr710
+Theres a fucking vr mode?!?!?
+
+
+[9/19/2025 11:56 AM] flicqt
+thats native to UE
+
+
+[9/19/2025 11:56 AM] rockstvr710
+So i can play it in vr
+
+
+[9/19/2025 11:56 AM] rockstvr710
+N noone told me
+
+
+[9/19/2025 11:56 AM] rockstvr710
+😔
+
+
+[9/19/2025 11:56 AM] flicqt
+some world design devs use VR to place to work lol
+
+{Reactions}
+🔥
+
+[9/19/2025 11:56 AM] flicqt
+idk if gbx does, but UE provides it natively
+
+
+[9/19/2025 11:56 AM] rockstvr710
+That honestly sounds cool af
+
+
+[9/19/2025 11:57 AM] rockstvr710
+Lets you really immerse yourself in it to see if you made it immersive enough
+
+
+[9/19/2025 11:57 AM] flicqt
+oh they put gizmos here
+
+
+[9/19/2025 12:11 PM] uplusion23
+Yeah no idea if NCS is something with Niagra or what. Never dove into Unreal before. I figure a nice way to fiddle would be making a pak with coherentui stuff, testing it now
+
+
+[9/19/2025 12:21 PM] flicqt
+usually Niagara comes as a uasset
+
+
+[9/19/2025 12:34 PM] uplusion23
+Good news; definitely getting somewhere with the UI stuff. Trying to output the entire `eventData` object to the item card, to see what's sent from the `window.engine` callback.
+
+Bad news is I just keep breaking the UI
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418636265590620200/image.png?ex=68e5e9ba&is=68e4983a&hm=dfec652f9aeb5b4e3794bdcfe9b6779d07264b694136a05eff629ee0f6cafaa3&
+
+{Reactions}
+❤️ 👍
+
+[9/19/2025 12:54 PM] flicqt
+I'm digging in the ini files for any clues, lot of interesting stuff, but nothing "insane" yet
+
+
+[9/19/2025 12:55 PM] flicqt
+only related thing to the Nexus-Data.ncs in DefaultGame.ini is this 
+``` [NexusConfigStoreInventory]
++PartTypes=body
++PartTypes=body_acc
++PartTypes=body_mag
++PartTypes=body_ele
++PartTypes=body_bolt
++PartTypes=barrel
++PartTypes=barrel_acc
++PartTypes=barrel_licensed
++PartTypes=magazine
++PartTypes=magazine_acc
++PartTypes=magazine_borg
++PartTypes=magazine_ted_thrown
++PartTypes=tediore_acc
++PartTypes=tediore_secondary_acc
++PartTypes=hyperion_secondary_acc
++PartTypes=scope
++PartTypes=scope_acc
++PartTypes=rail
++PartTypes=bottom
++PartTypes=grip
++PartTypes=foregrip
++PartTypes=underbarrel
++PartTypes=underbarrel_acc
++PartTypes=underbarrel_acc_vis
++PartTypes=endgame
++PartTypes=element
++PartTypes=secondary_ele
++PartTypes=secondary_ammo
++PartTypes=turret_weapon
++PartTypes=primary_augment
++PartTypes=secondary_augment
++PartTypes=enemy_augment
++PartTypes=active_augment
++PartTypes=unique
++PartTypes=payload
++PartTypes=payload_augment
++PartTypes=stat_augment
++PartTypes=curative
++PartTypes=augment
++PartTypes=utility_behavior
++PartTypes=class_mod_body
++PartTypes=action_skill_mod
++PartTypes=core_augment
++PartTypes=core_plus_augment
++PartTypes=passive_points
++PartTypes=special_passive
++PartTypes=stat_group1
++PartTypes=stat_group2
++PartTypes=stat_group3
++PartTypes=firmware
++PartTypes=augment_element
++PartTypes=augment_element_resist
++PartTypes=augment_element_nova
++PartTypes=augment_element_splat
++PartTypes=augment_element_immunity
++PartTypes=detail
++PartTypes=skin
++PartTypes=vile ```
+
+{Reactions}
+❤️ (2)
+
+[9/19/2025 1:00 PM] flicqt
+found a few more in the DefaultEngine.ini 
+``` [/Script/GbxSpawn.NexusConfigStoreSpawn]
+DefaultType=/Script/OakGame.OakCharacterDef
+
+[/Script/GbxGame.NexusConfigStoreCoordinatedEffectFilter]
+DefaultType=/Script/OakGame.OakCoordinatedEffectFilterDef
+
+[/Script/GbxGame.NexusConfigStoreDamageType]
+DefaultType=/Script/OakGame.OakDamageTypeDef
+
+[/Script/GbxGame.NexusConfigStoreDamageSource]
+DefaultType=/Script/OakGame.OakDamageSourceDef
+
+[/Script/GbxGame.NexusConfigStoreProjectile]
+DefaultType=/Script/OakGame.OakProjectileDef
+
+[/Script/GbxGame.NexusConfigStoreLightProjectile]
+DefaultType=/Script/OakGame.OakLightProjectileDef
+
+[/Script/GbxGame.NexusConfigStoreLightBeam]
+DefaultType=/Script/OakGame.OakLightBeamDef
+
+[/Script/GbxGame.NexusConfigStoreImpactEffectCollection]
+DefaultType=/Script/GbxGame.ImpactEffectSizeCollectionDef
+
+[/Script/GbxGame.NexusConfigStoreEffectCollection]
+DefaultType=/Script/OakGame.ElementalEffectCollectionDef
+
+[/Script/GbxWeapon.NexusConfigStoreCrosshair]
+DefaultType=/Script/OakGame.OakCrosshairDef
+
+[/Script/GbxGame.NexusConfigStoreMissionSets]
+DefaultType=/Script/OakGame.OakMissionSetDef
+
+[/Script/GbxGame.NexusConfigStoreInventory]
+DefsAccumFilters=None,Appearance,NPCOrRemotePlayer
+
+[/Script/GbxGame.NexusConfigStoreMissions]
+MissionDefType=/Script/OakGame.OakMissionDef
+ObjectiveDefType=/Script/OakGame.OakMissionObjectiveDef
++DevMissionContentPaths="/Game/Developers/"
++DevMissionContentPaths="/Oak2Test/"
++DevMissionContentPaths="/Oak2Automation/"
+
+[/Script/GbxGame.NexusConfigStoreMissionSource]
+DefaultType=/Script/OakGame.MissionSourceDef
+
+[/Script/GbxGame.NexusConfigStoreManufacturer]
+bAddToDamageTags=true
+
+[/Script/GbxGame.NexusConfigStoreCinematicMode]
+DefaultType=/Script/OakGame.OakCinematicModeDef ```
+
+
+[9/19/2025 1:20 PM] bliss3091
+In the yaml what actually determines the uvh level?
+
+
+[9/19/2025 1:37 PM] sairouth
+The yaml is the save file
+
+
+[9/19/2025 2:12 PM] uplusion23
+Finally got some pointless text to render without breaking the UI entirely
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418661019961655449/image.png?ex=68e55808&is=68e40688&hm=745dddddd65c24bbd11c5f138304c831f385c18c3db77b64ed51b9b57f6f175b&
+
+{Reactions}
+🔥 (3)
+
+[9/19/2025 2:25 PM] flicqt
+Ayeo
+
+
+[9/19/2025 2:46 PM] uplusion23
+Logging works for items, but it seems they're just plain objects, and not any unique class. I did catch some calls to the engine, but nothing about getting responses yet. Looks like my next steps will be to investigate the engine RPC from the coherent ui.
+Probably tomorrow though, good luck everyone!
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418669501234282667/image.png?ex=68e55fee&is=68e40e6e&hm=4904dfe550a08c7cc22b7b7a46e5c46daaf82d60dca4d1da81dcf632ebddfb79&
+
+
+[9/19/2025 2:47 PM] uplusion23
+disregard, tomorrow morning will be nice
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418669799680118915/image.png?ex=68e56035&is=68e40eb5&hm=c454831b90210399e135dd14d40921a6638085776ff413a4f7fa4946e8e53f18&
+
+
+[9/19/2025 3:12 PM] bliss3091
+I am aware but I would like ot understnad is it just the achievements
+
+
+[9/19/2025 3:20 PM] sairouth
+There's 2 places you have to put them in a save
+
+
+[9/19/2025 4:09 PM] uplusion23
+```
+// TODO OAK2-173433 - Remove this once the typo in Tooltip_DarkSiren_ActionSkill_PhaseShard_Capstone_GrimReaper gets fixed.
+        // I love it when I have to do the obviously wrong thing because someone messed up text formatting somewhere and nobody noticed until
+        // after localization got locked.
+```
+
+From one of their files lmao
+
+{Reactions}
+❤️ (2)
+
+[9/19/2025 5:33 PM] uplusion23
+Posting for later reference
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418711709455093862/image.png?ex=68e5873d&is=68e435bd&hm=2a79b1d787474f82f0bc027842f1ca083b963e5f3cdf744d4935bb36efbe7f00&
+https://cdn.discordapp.com/attachments/1418334668561842256/1418711709845295226/image.png?ex=68e5873e&is=68e435be&hm=f13df4c93ade14f4134b3089201c6c6d8414565aa7ead150b990e34737d0789f&
+
+{Reactions}
+👍
+
+[9/19/2025 6:48 PM] uplusion23
+I feel like the pattern is somewhat as follows
+
+Magic Number, Item Base/Manufacturer, Level, and then an "array" of modifiers. The above images slightly allude to that. Until we can get UE4SS working, I'm probably going to put a pause on it because brute forcing can eventually work, but if they change the seed or generation method even the slightest, all the work would be gone.
+
+{Reactions}
+👍 (2)
+
+[9/19/2025 7:43 PM] bratdolls
+you must be like albert einsteins grandchild or some shit.
+
+
+[9/19/2025 7:43 PM] bratdolls
+i feel like im reading alien technology. cheers to you.
+
+
+[9/19/2025 8:09 PM] uplusion23
+I appreciate the sentiment! The real geniuses are the ones who made all the tooling that makes it simple for people like me
+
+
+[9/19/2025 9:49 PM] p_h_i_l_i_p_p
+in this serial
+```@UgeU_{Fme!KAb(J5RG/_zZD<k
+```
+
+the 5 in J5RG is the rarity
+for example
+```@UgeU_{Fme!KAb(J4RG/_zZD<k
+```
+changes to purple
+
+
+[9/19/2025 11:09 PM] uplusion23
+That's a very interesting find... I can't even rationalize the order anymore. Unless it's specifically *unordered*
+
+
+[9/19/2025 11:11 PM] p_h_i_l_i_p_p
+i know the order till the barrel idk the order aufter it
+
+{Reactions}
+❤️
+
+[9/20/2025 12:57 AM] rockstvr710
+@akamoden you were onto something when relating the perks and such to parts shi
+
+
+[9/20/2025 6:16 AM] cephaloncinnamon
+Think it’ll be possible to make 63 part items like in previous games?
+
+
+[9/20/2025 6:30 AM] .shdw.
+This anti debugger is annoying
+
+{Reactions}
+ten_this
+
+[9/20/2025 7:25 AM] cr4nkst4r
+Yea, I got back to fiddling around with item codes themselves, I couldn't get a whole good dump from the latest version.
+
+
+[9/20/2025 9:15 AM] noidhogg
+for this item (plasma coil), is still known what scaling is used to determine the level value?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418948756094713949/image.png?ex=68e5bb42&is=68e469c2&hm=587f134425f80d7a94a15c419415545c968870710af3fceb72c76d663fb91965&
+
+
+[9/20/2025 9:39 AM] uplusion23
+All I've got is SDK from Dumper 7 but no dice on any structs
+
+{Reactions}
+👍
+
+[9/20/2025 9:43 AM] rockstvr710
+23554 is what my level value says i have a lvl 50 one
+
+
+[9/20/2025 9:43 AM] rockstvr710
+if that helps
+
+
+[9/20/2025 9:44 AM] noidhogg
+i found that too but i'm figuring out what is the factor for changing levels
+
+
+[9/20/2025 9:44 AM] noidhogg
+seems to not work well
+
+
+[9/20/2025 9:44 AM] xkangoku
+are you the person who posted there save on nexus
+
+{Reactions}
+👻
+
+[9/20/2025 9:44 AM] rockstvr710
+most of the time i just play with the $Yw2{TYg part
+
+
+[9/20/2025 9:45 AM] xkangoku
+https://www.nexusmods.com/borderlands4/mods/12
+
+
+[9/20/2025 9:45 AM] rockstvr710
+tracked me down did ya 😭
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1418956193954533477/image.png?ex=68e5c22f&is=68e470af&hm=e4ccf47fa32f10d859b6c5b25aee039e376c54a2e09178bb5122c467789c6b04&
+
+
+[9/20/2025 9:45 AM] xkangoku
+nah i was like wait he on epic
+
+{Reactions}
+👍
+
+[9/20/2025 9:45 AM] rockstvr710
+took me the longest to get yamls out
+
+
+[9/20/2025 9:45 AM] rockstvr710
+😔
+
+
+[9/20/2025 9:45 AM] xkangoku
+sorry i stole your spotlight
+
+
+[9/20/2025 9:46 AM] rockstvr710
+you good
+
+
+[9/20/2025 9:46 AM] xkangoku
+:rooSadSip:
+
+
+[9/20/2025 9:46 AM] rockstvr710
+idrc
+
+
+[9/20/2025 9:46 AM] rockstvr710
+im new on the site
+
+
+[9/20/2025 9:46 AM] rockstvr710
+i only started uploading bc silksong was new and reallllyyyy easy to play with
+
+
+[9/20/2025 9:46 AM] xkangoku
+lmao
+
+
+[9/20/2025 9:47 AM] realmavy
+What does the anti de-bugger do?
+
+
+[9/20/2025 9:47 AM] rockstvr710
+doesnt let you de bug? idk
+
+
+[9/20/2025 9:50 AM] jonaaa20
+Crashes your game when you try to debug with CE, etc
+
+{Reactions}
+👍🏻
+
+[9/20/2025 11:45 AM] cr4nkst4r
+For me it wasn't even finishing the dump on the latest version, only after release xD
+
+
+[9/20/2025 1:30 PM] unewt
+is there any consensus as to what these values really *mean* yet? i.e. the primary/secondary stat integers, do we know what those even correspond to yet?
+>     stats:
+>       manufacturer: 136
+>       primary_stat: 5496
+>       rarity: 120
+>       secondary_stat: 9146
+
+
+[9/21/2025 7:04 PM] deleteduser035b32074a55
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419459346907271300/5.5.4-4289355Oak2-Win64-4289355-OakGame.rar?ex=68e59c88&is=68e44b08&hm=92be908ce2b4baa44f775c1fa92bc2fb73a36ef9972d5a16765ba7b00a80217e&
+
+
+[9/21/2025 8:09 PM] cr4nkst4r
+Online for a day by now <https://dumpspace.spuckwaffel.com/Games/?hash=447a7840>
+
+{Reactions}
+👍
+
+[9/22/2025 12:51 PM] cookiestmonster
+does anybody know what the internal names for the challenges would be called 
+Zeroed in - Damage 10 or more enemies using a single point slam activation.
+A Friend in needles - Heal allies with AOE heal effect from repkits 
+and i am also missing 2 Licensed Parts 
+
+yep none of these worked 🙁 
+ spareparts_jakobs_ricochet: 2000
+    spareparts_jakobs_ricochet_shield: 2000
+    spareparts_jakobs_critricochet: 2000
+    spareparts_maliwan_underbarrel: 2000
+    spareparts_maliwan_altfire: 2000
+    spareparts_maliwan_element_switch: 2000
+    spareparts_maliwan_dualelement: 2000
+
+    repkit_healally: 200
+    repkit_healallies: 200
+    repkit_aoeheal: 200
+    repkit_aoeheal_allies: 200
+    repkit_healteam: 200
+    repkit_supportheal: 200
+    repkit_groupheal: 200
+
+    general_kill_groundpound_multihit: 200
+    general_kill_groundpound_multi: 200
+    general_kill_groundpound_bigshot: 200
+    general_kill_groundpound_masskill: 200
+    general_kill_groundpound_aoe: 200
+    general_kill_groundpound_chain: 200
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419727903217946756/image.png?ex=68e54525&is=68e3f3a5&hm=8c4728db2a2b9d2f2107c23f90fbde3ba0c15a133be5ca295bb5086b0d3c87e3&
+
+
+[9/22/2025 12:51 PM] cookiestmonster
+these the only ones i am missing
+
+
+[9/22/2025 1:28 PM] regularlunar
+thx for this site, im updating a lot of dumps now :)
+
+{Reactions}
+👍
+
+[9/22/2025 3:26 PM] mrllama
+manufacturer_tediore_comboreload_kills: 1
+
+these are the two i can find in yaml
+
+   spareparts_atlas_tracker_pucks: 10
+    spareparts_cov_overheated: 9
+    spareparts_cov_not_overheated: 105
+    spareparts_hyperion_absorb_ammo: 63
+
+these look like licensed parts challenges
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419766897418703008/image.png?ex=68e56976&is=68e417f6&hm=63f318b4845b07c92bb2dc6fccbc6f06efcdc4497edf367aeb9e089678955dcf&
+
+
+[9/22/2025 3:27 PM] mrllama
+fish was supposed to be at top of post :/
+
+
+[9/22/2025 3:40 PM] cookiestmonster
+thanks now i just need to find 4 more
+
+
+[9/22/2025 3:40 PM] cookiestmonster
+spareparts_atlas_tracker_pucks: 2000
+    spareparts_atlas_tracker_grenades: 2000
+    spareparts_cov_overheated: 2000
+    spareparts_cov_not_overheated: 2000
+    spareparts_hyperion_absorb_ammo: 2000
+    ??
+    ??
+
+
+[9/22/2025 3:58 PM] uplusion23
+Found descriptors for this method in my memdump `Force the save/load format for profile data to use JSON instead of YAML`, but I doubt it'll save the items as anything other than a string
+
+
+[9/22/2025 4:57 PM] haubitzen
+keep in mind it could be tied to content not yet out
+
+
+[9/22/2025 4:57 PM] haubitzen
+im too locked out of with 100%
+
+
+[9/22/2025 4:57 PM] haubitzen
+same 4
+
+
+[9/22/2025 4:57 PM] haubitzen
+done
+
+
+[9/22/2025 4:57 PM] haubitzen
+last 3 idk
+
+
+[9/22/2025 4:58 PM] cookiestmonster
+i tried about 100 different internal names it did not work
+
+
+[9/22/2025 4:58 PM] haubitzen
+yea  which brings me back to the original it could be something that the sig hasnt even been added yet its just a blank challenge block
+
+
+[9/22/2025 4:58 PM] cookiestmonster
+you can put a bunch and save and quit and then only the ones that work remain
+
+
+[9/22/2025 4:59 PM] haubitzen
+let me  load up rq to just verify that i dont ahve them
+
+
+[9/22/2025 5:00 PM] cookiestmonster
+Zeroed in - Damage 10 or more enemies using a single point slam activation.
+A Friend in needles - Heal allies with AOE heal effect from repkits 
+2 Licensed Parts
+
+
+[9/22/2025 5:00 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419790530111471678/image.png?ex=68e57f78&is=68e42df8&hm=300ff74d679487deae481abeba83782f7d6335e7981452f18e12fdae97cee820&
+
+
+[9/22/2025 5:01 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419790723829727373/image.png?ex=68e57fa6&is=68e42e26&hm=13fdf7b37a6cbb303344516a44d434c6b8d6f5eafefdac0829ded937f9c5a81c&
+
+
+[9/22/2025 5:02 PM] cookiestmonster
+did you do all the shinygear yet
+
+
+[9/22/2025 5:02 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419791029871181824/image.png?ex=68e57fef&is=68e42e6f&hm=3cba05169dcd3a8d8e1444d5d2be03b90c180dcd8bd78e8c20f9fb8176062073&
+
+
+[9/22/2025 5:02 PM] cookiestmonster
+ok i'll do that
+
+
+[9/22/2025 5:03 PM] cookiestmonster
+i have 68 though listed
+
+
+[9/22/2025 5:03 PM] haubitzen
+im missing tediore turret kills do you have that code?
+
+
+[9/22/2025 5:04 PM] haubitzen
+i think so
+
+
+[9/22/2025 5:04 PM] cookiestmonster
+manufacturer_tediore_turret_kills: 2555
+
+
+[9/22/2025 5:04 PM] haubitzen
+right^
+
+
+[9/22/2025 5:05 PM] cookiestmonster
+did you do the slam one?
+
+
+[9/22/2025 5:05 PM] haubitzen
+no
+
+
+[9/22/2025 5:05 PM] haubitzen
+i also need the suck and blow from grenade
+
+
+[9/22/2025 5:07 PM] cookiestmonster
+killenemy_grenade_singularity: 500
+    killenemy_grenade_mirv: 400
+    killenemy_grenade_artillery: 450
+    killenemy_grenade_lingering: 2500
+    killenemy_grenade_amp: 2500
+
+
+[9/22/2025 5:08 PM] cookiestmonster
+this is all the guns list 
+maybe you cant get them all but its still 72 and the game says there is 69 for some reason
+(Assault Rifles)
+Aegon’s Dream
+Bonnie and Clyde
+Bugbear
+Chuck
+Cold Shoulder
+Divided Focus
+G.M.R.
+Goalkeeper
+First Impression
+Lucian's Flank
+Bloody Lumberjack
+Oscar Mike
+Potato Thrower IV
+Rowan's Charge
+Star Helix
+Whiskey Foxtrot
+Wombo Combo
+
+(Pistols)
+Budget Deity
+Bully
+King's Gambit
+Lucky Clover
+Noisy Cricket
+Phantom Flame
+Queen's Rest
+Rangefinder
+Roach
+Ruby's Grasp
+San Saba Songbird
+Seventh Sense
+Sideshow
+Zipper
+
+(Shotguns)
+Acey May
+Anarchy
+Bod
+Convergence
+Forsaken Chaos
+Golden God
+Goremaster
+Hellwalker
+Hot Slugger
+Husky Friend
+Kaleidosplode
+Kickballer
+Lead Balloon
+Linebacker
+Rainbow Vomit
+Sweet Embrace
+T.K's Wave
+
+(SMGs)
+Birt's Bees
+Darkbeast
+Frangible
+Hellfire
+Kaoson
+Luty Madlad
+Matador's Match
+Ohm I Got
+Onslaught
+Plasma Coil
+Prince Harming
+
+(Snipers)
+Asher's Rise
+Boomslang
+Borstel Ballista
+Complex Root
+Finnity XXX-L
+Fisheye
+Katagawa's Revenge
+Midnight Defiance
+Stop Gap
+Stray
+Symmetry
+Truck
+Vamoose
+
+
+[9/22/2025 5:12 PM] cookiestmonster
+First Impression -  Pre-Order Bonus
+Matador's Match -  Pre-Order Bonus
+Midnight Defiance - Twitch Drop
+Forsaken Chaos - Twitch Drop
+dont know if these count
+
+
+[9/22/2025 5:14 PM] haubitzen
+for progression?
+
+
+[9/22/2025 5:14 PM] cookiestmonster
+for the shines
+
+
+[9/22/2025 5:14 PM] haubitzen
+ahh
+
+
+[9/22/2025 5:15 PM] haubitzen
+do you have the slam code?
+
+
+[9/22/2025 5:18 PM] cookiestmonster
+no
+
+
+[9/22/2025 5:18 PM] haubitzen
+i cant seem to find the echo log code
+
+
+[9/22/2025 5:19 PM] cookiestmonster
+city_mis_16: 1
+
+
+[9/22/2025 5:19 PM] cookiestmonster
+go to city_mis_15: 1 and put it below
+
+
+[9/22/2025 5:20 PM] cookiestmonster
+as long as you have 155 it should work even though you could be missing 
+the wait and experiment it worked for me
+
+
+[9/22/2025 5:21 PM] haubitzen
+i got 154
+
+
+[9/22/2025 5:21 PM] cookiestmonster
+idk how it works but this can be 
+          city_mis_12: 2
+          city_mis_13: 2
+or 
+          city_mis_12: 1
+          city_mis_13: 1
+
+
+[9/22/2025 5:22 PM] cookiestmonster
+then you are still missing one
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419796125036187789/collectibles.txt?ex=68e584ae&is=68e4332e&hm=462272e4a38f119ddc1f96cca5a9f669eb75e51059afee090b5b62eebe6cee02&
+
+
+[9/22/2025 5:23 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419796241759473834/image.png?ex=68e584ca&is=68e4334a&hm=79af8171f964d64a150551fa86c294ffdc4e37bd4f93b0c0a2dcdfd0a7cb6ffc&
+
+
+[9/22/2025 5:23 PM] cookiestmonster
+you can find which one is different from this if you want
+
+
+[9/22/2025 5:23 PM] haubitzen
+ok
+
+
+[9/22/2025 5:25 PM] cookiestmonster
+I do have different characters 
+which doesnt have Seismic Damage but has the wait and "experiment"
+and then another one has 
+Seismic Damage but not the wait and "experiment"
+
+
+[9/22/2025 5:36 PM] cookiestmonster
+close
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419799473307254824/image.png?ex=68e587cd&is=68e4364d&hm=4d574b0088cee86232708c0d66d15f105a07b5727e27f114c66884d3e5b4054c&
+
+
+[9/22/2025 5:37 PM] haubitzen
+worked
+
+
+[9/22/2025 5:38 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419800020131250297/image.png?ex=68e5884f&is=68e436cf&hm=b31eea4b8a37b0ab83456fc9742831136b4e7ffa3657f72bdedb5071a1c4a65d&
+
+
+[9/22/2025 5:41 PM] cookiestmonster
+misc: 
+      fish: 500
+
+
+[9/22/2025 6:06 PM] cookiestmonster
+this is what i am on
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419807139576418394/image.psd27.png?ex=68e58ef0&is=68e43d70&hm=131e683159a32fc2c7ba2976544b679d379f7f0727c81008ae322e795baf1442&
+
+
+[9/22/2025 6:08 PM] haubitzen
+ahh
+
+
+[9/22/2025 6:09 PM] haubitzen
+what are the 2 im missing from world
+
+
+[9/22/2025 6:09 PM] haubitzen
+?
+
+
+[9/22/2025 6:11 PM] haubitzen
+id like to have the code for those
+
+
+[9/22/2025 6:15 PM] domin8
+@CookiestMonster and @haubitzen whenever you get your challenges to 100%, could you please upload your save somewhere for reference?
+
+{Reactions}
+❤️
+
+[9/22/2025 6:16 PM] haubitzen
+of course
+
+{Reactions}
+👍 (2)
+
+[9/22/2025 6:18 PM] cookiestmonster
+I'm not on my pc right now
+
+
+[9/22/2025 6:19 PM] cookiestmonster
+But I do have the shines if anybody knows some more 
+i just want you to think of the ones I dont have if they were called something different so 
+ shinygear: 
+    base: 
+      shiny_convergence: 1
+      shiny_goldengod: 1
+      shiny_goremaster: 1
+      shiny_hellfire: 1
+      shiny_stray: 1
+      shiny_vamoose: 1
+      shiny_star_helix: 1
+      shiny_rangefinder: 1
+      shiny_zipgun: 1
+      shiny_bod: 1
+      shiny_kingsgambit: 1
+      shiny_phantom_flame: 1
+      shiny_seventh_sense: 1
+      shiny_hellwalker: 1
+      shiny_rainbowvomit: 1
+      shiny_tkswave: 1
+      shiny_ballista: 1
+      shiny_boomslang: 1
+      shiny_truck: 1
+      shiny_kaleidosplode: 1
+      shiny_kickballer: 1
+      shiny_sweet_embrace: 1
+      shiny_ohmigot: 1
+      shiny_plasmacoil: 1
+      shiny_complex_root: 1
+      shiny_katagawa: 1
+      shiny_gmr: 1
+      shiny_goalkeeper: 1
+      shiny_bully: 1
+      shiny_noisycricket: 1
+      shiny_rocketreload: 1
+      shiny_fisheye: 1
+      shiny_symmetry: 1
+      shiny_chuck: 1
+      shiny_dividedfocus: 1
+      shiny_rubysgrasp: 1
+      shiny_sideshow: 1
+      shiny_anarchy: 1
+      shiny_coldshoulder: 1
+      shiny_potatothrower: 1
+      shiny_queensrest: 1
+      shiny_roach: 1
+      shiny_leadballoon: 1
+      shiny_linebacker: 1
+      shiny_dualdamage: 1
+      shiny_lucian: 1
+      shiny_wombocombo: 1
+      shiny_kaoson: 1
+      shiny_onslaught: 1
+      shiny_stopgap: 1
+
+
+[9/22/2025 6:19 PM] cookiestmonster
+I was asking ai I couldn't get anymore
+
+
+[9/22/2025 6:20 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419810554796839063/shinygear.txt?ex=68e5921f&is=68e4409f&hm=6164dc0217d833fa7567a91387e6f960f54a8f657a033dd4ef2c9dc3d36ceb44&
+
+
+[9/22/2025 6:20 PM] cookiestmonster
+I am missing 19
+
+
+[9/22/2025 6:21 PM] it_corvo
+Does that go into profile? Or character?
+
+
+[9/22/2025 6:21 PM] haubitzen
+char
+
+
+[9/22/2025 6:21 PM] haubitzen
+just make sure 1 know where to put it
+
+
+[9/22/2025 6:21 PM] haubitzen
+or
+
+
+[9/22/2025 6:21 PM] haubitzen
+have atleast 1 collected for safe editing
+
+
+[9/22/2025 6:23 PM] it_corvo
+Thanks!
+
+
+[9/22/2025 6:51 PM] schlumped1
+Do you get anything for finding all phosphenes?
+
+
+[9/22/2025 6:55 PM] alienfreek
+sense of pride and accomplishment
+
+
+[9/22/2025 6:55 PM] alienfreek
+(i dont know)
+
+
+[9/22/2025 6:58 PM] schlumped1
+Damn okay 😂
+
+
+[9/22/2025 7:02 PM] it_corvo
+tried to copy this into my Player.yaml and stuff but still only shows 4/69 on the challenges pages
+
+
+[9/22/2025 7:11 PM] alienfreek
+make sure you name it back to profile after u edit if u didnt
+
+
+[9/22/2025 7:12 PM] alienfreek
+profile.sav
+
+
+[9/22/2025 7:13 PM] k.i.t.t.e.n
+You get weapon skin for finding all phosphenes
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419823848420937810/XwQNiP3.png?ex=68e59e80&is=68e44d00&hm=31d2ebb0e038afba7273d3ecf59f739d0488d0843acdc27cf1d753d7c5202134&
+
+
+[9/22/2025 7:14 PM] it_corvo
+i thought this was a char save?  kinda just trying to get the ingame challenges to match tbh
+
+
+[9/22/2025 7:14 PM] alienfreek
+oh im not sure i thought you were trying to get the skins
+
+
+[9/22/2025 7:14 PM] alienfreek
+you might need to add the skin unlocks to your profile.sav as well
+
+
+[9/22/2025 7:15 PM] it_corvo
+profile shows them as unlockable but idk how to edit that so they aren't lol (since they dont drop just doesnt complete the challenge)
+
+
+[9/22/2025 7:15 PM] alienfreek
+list of them
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419824554498326598/message.txt?ex=68e59f28&is=68e44da8&hm=aa7f159283ada296f7f02b8471e472cd91498f6ad59297acac4e80de2c9f7b13&
+
+
+[9/22/2025 7:16 PM] alienfreek
+yeah not sure about the challenge itself
+
+
+[9/22/2025 7:18 PM] k.i.t.t.e.n
+In your save file you need to have them unlocked in your unique_rewards
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419825323578757221/8JQUqjG.png?ex=68e59fe0&is=68e44e60&hm=b1cdf38437413e0b68976fb088ce5fe230eac6db1d079ef5eb17ccd8afbd582e&
+
+{Reactions}
+🔥 (2)
+
+[9/22/2025 7:20 PM] it_corvo
+profile or character sorry? and do you have that list? seems like a lot to type lol
+
+
+[9/22/2025 7:21 PM] k.i.t.t.e.n
+your char save, i didn't compile a list, i typed them manually
+
+
+[9/22/2025 7:22 PM] k.i.t.t.e.n
+i can compile one, give me a moment
+
+
+[9/22/2025 7:22 PM] it_corvo
+thank you so much
+
+
+[9/22/2025 7:25 PM] k.i.t.t.e.n
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419826865568223262/5mhexue.txt?ex=68e5a14f&is=68e44fcf&hm=0101696e0f05fb625b6eff76e384d695f658c04f6c62a47161ec046c546f5b31&
+
+{Reactions}
+🔥 (2)
+
+[9/22/2025 7:26 PM] it_corvo
+many thanks, friend of friends
+
+
+[9/22/2025 7:51 PM] haubitzen
+@CookiestMonster spareparts_hyperion_amp_shield:
+
+
+[9/22/2025 7:54 PM] haubitzen
+does anyone have a rafa character and vex with the character challenges with atleast 1 point in each sub challenge
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419834164571803721/image.png?ex=68e5a81c&is=68e4569c&hm=1ad6919ef921055ed4b3d897febc88b89dc77df134418f805d8fc76a3a9e56a2&
+
+
+[9/22/2025 8:19 PM] it_corvo
+hey sorry but im looking for these and it shows ive unlocked 4 of them but i cant find these on the char save
+
+
+[9/22/2025 8:22 PM] haubitzen
+`
+
+
+[9/22/2025 8:22 PM] haubitzen
+@Corvo have you atleast collected 1 shiny?
+
+
+[9/22/2025 8:22 PM] it_corvo
+yea
+
+
+[9/22/2025 8:22 PM] haubitzen
+and you know how to edit
+
+
+[9/22/2025 8:22 PM] haubitzen
+?
+
+
+[9/22/2025 8:22 PM] it_corvo
+shows 4/69 on the challenges
+
+
+[9/22/2025 8:23 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419841695885033587/image.png?ex=68e5af1f&is=68e45d9f&hm=8528eb1334ae57f6ff48857864c9a98374af2641f770bcc34a304d39696368c7&
+
+
+[9/22/2025 8:24 PM] haubitzen
+@Corvo
+
+
+[9/22/2025 8:24 PM] it_corvo
+yea i got it there just trying to get it to unlock on the actual challenge
+
+
+[9/22/2025 8:24 PM] haubitzen
+yea that should work
+
+
+[9/22/2025 8:25 PM] haubitzen
+are you using a save editor
+
+
+[9/22/2025 8:25 PM] haubitzen
+or ++
+
+
+[9/22/2025 8:25 PM] haubitzen
+or notepad
+
+
+[9/22/2025 8:25 PM] it_corvo
+notepad
+
+
+[9/22/2025 8:25 PM] it_corvo
+then saving then reconverting
+
+
+[9/22/2025 8:25 PM] haubitzen
+now from trial and error i only replaced the content under base:
+
+
+[9/22/2025 8:25 PM] haubitzen
+ex
+
+
+[9/22/2025 8:25 PM] haubitzen
+shiny_heavyturret: 1
+
+
+[9/22/2025 8:26 PM] haubitzen
+and it worked
+
+
+[9/22/2025 8:27 PM] it_corvo
+i think i might of been missing a few spaces in it the save
+
+
+[9/22/2025 8:27 PM] it_corvo
+realized my stuff is on collum one not 3 like the rest of them were
+
+
+[9/22/2025 8:27 PM] haubitzen
+could be always make sure correct spacing
+
+
+[9/22/2025 8:28 PM] haubitzen
+when it comes to saves 1 mishap can throw the whole thing or just not load said data in the section you edited
+
+
+[9/22/2025 8:30 PM] mrllama
+heavy arms
+exo_heavyarms_tiered: 11
+
+yolt
+exo_levelup: 50
+
+break me off a peace
+exo_autolock_tiered: 271
+
+
+[9/22/2025 8:30 PM] haubitzen
+exo_heavyarms_tiered: 110
+    exo_heavyarms_single: 1
+    exo_autolock_tiered: 926
+    exo_levelup: 50
+    
+    siren_death_tiered: 80
+    siren_demonology_tiered: 1000
+    siren_demonology_single: 1
+    siren_duplicate_tiered: 191
+    siren_duplicate_single: 1
+    siren_levelup: 50
+
+i got these so far
+
+
+[9/22/2025 8:30 PM] haubitzen
+thanks
+
+
+[9/22/2025 8:32 PM] mrllama
+My rafa has 
+
+siren_duplicate_single: 1
+
+thats weird right?
+
+
+[9/22/2025 8:32 PM] haubitzen
+yea
+
+
+[9/22/2025 8:33 PM] haubitzen
+i dont think gb knows how to perfect saves yet
+
+
+[9/22/2025 8:33 PM] haubitzen
+maybe another 10 years
+
+
+[9/22/2025 8:33 PM] haubitzen
+or maybe
+
+
+[9/22/2025 8:33 PM] it_corvo
+yep that fixed it im an idiot thank you, freind of friends
+
+
+[9/22/2025 8:33 PM] haubitzen
+its a stat thats just there
+
+
+[9/22/2025 8:33 PM] haubitzen
+np
+
+
+[9/22/2025 8:34 PM] haubitzen
+siren dup meaning siren class mod or item
+
+
+[9/22/2025 8:34 PM] haubitzen
+idk
+
+
+[9/22/2025 8:35 PM] haubitzen
+so for siren all i need is the tuning in challenge code
+
+
+[9/22/2025 8:37 PM] cookiestmonster
+it is done
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419845143867162664/image.png?ex=68e5b255&is=68e460d5&hm=e19dbcfe57e1286c2f10f8711817443755fc36acda3946f39eb51638516b0582&
+
+
+[9/22/2025 8:37 PM] haubitzen
+nice
+
+
+[9/22/2025 8:37 PM] haubitzen
+what challenges you got for lic
+
+
+[9/22/2025 8:38 PM] haubitzen
+spareparts_atlas_tracker_pucks: 
+    spareparts_atlas_tracker_grenades: 
+    spareparts_cov_overheated: 
+    spareparts_cov_not_overheated: 
+    spareparts_hyperion_absorb_ammo: 
+    spareparts_hyperion_amp_shield:
+
+
+[9/22/2025 8:38 PM] cookiestmonster
+one left
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419845286595002409/image.png?ex=68e5b277&is=68e460f7&hm=5a0bd708838102bca2868c2b87a5136e3d6f6f1d5b1b79f9e471215acd074f10&
+
+
+[9/22/2025 8:38 PM] haubitzen
+is what i got
+
+
+[9/22/2025 8:38 PM] cookiestmonster
+its the same
+
+
+[9/22/2025 8:39 PM] haubitzen
+hmm
+
+
+[9/22/2025 8:39 PM] haubitzen
+hows your charact and world challenges ?
+
+
+[9/22/2025 8:39 PM] haubitzen
+repkit 1 with team healing
+
+
+[9/22/2025 8:40 PM] haubitzen
+my rafa also has this
+
+
+[9/22/2025 8:40 PM] haubitzen
+siren_death_tiered: 76
+    siren_levelup: 50
+    exo_autolock_tiered: 17
+
+
+[9/22/2025 8:41 PM] haubitzen
+ill delete those
+
+
+[9/22/2025 8:41 PM] haubitzen
+and replace and report back
+
+
+[9/22/2025 8:42 PM] cookiestmonster
+these ones? 
+siren_duplicate_single: 1
+    gravitar_exodus_tiered: 1000
+    gravitar_exodus_single: 1
+    gravitar_stasis_tiered: 1000
+    gravitar_terminal_tiered: 1000
+    gravitar_terminal_single: 1
+    gravitar_levelup: 50
+    paladin_cybernetics_tiered: 4
+
+
+[9/22/2025 8:42 PM] haubitzen
+paladin is grav?
+
+
+[9/22/2025 8:43 PM] cookiestmonster
+its just there idk
+
+
+[9/22/2025 8:43 PM] haubitzen
+yea has to be
+
+
+[9/22/2025 8:43 PM] haubitzen
+bc exo is exo
+
+
+[9/22/2025 8:44 PM] mrllama
+paladin is amos as far as i know
+
+
+[9/22/2025 8:44 PM] haubitzen
+ok how about the world and repkit healing team
+
+
+[9/22/2025 8:44 PM] haubitzen
+ik some world are in misc
+
+
+[9/22/2025 8:44 PM] haubitzen
+like fish
+
+
+[9/22/2025 8:45 PM] haubitzen
+interesting
+
+
+[9/22/2025 8:45 PM] haubitzen
+i replaced vex 1s and it corrupted
+
+
+[9/22/2025 8:45 PM] cookiestmonster
+would this be called gravitar_stasis_slam?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419847208211185746/image.png?ex=68e5b441&is=68e462c1&hm=899e265815c936acc36582286ec62358c605a6426179cf0d7119634ea4fe5a3d&
+
+
+[9/22/2025 8:46 PM] haubitzen
+yes
+
+
+[9/22/2025 8:46 PM] haubitzen
+what category?
+
+
+[9/22/2025 8:47 PM] cookiestmonster
+character
+
+
+[9/22/2025 8:47 PM] haubitzen
+then yes
+
+
+[9/22/2025 8:47 PM] haubitzen
+most likely
+
+
+[9/22/2025 8:47 PM] haubitzen
+you could do blackhole zero point and slam
+
+
+[9/22/2025 8:47 PM] haubitzen
+unless you find the code
+
+
+[9/22/2025 8:48 PM] haubitzen
+ive been sifting through saves in #save-files
+
+
+[9/22/2025 8:48 PM] haubitzen
+and nexus
+
+
+[9/22/2025 8:48 PM] haubitzen
+havent looked in amon or grav yet
+
+
+[9/22/2025 8:48 PM] haubitzen
+i only plan on doing rafa and vex 100% challenges
+
+
+[9/22/2025 8:49 PM] haubitzen
+siren_death_tiered: 80 what number should this be
+
+
+[9/22/2025 8:50 PM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419848302161035400/image.png?ex=68e5b546&is=68e463c6&hm=224a475499370ed7c65c466bc14ace582167bda7aed4bdaf1bf96c497fd309c3&
+
+
+[9/22/2025 8:50 PM] haubitzen
+its showing corruption
+
+
+[9/22/2025 8:58 PM] mrllama
+thats weird that 76 is valid, but 80 isnt
+
+
+[9/22/2025 9:01 PM] cookiestmonster
+i dont think this is right for challenges in world is it achievements? 
+    10_worldevents_colosseum: 1
+    11_worldevents_airship: 1
+    12_worldevents_meteor: 1
+
+
+[9/22/2025 9:01 PM] haubitzen
+airship is
+
+
+[9/22/2025 9:02 PM] haubitzen
+bc thats all i recall
+
+
+[9/22/2025 9:02 PM] haubitzen
+rn
+
+
+[9/22/2025 9:02 PM] cookiestmonster
+event_count_aircargo: 2
+  event_count_caravan: 4
+  event_colosseum_visited: 1
+
+
+[9/22/2025 9:03 PM] cookiestmonster
+thats the only ones
+
+
+[9/22/2025 9:03 PM] haubitzen
+well the fishing 1 in in misc:
+
+
+[9/22/2025 9:03 PM] haubitzen
+misc:
+         fish:
+
+
+[9/22/2025 9:03 PM] cookiestmonster
+it is not there
+
+
+[9/22/2025 9:03 PM] cookiestmonster
+next to fish
+
+
+[9/22/2025 9:04 PM] haubitzen
+i dont think they are next to each other i think they spread out
+
+
+[9/22/2025 9:04 PM] haubitzen
+for some reason
+
+
+[9/22/2025 9:08 PM] cookiestmonster
+what cant you unlock from the character file without having the profile
+
+
+[9/22/2025 9:13 PM] haubitzen
+idk
+
+
+[9/22/2025 9:16 PM] cookiestmonster
+yes
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419854988787580989/image.png?ex=68e5bb80&is=68e46a00&hm=8f383e0bc374c4ed6c7c0fbd795fb268e402717af9fd2d0939d3741130a276de&
+
+
+[9/22/2025 9:17 PM] cookiestmonster
+2 left
+
+
+[9/22/2025 9:21 PM] haubitzen
+can you give me the world 1s
+
+
+[9/22/2025 9:21 PM] cookiestmonster
+does anybody know what the internal names for the challenges would be called 
+A Friend in needles - Heal allies with AOE heal effect from repkits 
+1 Licensed Parts missing 
+
+example of ones that work 
+    repkit_uses: 2500
+    repkit_healself: 400059
+    repkit_kills: 500
+    repkit_lifesteal: 1000000
+
+    spareparts_atlas_tracker_pucks: 2000
+    spareparts_atlas_tracker_grenades: 2000
+    spareparts_cov_overheated: 2000
+    spareparts_cov_not_overheated: 2000
+    spareparts_hyperion_absorb_ammo: 3000
+    spareparts_hyperion_amp_shield: 2000
+
+these dont work 
+ repkit_healally: 200
+    repkit_healallies: 200
+    repkit_aoeheal: 200
+    repkit_aoeheal_allies: 200
+    repkit_healteam: 200
+    repkit_supportheal: 200
+    repkit_groupheal: 200
+
+could be anything 
+spareparts_maliwan_dualelement: 2000
+    spareparts_jakobs_critricochet: 2000
+    spareparts_maliwan_element_switch: 2000
+    spareparts_tediore_targetcombo: 2000
+    spareparts_vladof_barrelmod: 2000
+
+
+[9/22/2025 9:22 PM] cookiestmonster
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419856462645297252/World.txt?ex=68e5bce0&is=68e46b60&hm=a56e25c2369fb667d5e0b6013ae1cc0ccebd01bfc99da095e467b2103c4c7f25&
+
+
+[9/22/2025 9:23 PM] haubitzen
+the challenges
+
+
+[9/22/2025 9:23 PM] cookiestmonster
+its not there
+
+
+[9/22/2025 9:23 PM] cookiestmonster
+like idk
+
+
+[9/22/2025 9:23 PM] haubitzen
+ahh
+
+
+[9/22/2025 9:23 PM] haubitzen
+im pretty sure they are spread thin
+
+
+[9/22/2025 9:23 PM] haubitzen
+can you provide the objectives
+
+
+[9/22/2025 9:23 PM] haubitzen
+for
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419856776219590746/image.png?ex=68e5bd2b&is=68e46bab&hm=fd982ad644b4272eb35fe6d5f668abf6aabdb0fdda20f7547120de3ebb18efa3&
+
+
+[9/22/2025 9:28 PM] cookiestmonster
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419857818462322718/Globals.txt?ex=68e5be23&is=68e46ca3&hm=26510005206e861973917090aed8de1eee41bc749d6754169254a282f68431fd&
+
+
+[9/22/2025 9:37 PM] haubitzen
+thanks
+
+
+[9/22/2025 9:37 PM] haubitzen
+so what well have 3 saves with 100% well soon
+
+
+[9/22/2025 9:37 PM] haubitzen
+ill also do the burrito challenge
+
+
+[9/22/2025 9:57 PM] haubitzen
+event_count_ambient_order: 21
+  event_count_aircargo: 2
+  event_count_caravan: 4
+  event_colosseum_visited: 1
+
+
+[9/22/2025 9:57 PM] haubitzen
+so i added these and nothing happened
+
+
+[9/22/2025 11:15 PM] epicnng
+any idea how to edit .dat files within uassets yet? Would help for a few changes I'm trying to make but it's all word salads
+
+
+[9/22/2025 11:16 PM] epicnng
+haven't been able to dec anything yet
+
+
+[9/23/2025 12:00 AM] sairouth
+Welcome in Epic
+
+
+[9/23/2025 12:01 AM] sairouth
+Don't think we've cracked that here either yet
+
+
+[9/23/2025 2:29 AM] haubitzen
+@Rxckstvr
+
+
+[9/23/2025 2:54 AM] epicnng
+Figured. Modding this time around is a major pain
+
+{Reactions}
+💯 (2)
+
+[9/23/2025 4:30 AM] haubitzen
+ok at some point ill have 2 saves rafa and vex ready to share for 100% challenge research
+
+{Reactions}
+❤️ 👍
+
+[9/23/2025 4:30 AM] haubitzen
+i got 2 challenges left
+
+
+[9/23/2025 4:30 AM] haubitzen
+ok now i only need the repkits
+
+
+[9/23/2025 4:30 AM] haubitzen
+healing allies
+
+
+[9/23/2025 4:39 AM] haubitzen
+gonna go grab that 1 now
+
+
+[9/23/2025 4:53 AM] haubitzen
+is the repkit challenge bugged
+
+
+[9/23/2025 4:55 AM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1419970419028525066/image.png?ex=68e57e41&is=68e42cc1&hm=ff6e74bbad3b363088c611bd5d08605ea02be28a738472825f51127be22d554d&
+
+
+[9/23/2025 4:55 AM] rockstvr710
+likely
+
+
+[9/23/2025 4:55 AM] rockstvr710
+mines 0 too
+
+
+[9/23/2025 4:55 AM] rockstvr710
+n i ran medic repkit
+
+
+[9/23/2025 4:56 AM] rockstvr710
+my whole story run with 3 people
+
+
+[9/23/2025 4:56 AM] rockstvr710
+😭
+
+
+[9/23/2025 4:56 AM] rockstvr710
+never noticed til now
+
+
+[9/23/2025 4:56 AM] rockstvr710
+ty
+
+
+[9/23/2025 4:56 AM] rockstvr710
+:val_WaaGone:
+
+
+[9/23/2025 4:56 AM] haubitzen
+yea
+
+
+[9/23/2025 4:56 AM] rockstvr710
+never even knew there w a challenge for that
+
+
+[9/23/2025 4:56 AM] rockstvr710
+i did most but not all
+
+
+[9/23/2025 4:56 AM] haubitzen
+my last challenge for 100% of all challenges on rafa and vex
+
+
+[9/23/2025 5:01 AM] haubitzen
+im gonna test random codes
+
+
+[9/23/2025 5:02 AM] haubitzen
+to see if something sticks
+
+
+[9/23/2025 5:24 AM] haubitzen
+@Rxckstvr i think i found the problem
+
+
+[9/23/2025 5:25 AM] rockstvr710
+
+
+
+[9/23/2025 5:25 AM] rockstvr710
+think i found an answer>
+
+
+[9/23/2025 5:25 AM] rockstvr710
+jk
+
+
+[9/23/2025 5:25 AM] rockstvr710
+but uh
+
+
+[9/23/2025 5:25 AM] rockstvr710
+?
+
+
+[9/23/2025 5:26 AM] haubitzen
+i think you have to use kill spring
+
+
+[9/23/2025 5:26 AM] haubitzen
+using the orbs on death of a npc to heal a teammate
+
+
+[9/23/2025 5:27 AM] haubitzen
+want to test?
+
+
+[9/23/2025 7:49 AM] kagekitsu
+now that it looks like people are able to see and change code values. I wonder how long until we get a chart that shows which parts are which to make it easier to translate. I can just imagine how much longer it will be before we have drop downs with part names and affects in a GUI
+
+
+[9/23/2025 8:48 AM] wetillusions
+Especially with AI now. Should just be able to provide common values and AI spit out some sort of pattern :ElonSmoke:
+
+
+[9/23/2025 8:49 AM] wetillusions
+I had AI writing me basic hotkey scripts for other games
+
+
+[9/23/2025 8:49 AM] wetillusions
+So could be a big help with this also :rune_addict:
+
+
+[9/23/2025 8:52 AM] haubitzen
+imagine if we had a rogue ai that we could ask whatever we wanted
+
+
+[9/23/2025 8:52 AM] haubitzen
+lol
+
+
+[9/23/2025 9:27 AM] rockstvr710
+uh
+
+
+[9/23/2025 9:35 AM] cr4nkst4r
+That's what most of them are doing, let AI write program for analysis.
+But comparing this to a hotkey script code is wyld
+
+{Reactions}
+👍
+
+[9/23/2025 10:14 AM] wetillusions
+I know it don’t compare. I just said it helped me with other games, I used the hotkey scripts as an example because that’s really all I’ve used AI for lol :eheheheh:
+
+
+[9/23/2025 10:16 AM] wetillusions
+Gemini and Perplexity can do a lot
+
+
+[9/23/2025 10:19 AM] cr4nkst4r
+So you don't replace it as a google alternative?
+
+
+[9/23/2025 10:22 AM] haubitzen
+i wonder if the loot pak still works online since we mod and fling related took a hit
+
+
+[9/23/2025 10:22 AM] wetillusions
+No? Google has Gemini built in now, it automatically uses AI when you search
+
+{Reactions}
+👍
+
+[9/23/2025 10:23 AM] haubitzen
+i use gemini on mobile things
+
+
+[9/23/2025 10:23 AM] wetillusions
+I got a year membership for hella cheap but I don’t really use AI fr
+
+
+[9/23/2025 10:23 AM] haubitzen
+copilot and gpt on web
+
+
+[9/23/2025 10:23 AM] wetillusions
+Same. I use deep sometimes on web also
+
+
+[9/23/2025 10:24 AM] haubitzen
+although i nuked copilot on my pc
+
+
+[9/23/2025 10:24 AM] haubitzen
+from running ever again
+
+{Reactions}
+❤️
+
+[9/23/2025 10:51 AM] cr4nkst4r
+Before google implemented that, some people preferred gpt instead of google, hence me asking
+
+
+[9/23/2025 1:31 PM] wetillusions
+
+
+{Stickers}
+https://cdn.discordapp.com/stickers/1280941514327064627.png
+
+
+[9/23/2025 7:56 PM] epicnng
+really hope we can get a uasset update that allows us to edit vectors of the new materials
+
+
+[9/23/2025 7:56 PM] epicnng
+so many mods we could in theory make but you can't view any vector stuff right now
+
+
+[9/23/2025 8:53 PM] alienfreek
+ik man i have so many ideas i cant work on yet 😭
+
+
+[9/25/2025 11:15 AM] numinex1387
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1420790794222047232/image.png?ex=68e5d74a&is=68e485ca&hm=e42c89d6480a44c56236caa649edaab3e01d1ebc5414474d057da5f5f1d953ec&
+
+{Reactions}
+👀 🔥 (2)
+
+[9/25/2025 11:15 AM] numinex1387
+VH10 mmmm.
+
+
+[9/25/2025 5:55 PM] alienfreek
+large list of item codes for whats believed to be the two serial subsets (pistol|shotty/restofguns)
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1420891534676590724/code.txt?ex=68e58c5c&is=68e43adc&hm=e36d09604dd2e8427d763ec43390c2a33a36e206c2a82a3a30d8925d233a9b79&
+
+{Reactions}
+❤️ (4) HEART (2)
+
+[9/25/2025 5:56 PM] alienfreek
+mixed rarities, level 1-50. for anyone who wants to play around with level codes
+
+
+[9/26/2025 12:41 AM] zilbest
+is there anyone working on something to better edit .uasset? Fmodel is updated with specific class for BL4 and I can see some new values that previously didn't show. but sadly uassetgui still can't parse those files.
+
+
+[9/26/2025 3:55 PM] epicnng
+FModel just got updated with new mappings. UAsset is still screwed up, so we're out of luck unless someone updates it
+
+{Reactions}
+🔥 🍻
+
+[9/26/2025 6:38 PM] .0x1a
+
+
+{Reactions}
+SChighfive
+
+[9/26/2025 6:46 PM] .0x1a
+updated 17 hours ago 
+https://dumpspace.spuckwaffel.com/Games/?hash=447a7840&type=offsets
+
+
+[9/26/2025 6:49 PM] steelymaverick
+do we have a break down on which parts of the item id affects what
+
+
+[9/26/2025 6:50 PM] alienfreek
+currently being worked on, no writeups or anything yet i dont believe
+
+
+[9/26/2025 6:50 PM] steelymaverick
+thanks i guess ill start figuring it out old fashion way
+
+
+[9/26/2025 6:51 PM] alienfreek
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421267921442832505/image.png?ex=68e59966&is=68e447e6&hm=6ac3a660865ff3ca8fc1f55a1ffd7418fc0902f73b733b42538f451a5088a95f&
+
+{Reactions}
+❤️ (4)
+
+[9/26/2025 6:51 PM] steelymaverick
+life saver
+
+
+[9/26/2025 6:51 PM] alienfreek
+decent start but outdated/not fully accurate
+
+
+[9/26/2025 6:51 PM] steelymaverick
+hey its better than scratch
+
+
+[9/26/2025 6:52 PM] steelymaverick
+i havent done this since like borderlands 2 so i take any help i can get im rusty af
+
+
+[9/26/2025 7:50 PM] epicnng
+new Oak2 abbreviations for files for anyone familiar with BL3 pak modding
+
+{Reactions}
+🍻
+
+[9/26/2025 7:50 PM] epicnng
+```GScript - Grenade Script
+IO - Interactive Object
+Tricks - basically controlled moves
+GPS - New way of finding targets, similar to query
+LPScript - Light Projectile Script```
+
+
+[9/26/2025 7:50 PM] epicnng
+or, somewhat new depending on who you ask
+
+
+[9/27/2025 12:13 AM] drnha
+Wassup vault hunters, hunt for the stuff u want in here and let us help u ❤️
+
+{Reactions}
+❤️
+
+[9/27/2025 12:14 AM] drnha
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421349161093038090/fnamedump.txt?ex=68e5e50f&is=68e4938f&hm=11d2a4754ba276320fc45fb2f9e3494b568f41604b277fc8e05848c01498e6fa&
+
+
+[9/27/2025 12:14 AM] drnha
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421349187135733801/objectdump.txt?ex=68e5e515&is=68e49395&hm=3aa4e6658024daadbc665eb38e3ada17afdf2c7d6cb90432fd3b7e11133834d0&
+
+{Reactions}
+📥 (3) 🔥 (3)
+
+[9/27/2025 12:48 AM] deleteduser035b32074a55
+https://tenor.com/view/yeah-bwoi-grin-chef-gif-18525191
+
+{Embed}
+https://tenor.com/view/yeah-bwoi-grin-chef-gif-18525191
+https://images-ext-1.discordapp.net/external/i44IBQS7-KAqQ_JytUnHQHreTcfyEt5nzP0i04h9HvU/https/media.tenor.com/n8DB4bmpduIAAAAe/yeah-bwoi-grin.png
+
+{Reactions}
+😂
+
+[9/27/2025 1:59 AM] haubitzen
+@CookiestMonster i think i just found it
+
+
+[9/27/2025 1:59 AM] haubitzen
+thanks to Dr
+
+
+[9/27/2025 2:03 AM] haubitzen
+@dr NHA YO thank you so much for that helped for the 100% challenge issue
+
+{Reactions}
+😘
+
+[9/27/2025 2:04 AM] haubitzen
+@CookiestMonster ```repkit_healothers: 1```
+
+
+```this should do it "repkit_healothers: 3647321"```
+
+{Reactions}
+sii (2) 🔥
+
+[9/27/2025 2:09 AM] haubitzen
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421378211886923796/image.png?ex=68e5575d&is=68e405dd&hm=c5c670d71153f103a082dfff8601c6df4f18bc92dfd70a39df660e7486a90389&
+
+
+[9/27/2025 2:10 AM] deleteduser035b32074a55
+looks good
+
+
+[9/27/2025 4:57 AM] zilbest
+do you know how can I find specific file in the .pak that has specific function, like this: ResourcePool_DarkSiren_ActionSkill_PhaseShard_Cooldown. I try to mess with action skill cooldown
+
+
+[9/27/2025 4:58 AM] drnha
+No sorry idk pak files i use cheat engine 🙂
+
+{Reactions}
+💯
+
+[9/27/2025 4:58 AM] zilbest
+ah... haha okay
+
+
+[9/27/2025 4:59 AM] zilbest
+I see that in the fname dump and object dump. but don't know how it translates to a specific file
+
+
+[9/27/2025 5:59 AM] drnha
+Use a old sdk or find a new one
+
+
+[9/27/2025 5:59 AM] drnha
+If u want i can send u sdk files
+
+
+[9/27/2025 6:00 AM] drnha
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421436246797848606/image.png?ex=68e58d6a&is=68e43bea&hm=c7c5ff90121b590e5b9753e18305276d68bd53111a601ed480a3f242add1ff97&
+
+
+[9/27/2025 6:00 AM] zilbest
+how to use that? lol... i usually just digging through fmodel
+
+
+[9/27/2025 6:02 AM] zilbest
+sure... I'll try digging around that
+
+
+[9/27/2025 10:39 AM] drnha
+Preview screenshot from the inventory editor in the cheat table, hopefully we can uncover more information soon ❤️
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421506457597251778/image.png?ex=68e5cecd&is=68e47d4d&hm=d5e9b34f0092b5d55734f331037af0482f6edf2a941e175a3e5e9745166f37ff&
+
+{Reactions}
+❤️ (5)
+
+[9/27/2025 11:05 AM] sairouth
+Can you get the balance?
+
+
+[9/27/2025 11:05 AM] drnha
+I didnt see it sadly
+
+{Reactions}
+👍
+
+[9/27/2025 11:12 AM] sairouth
+In pakfiles it seems at least for what we've been able to extract, a lot of the balances are in scripts
+
+
+[9/27/2025 12:07 PM] drnha
+Yeah i believe so
+
+
+[9/27/2025 10:17 PM] gamer5709
+dumb question is black loot even a thing no more or thats gone gone i remember hearing it was something related to editing the code to glitch it or default to black rarity for bl2
+
+
+[9/27/2025 10:21 PM] haubitzen
+it was a thing then\
+
+
+[9/27/2025 10:21 PM] haubitzen
+but as of rn no just give it time
+
+
+[9/27/2025 10:21 PM] haubitzen
+only sandman will tell us of that
+
+
+[9/27/2025 10:42 PM] sairouth
+outside of "sanity saver" mod for bl2 if you are on pc, or having to reload your save every time you are wanting to play with it. "Black rarity" aka Hybrids are only on bl2.
+
+
+[9/27/2025 10:43 PM] sairouth
+#bl2-tps-save-editing
+
+
+[9/27/2025 10:43 PM] sairouth
+but there's a channel for it, empty mind you, but there's a channel dedicated to that game, this one is about bl4
+
+
+[9/27/2025 10:43 PM] sairouth
+which doesn't have Black Rarity atm
+
+
+[9/27/2025 10:44 PM] gamer5709
+will it ever be possible
+
+
+[9/27/2025 10:46 PM] sairouth
+Hybrids?
+
+
+[9/27/2025 10:46 PM] sairouth
+we already have modded weapons with mixing some parts and here there, don't think we've mixed pistol with shotgun type of thing, but who knows. We are still very new to modding items for this game
+
+
+[9/27/2025 10:54 PM] drnha (pinned)
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421691588127752334/Hover_Edit_And_Dump.CT?ex=68e5d278&is=68e480f8&hm=01afe166f5431e5e7aed761b74b8702f029aabd368785fdef0f35e598db9fa4b&
+
+{Reactions}
+🔥 (3) 💙 (2)
+
+[9/27/2025 10:55 PM] drnha
+Better than whats out there
+
+
+[9/27/2025 10:55 PM] drnha
+And pulls info about guns,
+Allows u to dump to files for mass inspection of codes ❤️
+
+
+[9/27/2025 10:55 PM] drnha
+Enjoy, no need to fear NHA is here ❤️
+
+
+[9/27/2025 11:00 PM] gamer5709
+nice i wish we had a community like this that is actively trying to get tools and info figured out for another series of games called dying light like theres a modding community but not many tool makers/reverse engineers around there
+
+
+[9/27/2025 11:02 PM] drnha
+Sadly i dont do much games, 
+Borderlands series are always on my radar though lol
+
+
+[9/27/2025 11:02 PM] zcodservices
+use wemod
+
+
+[9/27/2025 11:05 PM] cookiestmonster
+lol
+
+
+[9/27/2025 11:09 PM] sairouth
+Pinned a message.
+
+{Reactions}
+❤️
+
+[9/27/2025 11:14 PM] sairouth
+Are you able to look inside "Script/Oakgame" in anyway shape or form?
+
+
+[9/27/2025 11:16 PM] drnha
+Honestly i think thats full of blueprint functions or something, like maybe that whole section is blueprint generated?
+
+
+[9/27/2025 11:17 PM] drnha
+I havent got the tooling to search though blueprint generated unreal objects yet
+
+{Reactions}
+🍻 (2)
+
+[9/27/2025 11:17 PM] sairouth
+Most of what I'm finding for serials tends to point to the scripts, hence asking
+
+
+[9/27/2025 11:17 PM] sairouth
+If you end of creating something for that, let me know
+
+
+[9/27/2025 11:18 PM] drnha (pinned)
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421697464410439680/image.png?ex=68e5d7f1&is=68e48671&hm=dd6aa70abb8097aba79096fc9e68000d074233d328d3568485037b48d6e33207&
+
+{Reactions}
+😎 (3)
+
+[9/27/2025 11:18 PM] drnha
+I have found this infomation, not sure how useful it is, but did a search for serial number and found this
+
+
+[9/27/2025 11:18 PM] sairouth
+Pinned a message.
+
+
+[9/27/2025 11:20 PM] copeconsumer
+@Alien
+
+
+[9/28/2025 12:39 AM] deleteduser035b32074a55
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1421717954848096317/undefined_-_Imgur.gif?ex=68e5eb06&is=68e49986&hm=0cf11c22cd0ffddaf3531efe0959fd9aa884feb3983d3635137643729d1c4361&
+
+
+[9/28/2025 2:21 AM] deleteduser035b32074a55
+@XTheFallen0neX 
+```lua
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1337326263</ID>
+      <Description>"[&gt;] Skill Points"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript Async="1">{$lua}
+if syntaxcheck then return end
+[ENABLE]
+function createHeader(parent, name)
+    local hdr = getAddressList().createMemoryRecord()
+    hdr.isGroupHeader = true
+    hdr.Description = name
+    hdr.appendToEntry(parent)
+    return hdr
+end
+
+function createEntry(group, desc, offset)
+    local e = getAddressList().createMemoryRecord()
+    e.Description = desc
+    e.Address = "[ReyLambChops]+1358"
+    e.Type = vtDword
+    e.ShowAsSigned = false
+    e.setOffsetCount(6)
+    e.Offset[0] = offset
+    e.Offset[1] = 0x6E58
+    e.Offset[2] = 0x3D0
+    e.Offset[3] = 0x30
+    e.Offset[4] = 0x0
+    e.Offset[5] = 0x38
+    e.appendToEntry(group)
+end
+if memrec == nil then return end
+createdHeader = createHeader(memrec, "GbxProgressionManager.ProgressPointsContainer.-&gt; PointsAcquiredPerPool.Data")
+createEntry(createdHeader, "", 0x0)
+createEntry(createdHeader, "", 0x4)
+createEntry(createdHeader, "", 0x8)
+createEntry(createdHeader, "", 0xC)
+createEntry(createdHeader, "", 0x10)
+createEntry(createdHeader, "", 0x14)
+createEntry(createdHeader, "", 0x18)
+createEntry(createdHeader, "", 0x1C)
+createEntry(createdHeader, "", 0x20)
+createEntry(createdHeader, "", 0x24)
+createEntry(createdHeader, "", 0x28)
+createEntry(createdHeader, "", 0x2C)
+createEntry(createdHeader, "", 0x30)
+createEntry(createdHeader, "", 0x34)
+createEntry(createdHeader, "", 0x38)
+createEntry(createdHeader, "", 0x3C)
+createEntry(createdHeader, "", 0x40)
+createEntry(createdHeader, "", 0x44)
+createEntry(createdHeader, "", 0x48)
+
+[DISABLE]
+if createdHeader then
+    memoryrecord_delete(createdHeader)
+    createdHeader = nil
+end
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+</CheatTable>
+```
+
+{Reactions}
+SChighfive (4)
+
+[9/28/2025 9:27 PM] drnha
+My fname dump script had issues, heres a better dump with almost double the size compared to my last dump lol,
+Sorry for the missing entrys im working with what i can ❤️
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1422032088575770634/fnamedump.txt?ex=68e5be15&is=68e46c95&hm=39692d53837b63d509c6b8244ea5a313288c9207c68e800d9559d1b8d70a4c88&
+
+{Reactions}
+🍻
+
+[9/28/2025 9:36 PM] wetillusions
+Will this be useable to acquire weapon serial codes?
+
+
+[9/28/2025 9:43 PM] drnha
+Not exactly unless ur reversing the games instructions for handling serial data
+
+
+[9/28/2025 11:49 PM] orinx
+so I am manually messing around with plasma coil codes to try and see what part does what starting with codes that are really similar, with one set I was able to swap the mag and grip, but  with the next set even though there where 4 different codes I ended up with just 2 sets of identical guns.
+
+
+[9/28/2025 11:49 PM] orinx
+```@Ugw$Yw2}TYgjQt4uhbq+2p?;{9sF$cs%/Yctl/u~+00
+@Ugw$Yw2}TYg4BQL)hbq+2p?;{9sF$ct%/YctokI-^00
+@Ugw$Yw2}TYgjQt4uhbq+2p?;{9sF$cs%/YctokI-^00
+@Ugw$Yw2}TYg4BQL)hbq+2p?;{9sF$ct%/Yctl/u~+00```
+
+
+[9/28/2025 11:49 PM] orinx
+thouse got 4 different guns
+
+
+[9/28/2025 11:50 PM] orinx
+and these got 2 identical guns  twice 
+```@Ugw$Yw2}TYg4CD;@hbq+2p?;{As7=j5)k2L!4GRD
+@Ugw$Yw2}TYg%+?F~hbq+2p?;{As7=j5)k2L!4GRD
+
+@Ugw$Yw2}TYg4CD;@hbq+2p?;{As7=j5<wBK14GRD
+@Ugw$Yw2}TYg%+?F~hbq+2p?;{As7=j5<wBK14GRD```
+
+
+[9/28/2025 11:51 PM] orinx
+the %+?F~ /4CD;@ part seemingly doing nothing
+
+
+[9/28/2025 11:53 PM] akamoden
+Rarity, model/class/main legendary. Part of acceptable table. Shouldn't see a significant difference. Between them. As they are just different valid bytes
+
+
+[9/28/2025 11:55 PM] orinx
+but why in one case did the bits change the damage/dot tick but in the other it did nothing?
+
+
+[9/28/2025 11:56 PM] akamoden
+Tiling
+
+
+[9/28/2025 11:56 PM] orinx
+and also change what part showed in the 3d model
+
+
+[9/28/2025 11:56 PM] akamoden
+Would you like me to show you? Do you have the two different codes?
+
+
+[9/28/2025 11:57 PM] orinx
+yes that would be very helpfull
+
+
+[9/28/2025 11:57 PM] orinx
+I just posted the codes
+
+
+[9/29/2025 12:00 AM] akamoden
+```'@Ugw$Yw2}TYg4CD;@hbq+2p?;{As7=j5<wBK14GRD' '@Ugw$Yw2}TYg%+?F~hbq+2p?;{As7=j5)k2L!4GRD' --compare-all
+[DEBUG load_true_spec] normalized (3,'tail') prefs = [2, 3, 4]
+[INFO] Loaded 2 quarantined blocks from quarantine.json
+
+[COMPARE]
+ A len=30  prefix='@Ugw' type='w'
+ B len=30  prefix='@Ugw' type='w'
+ A blocks: [(26, 21, 'mid'), (11, 9, 'tail')]
+ B blocks: [(26, 21, 'mid'), (11, 9, 'tail')]
+
+ idx   A(dec/hex)  B(dec/hex)  chrA chrB  mark
+ ----  -----------  -----------  ---- ----  ----
+    0         3/03         3/03     ·    ·   =
+    1        18/12        18/12     ·    ·   =
+    2       124/7C       124/7C     |    |   =
+    3        47/2F        47/2F     /    /   =
+    4       235/EB       235/EB     ·    ·   =
+    5       134/86       134/86     ·    ·   =
+    6       198/C6       197/C5     ·    ·   !=
+    7       150/96        25/19     ·    ·   !=
+    8        31/1F         1/01     ·    ·   !=
+    9        85/55       124/7C     U    |   !=
+   10       157/9D       150/96     ·    ·   !=
+   11        82/52        95/5F     R    _   !=
+   12       231/E7       132/84     ·    ·   !=
+   13       193/C1       130/82     ·    ·   !=
+   14       157/9D        83/53     ·    S   !=
+   15       198/C6       128/80     ·    ·   !=
+   16        10/0A       228/E4     ·    ·   !=
+   17       177/B1       203/CB     ·    ·   !=
+   18        77/4D       113/71     M    q   !=
+   19       145/91       236/EC     ·    ·   !=
+   20       121/79       252/FC     y    ·   !=
+   21        69/45        69/45     E    E   =
+   22       147/93       146/92     ·    ·   !=
+   23       121/79       221/DD     y    ·   !=
+   24        84/54        12/0C     T    ·   !=
+   25        59/3B       160/A0     ;    ·   !=
+   26       174/AE        23/17     ·    ·   !=
+   27        52/34        75/4B     4    K   !=
+   28       247/F7        17/11     ·    ·   !=
+   29        12/0C       242/F2     ·    ·   !=```
+
+
+[9/29/2025 12:00 AM] akamoden
+see blocks A and B
+
+
+[9/29/2025 12:01 AM] akamoden
+thats the Tilling, which means if you change at a seam, it'll change part of the tail. and will change what table rolls onto the gun.
+
+
+[9/29/2025 12:03 AM] akamoden
+as we can see, 0-5 bytes are the same. and then again at byte 21, these are all valid rolls for the gun, however, long story short each attachment, like a grip or a barrel or sight adds stats. and so you can mix them because the game will allow it but naturally it wouldnt.
+
+
+[9/29/2025 12:03 AM] orinx
+so because the code is slightly encrypted / compressed  each part of the str isn't a 1 to 1 correlation to weapon part?
+
+
+[9/29/2025 12:03 AM] akamoden
+so when changing bytes you're changing the rolls, which inturn changes what attachments are on the gun.
+
+
+[9/29/2025 12:04 AM] akamoden
+correct!
+
+
+[9/29/2025 12:04 AM] wetillusions
+Ooooo, how did you do this plz
+
+
+[9/29/2025 12:04 AM] orinx
+oh the str is the rng seed for the part rolls?
+
+
+[9/29/2025 12:04 AM] akamoden
+yes
+
+
+[9/29/2025 12:05 AM] orinx
+ah kind of cool, is there a way to reverse the seed or at least use that tool you have to see what parts it accualy is modifying?
+
+
+[9/29/2025 12:06 AM] orinx
+and I guess what ever is making the "seed" isn't pure random as there is way to many repeating parts for pure randomness
+
+
+[9/29/2025 12:07 AM] akamoden
+so earlier in the chat, the guy dumped alot of info on how the game determines what table it picks from. currently. no one that i've found has reversed that part. but im sure someone will, my tool currently only allows you to see tilling, see bytes. reencode 1:1 with GBX etc. i have no codex for parts yet.
+
+
+[9/29/2025 12:07 AM] orinx
+ah
+
+
+[9/29/2025 12:08 AM] akamoden
+and this is how they get 30 billion guns.
+
+
+[9/29/2025 12:08 AM] akamoden
+so alot of math, general checks. parts list. etc.
+
+
+[9/29/2025 12:09 AM] akamoden
+we need the parts list and then my tool can make guns. and just about everyone else would be able aswel.
+
+
+[9/29/2025 12:09 AM] orinx
+ya in bl3 at the start I was just copying parts of the gun memory from one to another of the same length to get the anointments I wanted.
+
+
+[9/29/2025 12:09 AM] orinx
+but the in game part viewer helped
+
+
+[9/29/2025 12:10 AM] akamoden
+i think the CT does something similar to that, that someone used. im just lazy and don't want to build a codex. i spent alot of time making my tool but people are happy with free handing edits right now.
+
+
+[9/29/2025 12:10 AM] akamoden
+until there is a need for my tool in the general sense im just leaving it be.
+
+
+[9/29/2025 12:11 AM] akamoden
+but whenever you wanna see two different guns compared let me know. if you need me to change bytes. i can do that too.
+
+
+[9/29/2025 12:12 AM] orinx
+awsome I might take you up on that
+
+{Reactions}
+❤️
+
+[9/29/2025 12:37 AM] orinx
+@akamoden  can you compare these 2? there should only be one difference, the sight 
+```@Ugw$Yw2}TYgjHeFDhbq*f?x8l72Neo63RMer4gm
+@Ugw$Yw2}TYg437fJhbmN~7IhD`sX3@xsB;J```
+
+
+[9/29/2025 12:38 AM] akamoden
+should be but watch :p one sec
+
+
+[9/29/2025 12:39 AM] soldier9322
+Anyone able to find out what achievements: 09_ is?
+
+
+[9/29/2025 12:39 AM] akamoden
+```[COMPARE]
+ A len=29  prefix='@Ugw' type='w'
+ B len=26  prefix='@Ugw' type='w'
+ A blocks: [(26, 21, 'mid'), (10, 8, 'tail')]
+ B blocks: [(26, 21, 'mid'), (6, 5, 'tail')]
+
+ idx   A(dec/hex)  B(dec/hex)  chrA chrB  mark
+ ----  -----------  -----------  ---- ----  ----
+    0         3/03         3/03     ·    ·   =
+    1        18/12        18/12     ·    ·   =
+    2       124/7C       124/7C     |    |   =
+    3        47/2F        47/2F     /    /   =
+    4       235/EB       235/EB     ·    ·   =
+    5       134/86       134/86     ·    ·   =
+    6       204/CC       198/C6     ·    ·   !=
+    7       171/AB       144/90     ·    ·   !=
+    8       242/F2       148/94     ·    ·   !=
+    9       215/D7       218/DA     ·    ·   !=
+   10       194/C2       115/73     ·    s   !=
+   11       101/65       223/DF     e    ·   !=
+   12        51/33       252/FC     3    ·   !=
+   13       131/83       222/DE     ·    ·   !=
+   14       253/FD        38/26     ·    &   !=
+   15       147/93       189/BD     ·    ·   !=
+   16        90/5A        71/47     Z    G   !=
+   17       156/9C        91/5B     ·    [   !=
+   18        41/29       200/C8     )    ·   !=
+   19       116/74        16/10     t    ·   !=
+   20       192/C0       133/85     ·    ·   !=
+   21       225/E1        27/1B     ·    ·   !=
+   22       167/A7       212/D4     ·    ·   !=
+   23         9/09       183/B7     ·    ·   !=
+   24        77/4D         0/00     M    ·   !=
+   25       109/6D       124/7C     m    |   !=
+   26       227/E3       ---/--     ·    ·   !=
+   27        18/12       ---/--     ·    ·   !=
+   28        86/56       ---/--     V    ·   !=``` they are two different Tiles. because of their length. so bytes can't line up.
+
+
+[9/29/2025 12:39 AM] akamoden
+@Orinx one is a 10,8 tail and the other is aa 6,5 tail.
+
+
+[9/29/2025 12:41 AM] akamoden
+0-5 exactly the same. which is like the type of gun it is, the foundation for this weapon. after this, is everything else. and the tail length is different, which means the bytes get encoded differently.
+
+
+[9/29/2025 12:42 AM] orinx
+ah, one sec I have another set that is the same lenght
+
+
+[9/29/2025 12:46 AM] orinx
+```@Ugw$Yw2}TYg47~)(hbmN~?x8ky2UQAH3snvQ
+@Ugw$Yw2}TYgT(S@4LltUK_fVVKgGz;}g(`;t```
+
+
+[9/29/2025 12:46 AM] akamoden
+these A and B blocks only really matter when it comes to extremes. right so like these couldnt merge or would have to be merged at the tail section, but if you merge two items with the same Tiling, you could get a mix of the two. if you knew what to swap or splice. the chance for success goes up with tail merges or mutations by alot. this is why gernades and sheilds and all that stuff is so easy to mutate. because the tails on those are essentially the whole thing. the mid section is where the game will reject it if its not percise. or a known value for that table. if that makes sense.
+
+
+[9/29/2025 12:47 AM] orinx
+hmmm
+
+
+[9/29/2025 12:49 AM] akamoden
+let me show you. one sec
+
+
+[9/29/2025 12:50 AM] akamoden
+``` --inspect-bytes '@Ugw$Yw2}TYg47~)(hbmN~?x8ky2UQAH3snvQ'
+[DEBUG load_true_spec] normalized (3,'tail') prefs = [2, 3, 4]
+[INFO] Loaded 2 quarantined blocks from quarantine.json
+
+[INSPECT BYTES] len=27  prefix='@Ugw' type='w'
+ index  dec   hex   chr  zone
+ -----  ----- ----- ---  ----
+     0      3  0x03   ·  mid
+     1     18  0x12   ·  mid
+     2    124  0x7C   |  mid
+     3     47  0x2F   /  mid
+     4    235  0xEB   ·  mid
+     5    134  0x86   ·  mid
+     6    198  0xC6   ·  mid
+     7    146  0x92   ·  mid
+     8     83  0x53   S  mid
+     9    198  0xC6   ·  mid
+    10    211  0xD3   ·  mid
+    11    187  0xBB   ·  mid
+    12    213  0xD5   ·  mid
+    13    254  0xFE   ·  mid
+    14    205  0xCD   ·  mid
+    15     61  0x3D   =  mid
+    16    205  0xCD   ·  mid
+    17     21  0x15   ·  mid
+    18    247  0xF7   ·  mid
+    19     83  0x53   S  mid
+    20    230  0xE6   ·  mid
+    21      9  0x09   ·  tail
+    22    102  0x66   f  tail
+    23     58  0x3A   :  tail
+    24    138  0x8A   ·  tail
+    25    197  0xC5   ·  tail
+    26    134  0x86   ·  tail``` one of your Serials.
+
+
+[9/29/2025 12:51 AM] akamoden
+tails are the easiest thing to get to work.
+
+
+[9/29/2025 12:59 AM] akamoden
+(26, 21, 'mid') = 21 raw bytes → 26 base-85 characters
+
+(10, 8, 'tail') = 8 raw bytes → 10 characters @Orinx \
+
+
+[9/29/2025 4:21 AM] copeconsumer
+Who was that guy who was talking about getting an ai server thing up to decode the games formatting for how it generates id codes?
+
+
+[9/29/2025 7:40 PM] numinex1387
+id code mean item code ?
+
+
+[9/29/2025 7:43 PM] alienfreek
+yeah he was talking about setting up a large input llm to ingest tons and tons of item codes in attempt to train it to understand them better
+
+
+[9/29/2025 7:43 PM] alienfreek
+token limits in most apps make it hard
+
+
+[9/29/2025 7:49 PM] copeconsumer
+Yeah
+
+
+[9/29/2025 7:49 PM] copeconsumer
+It was Beasley who was talking about doing it
+
+{Reactions}
+🔥
+
+[9/29/2025 9:24 PM] uplusion23
+`FName.Dump` <-- console command not of too much use. So far the only one that outputs a file. `FName.DumpNumbered` also exists but is empty
+
+
+[10/1/2025 1:02 PM] zerkul
+Dears, has any progress been made regarding item level changes? Anything you can share?
+
+Latest info I have is to find out same item on different levels then figure out the change, however this is a limit.
+
+
+[10/1/2025 2:51 PM] orinx
+Looking at legendary items with mostly fixed parts then try to find one with the only difference being the level will help narrow it down.
+
+{Reactions}
+👍
+
+[10/1/2025 3:25 PM] .donpablo
+Quick question would yall be able to put heating up on this instead of deadeye
+
+
+[10/1/2025 3:25 PM] .donpablo
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1423028083102847058/Vindictive_quicksilver.jpg?ex=68e5692d&is=68e417ad&hm=7260a8b80e5f2c43a070a8ea70fafdb9ed8054a100aec632fa186eb95cc66dc9&
+
+
+[10/1/2025 3:26 PM] .donpablo
+@Uge8v#m/)}}!bFLnM7=L3s8Ex79}O<4D+&M
+
+
+[10/1/2025 4:37 PM] orinx
+Can’t you just do that in game?
+
+
+[10/1/2025 4:39 PM] orinx
+There should be some saves with all the possible firmware posed in the saves channel.
+
+
+[10/1/2025 11:22 PM] alienfreek
+does anyone know when engine.ini is read in ue
+
+
+[10/2/2025 12:07 AM] alienfreek
+i might lose my marbles if I cant figure out how this config file is encrypted
+
+
+[10/2/2025 12:08 AM] alienfreek
+if i see the 2k code of conduct screen one more time :pain:
+
+
+[10/2/2025 1:28 AM] sinofazrael
+
+
+
+[10/2/2025 1:28 AM] sinofazrael
+Anyone know what tool this is?
+
+
+[10/2/2025 1:59 AM] valykaihyena
+https://www.nexusmods.com/borderlands4/mods/51
+
+{Embed}
+https://www.nexusmods.com/borderlands4/mods/51
+Borderlands 4 Gear n Gun Editor -RAW ENCODING FIX UPDATE
+A simple Borderlands 4 gear and gun editor that lets you decode, view, edit, and re-encode item serials. Adjust stats, rarity, level, manufacturer, and more with an easy-to-use interface.
+https://images-ext-1.discordapp.net/external/3kyciUE3tI5t9uyvMoW3C7NlqSq-2qgWEWXq4kXQ8_k/https/staticdelivery.nexusmods.com/mods/8148/images/thumbnails/51/51-1758683353-2115940662.png
+
+
+[10/2/2025 3:52 AM] alienfreek
+I've been compiling unreal 554 for like, nearly an hour
+
+
+[10/2/2025 3:52 AM] alienfreek
+my poor CPU is melting
+
+
+[10/2/2025 3:53 AM] alienfreek
+I just wanted to cook a simple mod 😭
+
+
+[10/2/2025 7:14 AM] thedarkness1404
+How do you mod the dmg of the weapon?
+
+
+[10/2/2025 7:34 AM] thedarkness1404
+@Ug!pHG2}TYghssnhgW7FSxen^~LFG=}GN{_ozLDh~1j?e%EO}Isg would this code work??
+
+
+[10/2/2025 9:36 AM] copeconsumer
+👀
+
+
+[10/2/2025 10:42 AM] sinofazrael
+Whats success rate?
+
+
+[10/2/2025 1:17 PM] inflamedsebi
+So, I read a bit of the topic, but I am not quite sure if I understand it.
+1) The serial string is not the encoded weapon but a seed on how to roll this weapon?
+Which means every restart of the game would reroll all weapons, but since it is seeded, it will reroll the same weapon.
+But if we reverse the seed, we can change and control which parts to roll.
+
+2) Seeds have different lengths because of a different amount of parts (makes sense), but are divided in prefix,mid,tail.
+prefix defines type, but what differentiates mid and tail and how do you know when mid ends and tail starts?
+
+3) (26, 21, 'mid') (10, 8, 'tail') Why are there 2 values? Isn't this the length value of mid and tail?
+
+
+[10/2/2025 1:30 PM] inflamedsebi
+4) Apparently peeps agreed on dividing the seed to 8bit/2hex blocks. Do we know this, or is it just an assumption?
+like couldn't each part consist of 12 bit? first 4 for a manufacturer last 8 for the actual part?
+
+
+[10/2/2025 1:54 PM] orinx
+4) some parts seem to be 4 bits and there might other 2 bit parts that push things out of alignment, that from someone who tested changing gun scopes.
+
+
+[10/2/2025 1:58 PM] orinx
+https://discord.com/channels/1306526445090111508/1418368877183893715/1423333681753227395
+
+
+[10/2/2025 2:18 PM] inflamedsebi
+oh i see, yeah that's what i was worried about. However if there is variable length to parts itself, there must be a way to determine the length because they would need to know as well.
+So either they work with fixed positions (which the apparently do not) or the use some other witchery like utf8 does for example, where each part determines the bit length at the beginning, so you would always know when to stop and a new part starts.
+
+
+[10/2/2025 2:32 PM] orinx
+There is something that can make item codes vary in length even without converting guns that on the surface look to only be one part different
+
+
+[10/2/2025 2:47 PM] inflamedsebi
+Well this absolutely sounds like this. the seed probably looks completely different in general, since most parts are shifted ...
+
+
+[10/2/2025 2:48 PM] inflamedsebi
+imma get some python ide and comparing seed on  bit level ... maybe i can find some pattern ...
+
+
+[10/2/2025 7:38 PM] sphinxxxi
+how do i mod guns
+
+
+[10/2/2025 8:28 PM] sairouth
+By editing the serial
+
+
+[10/2/2025 8:29 PM] sairouth
+There's no "point click" save editor
+
+
+[10/2/2025 8:49 PM] sinofazrael
+Do we have a tool that lets us edit it better or are we still raw hand splicing, any key for higher success rate/method or?
+
+
+[10/2/2025 8:49 PM] sairouth
+Pretty much still raw hand splicing
+
+
+[10/2/2025 8:52 PM] sinofazrael
+
+
+
+[10/2/2025 8:52 PM] sinofazrael
+Whats the string for this?
+
+
+[10/2/2025 8:53 PM] lshift
+
+
+
+[10/2/2025 8:53 PM] lshift
+@SinofAzrael
+
+{Reactions}
+❤️
+
+[10/2/2025 8:54 PM] sinofazrael
+Is there a tool ya’ll using to increase odds or just any and all bl4 save editor
+
+
+[10/2/2025 8:54 PM] .relek.
+is there a 5mil repkit too🤣
+
+
+[10/2/2025 8:55 PM] lshift
+We're using either AI or just going at it by looking at the code itself man
+
+
+[10/2/2025 8:59 PM] sinofazrael
+Do we have a community database csv or something
+
+
+[10/2/2025 9:00 PM] lshift
+Look in #deleted-channel
+
+
+[10/3/2025 9:04 AM] peak0103
+Somone found one with 14 million
+
+
+[10/3/2025 9:49 AM] sinofazrael
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1423668254685139167/image-1.png?ex=68e5c322&is=68e471a2&hm=ef49ec0d614c9a1aec500166f70c7e279e88d5efce6375868e7c7b8e40a0c587&
+
+
+[10/3/2025 9:50 AM] sinofazrael
+16.8 trillion
+
+
+[10/3/2025 10:34 AM] .relek.
+whats the code 0.0
+
+
+[10/3/2025 10:34 AM] .relek.
+@SinofAzrael
+
+
+[10/3/2025 11:02 AM] peak0103
+Pahahahazazaa
+
+
+[10/3/2025 12:01 PM] jonaaa20
+you should check this channel bro: https://discord.com/channels/1306526445090111508/1419884940279021589/1423698137658163270
+
+
+[10/3/2025 12:01 PM] jonaaa20
+:think:
+
+
+[10/3/2025 4:29 PM] brandon__
+I need it
+
+
+[10/3/2025 4:30 PM] sinofazrael
+Check the link jonaa posted if you still need help when im back on pc ill send it to ya
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1423769178007015555/IMG_5180.png?ex=68e57860&is=68e426e0&hm=919bb412da8dcc159cb15a0f66d8b2b274144f0fcf9412c4fb6dd9ca4e5ec0e6&
+
+{Reactions}
+🤣
+
+[10/3/2025 6:47 PM] copeconsumer
+Didnt i post thattt
+
+
+[10/3/2025 7:32 PM] funkyoushift
+@Ugd_t@Fme!K0CW~rs6~}U)kO^/CaNdu9_k+I9%`FVEYzX44SfmfhkA$ViRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!i2w
+
+As this is a very repetitive code i thought i would share it.
+
+
+[10/3/2025 7:33 PM] funkyoushift
+based on the item card i would say that it must have what would be the equivalent of stacked barrels (bl3) and may be a better clue to what we are looking at
+
+
+[10/3/2025 7:37 PM] funkyoushift
+02 51 3d 56 for the binary
+
+
+[10/3/2025 7:51 PM] blackberryshadoe
+u got a ss of item?
+
+
+[10/3/2025 7:51 PM] funkyoushift
+i cna grab you one
+
+{Reactions}
+🍻
+
+[10/3/2025 7:52 PM] blackberryshadoe
+pasting codes rn n will add this but curious what it is...lol
+
+
+[10/3/2025 7:52 PM] funkyoushift
+hell walker with quadrillion damage lol
+
+
+[10/3/2025 7:53 PM] blackberryshadoe
+does it work? and is it another one of those that you shoot once and then it reloads forever?
+
+
+[10/3/2025 7:53 PM] funkyoushift
+best gun i have found yet
+
+
+[10/3/2025 7:53 PM] blackberryshadoe
+https://tenor.com/view/oh-really-no-look-up-kid-gif-17649851630402526285
+
+{Embed}
+https://tenor.com/view/oh-really-no-look-up-kid-gif-17649851630402526285
+https://images-ext-1.discordapp.net/external/otyVajcD6bfsaOUyJ3AA_eDS2ahayj75CRSHqWPorxU/https/media.tenor.com/9PDei4B93E0AAAAe/oh-really-no.png
+
+{Reactions}
+🍻
+
+[10/3/2025 7:56 PM] cookiestmonster
+this is infm for me
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1423820934250364929/image.png?ex=68e5a894&is=68e45714&hm=d8e465d643174023f6e13d5379e2d0a944dc316b9fef65aca5a581c49074a8ac&
+
+
+[10/3/2025 7:56 PM] cookiestmonster
+strange
+
+
+[10/3/2025 7:56 PM] cookiestmonster
+i'm not using any mods
+
+
+[10/3/2025 7:56 PM] funkyoushift
+very op
+
+
+[10/3/2025 7:57 PM] cookiestmonster
+it should be 909K
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1423821181173239830/image.png?ex=68e5a8ce&is=68e4574e&hm=29e835e68e946207d76f4471f9d8979eb1e5941499eaae069aef4d8c64678038&
+
+
+[10/3/2025 7:57 PM] funkyoushift
+i belive it has stacked elemental modifiers
+
+
+[10/3/2025 7:57 PM] funkyoushift
+assuming on an additional barrel
+
+
+[10/3/2025 7:58 PM] funkyoushift
+so the hell walker barrel is main part but then has more added
+
+
+[10/3/2025 8:05 PM] funkyoushift
+if anyone stacks this binary into a different weapon successfully let me know what you get.
+
+
+[10/3/2025 9:17 PM] hobamj
+@FunkYouSHiFTthe OG 5mil shield i made has stack power play leg part for massive firate and ammo regen
+
+{Reactions}
+🍻
+
+[10/3/2025 9:17 PM] hobamj
+roughlt 12 stacked cause its regens 12 ammo
+
+
+[10/3/2025 9:54 PM] funkyoushift
+thank you
+
+
+[10/3/2025 10:58 PM] nerokvsh
+That's how it shows it's an extremely overpowered gun
+
+
+[10/3/2025 10:59 PM] nerokvsh
+I'm on Xbox and it shows the same thing
+
+
+[10/4/2025 3:50 AM] classupgrade1
+Can someone walk me through how to make modded items
+
+
+[10/4/2025 3:52 AM] mattmab
+@ClassUpgrade  https://discord.com/channels/1306526445090111508/1423057138993070090
+
+
+[10/4/2025 6:28 AM] scxnlines
+Anything for just editing legit gear?
+
+
+[10/4/2025 6:28 AM] scxnlines
+Like for spawning grolls
+
+
+[10/4/2025 6:43 AM] burrmane
+does this method not you just give you random modded gear to skim through ?
+
+
+[10/4/2025 6:49 AM] cyber710
+Yeah it does just give you random modded items to go through
+
+
+[10/4/2025 6:49 AM] cyber710
+But that's the method we use for everything
+
+
+[10/4/2025 6:49 AM] cyber710
+We just go through it and get the good ones out
+
+
+[10/4/2025 6:50 AM] cyber710
+And if there is none try again
+
+
+[10/4/2025 6:56 AM] drnha
+Not much difference, not really all that useful unless using for a injection 🙂
+
+
+[10/4/2025 7:09 AM] burrmane
+people are getting weapons with 100+Million dps from this ?
+
+
+[10/4/2025 7:14 AM] cyber710
+If your referring to the methods discussed in Matt's post yeah
+
+
+[10/4/2025 7:19 AM] burrmane
+is there any way to add specific rolls to a specific weapon or is everything just random
+
+
+[10/4/2025 7:22 AM] cyber710
+Just random basically you can take a specific serial and figure out what part does what and go from there Matt's post talks bout how to do that
+
+But we ain't got like a tool or data base to help with that it's just manual you got to test and test to figure it out so random lol
+
+
+[10/4/2025 7:23 AM] cyber710
+Sorry I'm half asleep my explanation probably not the best just go to the top of the post linked ealier and go through the whole thing
+
+
+[10/4/2025 7:23 AM] cyber710
+You'll learn lots
+
+
+[10/4/2025 7:27 AM] burrmane
+i get it, i’m just a little confused what part of the serial i should replace, or just add on to it
+
+
+[10/4/2025 7:28 AM] cyber710
+I can't tell you the exact part cause idk but it's normally near the middle of the serial kinda the middle end it that makes any sense
+
+
+[10/4/2025 7:28 AM] cyber710
+But the middle in general is normally where all the stuff you would want to change is
+
+
+[10/4/2025 8:30 AM] inflamedsebi
+editing the @U serial is the same like chnaging random bits in the data and hoping for the best, since the serial is a compressed format of the gun data.
+right now we compare guns on the hex/binary level to identify more precise sections. We managed to swap scopes on snipers consistently.
+Not really useful but helps to understand the format.
+we also discovered selling and buying back guns does change the serial, despite being the exact same gun, so we are comparing those too.
+
+
+[10/4/2025 8:30 AM] inflamedsebi
+This is a bought back gun on hex level comparison, so the are somewhat close and lining up.
+while the repeating parts are very likely to be the guns parts. but we are still having trouble to figure out, where each part starts and ends and what else might be around there
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424010918056169623/image.png?ex=68e5b0c3&is=68e45f43&hm=53ff28650bc1ed9ea1e647a087f71c796c78ff479170d91e67656787dfc5dcb8&
+
+
+[10/4/2025 8:32 AM] inflamedsebi
+however on @U serial level comparison the look very different for the same gun.
+So comparing @U serials and editing them directly is just pure luck
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424011250412552199/image.png?ex=68e5b112&is=68e45f92&hm=e49b7a6046eae8a3eb8936861485ec51e91e0238c9e28c308fa2f8129c740a10&
+
+
+[10/4/2025 9:10 AM] derder
+sigh, so far of all my Super Soldier shields I have been able to get 4 legendries on them at times, the only one I'm looking for is Bundled, but normally I always get the SS effect along with Wings of Grace and Oscar Mike effect, with the 4th effects so far being constellation and color spray when I can get a 4th one to show upchat gpt taking years to answer simple questions now I've had it "learning" for so damn long
+
+
+[10/4/2025 9:12 AM] derder
+but if any one wants to mess around and feed these codes into your logic or whatnot, go for it, sorry I don't have the screenshots currently, just going off my save
+
+
+[10/4/2025 9:14 AM] derder
+```@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLA{D7ELXnD8q#_lmN;PVtG3f*V``` has color spray, Power Play, Wings of Grace and Tactical Rounds, along with a slew of perks I have no clue what they are because that's not what I was testing
+
+
+[10/4/2025 9:16 AM] derder
+```@Uge9B?m/)}}!ffxLNwtrrhUgJ5vP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLA{D7ELXnD8q#_lmN;PVuG3f*V``` ```@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLA{D7ELXnD8q#_lmN;PVuG3f*V``` ```@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLBDF;*Qjv;Oq#{+RMr/}Eod5``` ```@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLwg^QkQjv;Oq$<^@jmD%C00``` all of those should be different combos of the same effects, tactical rounds, power play, wings of grace and constellation
+
+
+[10/4/2025 10:09 AM] thatdonfc
+I'm not building on the same level as that awesome CT you are working on lol I did this mostly to see if I could do it so I thought I'd share my results.
+
+
+[10/4/2025 10:18 AM] drnha
+Do what exactly though
+
+
+[10/4/2025 10:19 AM] drnha
+Im interested in seeing what others are doing
+
+
+[10/4/2025 10:24 AM] thatdonfc
+Create an SDK for the game using dumper-7. I feel like we need to be looking into the game files to see if we can figure out how they are building serials for items. Until we do that, modded items will always just be a guessing game.
+
+
+[10/4/2025 10:25 AM] drnha
+Let me get this right, u inject dumper 7 and say ur doing something?
+
+
+[10/4/2025 10:26 AM] drnha
+Have u done anything with the SDK?
+Have u loaded the files in a c++ dll project in visual studio and made a test dll to inject yet?
+
+
+[10/4/2025 10:28 AM] thatdonfc
+I've never done it before, so it's a start, right? That was going to be my next test but it got late so I went to bed
+
+
+[10/4/2025 10:28 AM] drnha
+BRO
+
+
+[10/4/2025 10:28 AM] drnha
+U have Done nothing, no hate but u have not done anything
+
+
+[10/4/2025 10:29 AM] drnha
+Idk what ur point of dumping the sdk was if ur not going to use it lol
+
+
+[10/4/2025 10:30 AM] drnha
+All u did was download dumper 7, inject it to the game, uploaded the sdk here, does that sound like it was worth ur time?
+If ur point was to go though the game code to figure out the Serials, ur not doing it right, U dont dump objects to reverse engineer functions, u use IDA or ghidra
+
+{Reactions}
+borderlands4
+
+[10/4/2025 10:31 AM] numinex1387
+Size from 14'112 Ko vs 84'049 Ko seems to have big difference
+
+
+[10/4/2025 10:32 AM] drnha
+🤦
+
+
+[10/4/2025 10:33 AM] drnha
+My god yall kids never even compared the files to see what i uploaded wasnt the full sdk, as most yall WONT USE IT
+
+
+[10/4/2025 10:35 AM] drnha
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424042283497426964/image.png?ex=68e5cdf9&is=68e47c79&hm=e5be8d4ef6ffbe19ada0df85c2f09c9a44efef16789071dff4e45834ffa865cf&
+
+
+[10/4/2025 10:35 AM] drnha
+Do i have to do everything for yall fake modders
+
+
+[10/4/2025 10:36 AM] drnha
+Delete @THATDONFC 's .vs folder as its tanking the space making the file look bigger,
+Use your eyes people
+
+
+[10/4/2025 10:37 AM] thatdonfc
+You're right, I forgot to delete that when zipping the folder so it's making it look a lot bigger than it actually is
+
+
+[10/4/2025 10:38 AM] drnha
+If u do a offset check on the files and do a text comparison youll find pretty much no changes, youll find extra objects in the object dump / size changes there but thats only because how dumper7 and other dumpers dump offsets,
+They dump from all the UObjectArray Chunks, causing instanced objects to get dumped
+
+
+[10/4/2025 10:39 AM] drnha
+Instanced objects should be ignored from dumps as u will not see it in your game instance
+
+
+[10/4/2025 10:45 AM] thatdonfc
+I don't call myself a modder. I don't have a fraction of the experience some of the others in this server have. It's something I enjoy learning about though because it's a problem without a solution at this time. I figured any new information is good information.
+
+
+[10/4/2025 10:46 AM] numinex1387
+Compression issue i guess :p
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424045038345912463/image.png?ex=68e5d08a&is=68e47f0a&hm=6585e2490375873b4ae91814b3ce4e92dff462275b1ef8516be50912d5d21470&
+
+
+[10/4/2025 10:46 AM] drnha
+I hope u understand my frustration,
+Whats the point in doing nothing to further the nothing effort in order to waste time on nothing
+
+
+[10/4/2025 10:47 AM] drnha
+If u want to help please do so, but dont do nothing and act like ur helping, before posting anything about nothing try and do something
+
+
+[10/4/2025 10:48 AM] drnha
+If u had experience i could point u in the right direction for the games serialization functions
+
+
+[10/4/2025 10:48 AM] drnha
+As FUNCTIONS are what u want, not objects
+
+
+[10/4/2025 10:49 AM] drnha
+```
+Of interest for people researching the games functions
+Seems to be for serializing the backpack and bank on gamesave?
+Borderlands4.exe.sdata+B257ADA
+
+Seems to be for all weapons in the game instance at any time:
+Borderlands4.exe.sdata+95E328F
+```
+
+
+[10/4/2025 11:02 AM] thatdonfc
+Didn't realize I'd get so much flak for uploading a file. Guess I'll think twice before uploading anything in here next time
+
+
+[10/4/2025 11:04 AM] drnha
+.
+
+
+[10/4/2025 11:24 AM] dura_del
+https://www.nexusmods.com/borderlands4/mods/142
+has been re listed if anyone is willing to help
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424054579770953880/preview.png?ex=68e5d96d&is=68e487ed&hm=404a060263a3bc543311ec6404a555286d86f2c98a2ab2c9084101e877589f35&
+
+{Reactions}
+🔥 (5)
+
+[10/4/2025 1:58 PM] darealslimballin
+Lastest SDK as I updated Dumper 7 to create this SDK. How's that for helping..
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424093312054202428/5.5.4-4306756Oak2-Win64-4306756-OakGame.zip?ex=68e554bf&is=68e4033f&hm=11137a641eec036d7f38b33a0b037b318735a23af1c5b40187a097c22a6c080e&
+
+
+[10/4/2025 3:33 PM] thatdonfc
+I just downloaded this and started reading the readme. Holy shit dude that is really good. Got me super excited to start testing shit using Moxxi. I haven't even gotten into the code parts but damn good job writing that introduction.
+
+{Reactions}
+😂
+
+[10/4/2025 3:34 PM] dura_del
+ai is powerful
+
+
+[10/4/2025 3:34 PM] dura_del
+XD
+
+
+[10/4/2025 3:35 PM] dura_del
+moxxi is for decrypting and logging use dat bois to mutate
+
+
+[10/4/2025 3:39 PM] thatdonfc
+I can't tell if this is sarcasm or not lmao
+
+
+[10/4/2025 10:14 PM] drnha
+Did the admins actual give u contributer for posting a sdk
+
+
+[10/4/2025 10:20 PM] sairouth
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424219642573885490/image.png?ex=68e5ca67&is=68e478e7&hm=33b2ad7cf8de2a599f40b722e0d9d011f420eade8f25f5296072fd0ec4a7cfe6&
+
+
+[10/4/2025 10:22 PM] drnha
+lol
+
+
+[10/4/2025 10:24 PM] drnha
+I figured there would be a python script in that zip
+
+
+[10/4/2025 10:44 PM] drnha
+```PartString: @Ugvelk2}TYg44(@6hbq*fh6@cUCMqndCTdfAP^(b0P;F5q5d | Type: weapon | Level: 50 | Price: 346843 | WeaponType: assaultrifle | ManufacturerWeaponType: Vladof Assault Rifle | ItemName: Domino Toochney Lucian's Flank  | Rarity: Legendary | BulletType: cryo | Timestamp: 2025-10-05 13:12:38```
+**Updated hover edit and dump**
+Now dumps price and level
+Also includes a script to remove dupes from ur dumps
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424225586267689031/Hover_Edit_And_Dump.CT?ex=68e5cff0&is=68e47e70&hm=92d6b9b8e135ee2c31cecad10d7d23a002bae5c9e2855d3ab0110c97fc6cf820&
+https://cdn.discordapp.com/attachments/1418334668561842256/1424225586662080665/image.png?ex=68e5cff0&is=68e47e70&hm=c419f27de5ff372fa250220fbaeb6599dfd4e80f593727d885f452cd440a20bc&
+
+{Reactions}
+🔥 (2) 💯
+
+[10/4/2025 10:52 PM] thatdonfc
+No, it wasn't for the SDK. Do you have some sort of issue with me?
+
+
+[10/4/2025 10:53 PM] drnha
+https://tenor.com/view/sassy-foods-gif-9241968568519974037
+
+
+[10/5/2025 2:22 AM] alienfreek
+@EpicNNG sorry for the ping brotha, could you share what tools you use for editing and packing your mods? I dont need tutorials or anything ill figure it all out, I just cant seem to nail it down
+
+
+[10/5/2025 2:22 AM] alienfreek
+appreciate the mods btw :SCkittymeowHEARTS:
+
+
+[10/5/2025 2:24 AM] epicnng
+I use UAssetGUI, Unreal 5, Fmodel, and Retoc
+
+
+[10/5/2025 2:25 AM] epicnng
+Also Zentools for dumping files
+
+{Reactions}
+SChighfive
+
+[10/5/2025 2:25 AM] alienfreek
+appreciate it man, ive been going about it all wrong lol
+
+
+[10/5/2025 2:37 PM] stone_swan
+????
+
+
+[10/6/2025 12:50 AM] alienfreek
+my ass can not get zentools to function bro
+
+
+[10/6/2025 12:52 AM] alienfreek
+it tells me the toc header is too new, recompiled with ue source but still says :RAGEY:
+
+
+[10/6/2025 1:11 AM] alienfreek
+fmodel my goat
+
+
+[10/6/2025 9:52 AM] sinofazrael
+https://www.tiktok.com/t/ZP8A6puRf/
+
+yet another person selling modded weapons that were stolen..
+
+Keep an eye out
+
+
+[10/6/2025 12:39 PM] epicnng
+gross
+
+
+[10/6/2025 12:39 PM] epicnng
+selling gear period is so trash
+
+{Reactions}
+💯 (8) 👆 (2)
+
+[10/6/2025 4:10 PM] alienfreek
+hes in here bro he saw your post and added this comment just now 💀
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424851301170413568/image.png?ex=68e573ae&is=68e4222e&hm=7fe0a790a5b93fd1bd0f204d2921b5877a984b9265b1e4521e066eb70ae687c5&
+
+
+[10/6/2025 4:11 PM] sinofazrael
+😂lol
+
+
+[10/6/2025 4:12 PM] talesmuniz
+Only someone who is very foolish would buy that.
+
+
+[10/6/2025 8:58 PM] derder
+I've been at this for days using chatGPT, plugging in every and all modded items that show up in the discord/downloaded saves from nexus with modded items and explained specifically to  chatgpt what they were, the order I noticed things in ect for one goal and one goal only. I want an Energy Shield that has both the Super Soldier effect and the Fireworks Effect. Using the Super soldier base brand code, which is the same as trhe Guardian angel, I have gotten chatGPT to spit me out literally at this point, over 100k, differernt mutations over the past however many days, all tested, and the closest it can get is to put the same legendaries we've seen on everything in whatever differernt order on the Super Soldier shield. My question, has ANY one seend Bundled "the fireworks perk" show up on ANYTHING that is not the Fireworks base brand code? Because looking over the discord and my modified save items, literally nothing but the fireworks shield has even gotten that effect. 
+
+TL:DR has any one seen "bundled" on anything besides a fireworks/armor shield?
+
+
+[10/6/2025 9:01 PM] derder
+Like at this point I could go in and probably tell it whatever specific combo of lego effects we already have seen pop up on everything tell it I want it to have super capacity, a fracking underbarrel attachment, and 9 normal perks and it could probably spit out 10k codes half of which would be excatly what I asked for, but when I tell it to try and get Bundled on there, it bricks just about every single code, or it just ends up like every other mega modified version, but without bundled.
+
+
+[10/6/2025 9:23 PM] sairouth
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424930211501445212/image.png?ex=68e5bd2c&is=68e46bac&hm=8b3a115804b228171a92c82a71b8ea347ec247fda357bbaf394ca713909aa62d&
+https://cdn.discordapp.com/attachments/1418334668561842256/1424930211908157543/image.png?ex=68e5bd2c&is=68e46bac&hm=58a9dde99ea77acc234b1d6181ea4a85380b69943744ab629fa9a1247b6e1c72&
+
+
+[10/6/2025 9:25 PM] sairouth
+Two different manufactures. My question is can you use parts from different manufacturers?
+
+
+[10/6/2025 10:01 PM] derder
+that you can, or at least, legendary effects
+
+
+[10/6/2025 10:01 PM] derder
+I've gotten jacobs legendaries, other brand legendaries, all to show up on the SS shield
+
+
+[10/6/2025 10:01 PM] derder
+just not Bundled
+
+
+[10/6/2025 10:02 PM] derder
+granted I haven't tried using the fireworks base and trying to get SS perk on it but I beleieve I read that even though that could be done the SS perk won't work because it HAS to be an energy shield for the perk to work.
+
+
+[10/6/2025 10:02 PM] derder
+might be wrong about that though as I haven't specifically tested that myself, only going off of what I've seen others say
+
+
+[10/6/2025 10:03 PM] derder
+you can also shields to roll different brand normal perks so again, not sure why Bundled is being an issue.
+
+
+[10/6/2025 10:05 PM] derder
+if it's as simple as you can't have an armor effect on an energy shield through any logic than that's fine, just wish I knew know rather than wonder if I'm wasting my time trying to get ChatGPT to figure it out
+
+
+[10/6/2025 10:07 PM] derder
+and now relooking through shields I have made, I have many that rolled with "Vintage" wich is the Jacobs shield Old Age Cask Legendary, which is also an armor shield so, there goes that theory
+
+
+[10/6/2025 10:07 PM] derder
+I guess...I should have it make mutations of those
+
+
+[10/6/2025 10:08 PM] sairouth
+Seems like you have a game plan
+
+
+[10/6/2025 10:08 PM] derder
+sorry for complaining, I'm just annoyed
+
+
+[10/6/2025 10:09 PM] sairouth
+Sadly, that's the stage we are at
+
+
+[10/6/2025 10:10 PM] cookiestmonster
+i mean isnt there any way to make your own ai that would probably cost a lot of tokens though still
+
+
+[10/6/2025 10:25 PM] darealslimballin
+Any pic of items???
+
+
+[10/6/2025 10:26 PM] derder
+not currently, also I noticed that on my shields that did roll Vintage, it changed them all into Armor Shields, so I still may be on to something, I just don't know what
+
+
+[10/6/2025 10:27 PM] derder
+and looking at the legendary shield list, eveyr single brand shares the exact same shield type, no differences, ie. all order are energy, all torgue are armor ect
+
+
+[10/6/2025 10:27 PM] derder
+what I'm after might just not be possible with my limited ability to tell it what I'm really wanting it to figure out
+
+
+[10/6/2025 10:28 PM] derder
+sigh...so now...to go farm...things....and show it...I dunno
+
+
+[10/6/2025 10:32 PM] darealslimballin
+https://tenor.com/view/safemoon-tea-thai-tea-fud-fudder-gif-26060648
+
+
+[10/7/2025 12:32 AM] derder
+Here is what ChatGPT has broken down into known rules for me or whatever for shield generaion (I've only been truly focusing on the Super Soldier Shield, so grain of salt blah blah blah) if this helps any one.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1418334668561842256/1424977563880652881/README_Shield_Generation_Notes.txt?ex=68e5e946&is=68e497c6&hm=22f1a2704f75d1f719e0bb2ba21cd353b9b923fb10df56af51d6edd9ce54df2f&
+
+
+==============================================================
+Exported 717 message(s)
+==============================================================

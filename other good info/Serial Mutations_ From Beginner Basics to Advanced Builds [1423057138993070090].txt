@@ -1,0 +1,4845 @@
+==============================================================
+Guild: Borderlands Modding
+Channel: Trading/LFG / item-codes / Serial Mutations: From Beginner Basics to Advanced Builds
+==============================================================
+
+[10/1/2025 5:21 PM] mattmab
+!!!! IMPORTANT !!!
+You must have a ChatGPT account to upload the files.
+ 
+New GPT link with Brain By @Dura / Clanker https://chatgpt.com/share/68e1f3b6-0734-8010-8ea8-80366ec20405
+I believe you must pay for ChatGPT to use gpt5 thinking.
+
+Startup video made by @Fearless  https://youtu.be/pUJnXxKFmI0
+
+Basic Startup for Modifying Serials
+
+Here’s a simple workflow you can use to get started:
+
+1. Copy/paste Step 1 into ChatGPT.
+
+2. Send it Step 2.
+
+3. Paste in the startup prompt (explains how ChatGPT should generate serials).
+
+4. Use Step 4 to ask ChatGPT for specific serial mutations.
+
+Example YAML Output
+
+When you ask ChatGPT for serials, it should return a .yaml block that looks something like this:
+
+state:
+  inventory:
+    items:
+      backpack:
+        slot_0:
+          serial: '@Uge8Cmm/)}}!uW2WI;cvuFsK&>wbGzc9Ms8!DxpxnQ?;XsB6I)'
+          state_flags: 3
+        slot_1:
+          serial: '@Uge8Cmm/)}}$pj({l?bYXs#G{s3xir/P$>@T<UzeKs1gcQJDMmGM/'
+          state_flags: 3
+        slot_2:
+          serial: '@Ugr$xKm/)}}$pj({_X>Jcq0UExO{SqiosR~Z6aW'
+          state_flags: 3
+        slot_3:
+          serial: '@Uge8Usm/)}}$pj)yuMCRR`*MONb*T5z>=3%500'
+          state_flags: 3
+
+
+
+How to Use
+
+Copy everything starting from the two spaces before inventory: and paste it into:
+👉 https://iyre.github.io/bl4-save-tools/
+
+Important:
+
+If the inventory structure is invalid, your save will become corrupt.
+
+If the serials themselves are invalid, your character may fail to load.
+
+In this case, go back to the main menu and log in again — the game will “load” your save and move invalid serials to unknown items.
+
+If your game crashes outright, that means you’ve got a truly broken serial. Best bet is to throw those away and try different ones.
+
+If a particular crashing serial is important to you, ChatGPT can sometimes help debug why it’s failing and suggest mutations.
+
+
+That’s it!
+Any feedback is welcome — and good luck & happy modding!
+
+– Matt
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423057139240538132/GPT_Mutatuions_startup.zip?ex=68e5843d&is=68e432bd&hm=daee3a207ee7e3f537f65370d8c8e931e92ddd4c1664cd2b10b26696c3d364ac&
+
+{Embed}
+https://chatgpt.com/share/68e1f3b6-0734-8010-8ea8-80366ec20405
+ChatGPT - Seed list processing options
+A conversational AI system that listens, learns, and challenges
+https://images-ext-1.discordapp.net/external/Mq33KQa9wHEU5skTeK_xn-9R8-j7XejheyqZ-sxdGwk/https/cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp
+
+{Embed}
+F3arl3ss
+https://www.youtube.com/watch?v=pUJnXxKFmI0
+How to get modded weapons in borderlands 4
+Thanks for watching
+
+Social's : https://linktr.ee/F3arless_ttv
+
+Borderlands 4 Modding discord : https://discord.gg/EJuMKayB8d
+
+ Discord to be notified anytime I go live or make a YouTube video - https://discord.gg/qWncxte
+https://images-ext-1.discordapp.net/external/rUaFw8IEqfbgaAoA-QiA5z2kajZTOSuXWxWWZX3cLqg/https/i.ytimg.com/vi/pUJnXxKFmI0/maxresdefault.jpg
+
+{Reactions}
+🔥 (6)
+
+[10/1/2025 6:00 PM] mattmab
+All items should be pasted over this section
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423066977156468868/Screenshot_2025-10-01_175843.png?ex=68e58d66&is=68e43be6&hm=5f85f4019570393b287742f522fb255fc8ccfbc93b52908d8c48d6ea37127d5c&
+
+
+[10/1/2025 6:01 PM] mattmab
+when done the header should look like this and footer like this
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423067253204717659/Screenshot_2025-10-01_175721.png?ex=68e58da8&is=68e43c28&hm=c132f111cad883a0629077289d47d9428012c8c7181cfe216c10bcff80765d0c&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423067253737525248/Screenshot_2025-10-01_180055.png?ex=68e58da8&is=68e43c28&hm=e94afb61cee0353b580eff8e9d14876a3da191e8acb6c79dfa5f5e51a71e441b&
+
+
+[10/1/2025 6:38 PM] tfk_yun
+question can i tell it to just straight up add an attachment and see if it works ?
+
+
+[10/1/2025 6:45 PM] mattmab
+it doesnt have the context so until they properly decode probably not
+
+
+[10/1/2025 6:50 PM] tfk_yun
+alright then what kinda words can i use to get it to add or do i just gotta use the 3 broad ones
+
+
+[10/1/2025 6:51 PM] mattmab
+be creative test what works
+
+
+[10/1/2025 6:51 PM] mattmab
+chatgpt is great there is no "specific" method
+
+
+[10/1/2025 6:52 PM] tfk_yun
+oh so its all in the air rn ok
+
+
+[10/1/2025 6:52 PM] tfk_yun
+ill see if i get anything valid to spit out lol
+
+
+[10/1/2025 7:07 PM] mattmab
+If you need Step 1 and Step 2 slimmed down for ChatGPT Free thanks to @BCD7000 (Duke)
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423083883489919006/Step_1.txt?ex=68e59d25&is=68e44ba5&hm=bc1843b6121fd196a5951795857701d4a03ff36500a8502ca33750eda30bef01&
+
+
+[10/1/2025 7:13 PM] sinofazrael
+So you just copy past step 1 into gpt? Also looks like u sent 2 step 1’s
+
+
+[10/1/2025 7:28 PM] mattmab
+Oops
+
+
+[10/1/2025 7:29 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423089361121054832/Step_2.txt?ex=68e5a23f&is=68e450bf&hm=bf62f1cb88598fd50f88478ce5d06e84a838cfb36b74c67d64143f60d391b51c&
+
+
+[10/1/2025 7:29 PM] mattmab
+@SinofAzrael here
+
+
+[10/1/2025 7:39 PM] tfk_yun
+i got somthing that actually works
+
+
+[10/1/2025 7:39 PM] tfk_yun
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423092045316231168/image.png?ex=68e5a4bf&is=68e4533f&hm=a75b5915bfd01d89064c8720023f9d253f3e75ca2852099d97441e6a1992ef71&
+
+
+[10/1/2025 7:44 PM] mattmab
+!
+
+
+[10/1/2025 7:44 PM] mattmab
+Gratz
+
+
+[10/1/2025 7:45 PM] tfk_yun
+this is so cool thanks for putting this in here for us
+
+
+[10/1/2025 7:46 PM] mattmab
+Im trying to help get more people into serial modding.
+
+{Reactions}
+🙏 (5) 💯
+
+[10/2/2025 2:45 AM] unkempt3329
+This is AMAZING, I appreciate this so much, Been looking into how to mod this game; considering Im on linux, It's quite difficult, But man OH MAN, this is a game changer, just made 2k modded items in 2 seconds!
+
+{Reactions}
+👍
+
+[10/2/2025 3:10 AM] mattmab
+@Unkempt if you find something cool could you post an image here just as a victory lap for chatgpt xD
+
+
+[10/2/2025 3:12 AM] unkempt3329
+IF I can find some code that works, yes. Gladly. My codes did NOT generate and I have to wait till tomorrow, But I will post things that it creates!
+
+
+[10/2/2025 7:26 AM] duke7000
+My first successful mod came away worse of but was different I have been feeding what results the code change help towards.
+
+I have found batches of say 5-10 see what pops up in lost loot and inform ChatGPT of any new items and the new code that comes from it.
+
+
+[10/2/2025 11:18 AM] f3arlessttv
+This is how to make modded weapons in borderlands 4 
+
+https://youtu.be/pUJnXxKFmI0
+
+https://iyre.github.io/bl4-save-tools/
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423328192361664613/Hover_Edit_And_Dump.CT?ex=68e5d7ed&is=68e4866d&hm=679e8af625502a86075b520bf866de9d556f91b3507cedb9d4cf144aa3ecd7dd&
+
+{Embed}
+F3arl3ss
+https://www.youtube.com/watch?v=pUJnXxKFmI0
+How to get modded weapons in borderlands 4
+Thanks for watching
+
+Social's : https://linktr.ee/F3arless_ttv
+
+Borderlands 4 Modding discord : https://discord.gg/EJuMKayB8d
+
+ Discord to be notified anytime I go live or make a YouTube video - https://discord.gg/qWncxte
+https://images-ext-1.discordapp.net/external/rUaFw8IEqfbgaAoA-QiA5z2kajZTOSuXWxWWZX3cLqg/https/i.ytimg.com/vi/pUJnXxKFmI0/maxresdefault.jpg
+
+{Reactions}
+🔥 (3) 🫡 (2) ❤️ 👍
+
+[10/2/2025 12:00 PM] mattmab
+Thanks to @Fearless for the video!
+
+
+[10/2/2025 12:00 PM] f3arlessttv
+np
+
+
+[10/2/2025 12:00 PM] mattmab
+@Fearless i put your video at the top
+
+
+[10/2/2025 12:01 PM] f3arlessttv
+Thank you
+
+
+[10/2/2025 12:05 PM] mattmab
+Attaching this as part of @Fearless references it
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423340132135735346/Serial_formatting.png?ex=68e5e30b&is=68e4918b&hm=12feec7ed2cc77c8687c00d9825893901b41973baf3c04be2295d16a47ffcf43&
+
+{Reactions}
+🔥 (5)
+
+[10/2/2025 12:44 PM] burrmane
+so it just gives you batches of random modded weapons?
+
+
+[10/2/2025 12:49 PM] f3arlessttv
+yes
+
+
+[10/2/2025 1:04 PM] whiteshark2020
+great tutorial this should speedup the provess of creating, do we need paid version of gpt?
+
+
+[10/2/2025 1:05 PM] f3arlessttv
+It does work better becasue you can send more messages if you have the paid version but I was using the free version for a few day's and I decided to upgrade
+
+{Reactions}
+👍
+
+[10/2/2025 1:10 PM] whiteshark2020
+im on Cursor ill give it a go
+
+{Reactions}
+❤️
+
+[10/2/2025 1:38 PM] whiteshark2020
+fingers crossed
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423363436686872576/82B62ED5-9E27-4E16-BC1D-08BAC7BD7D42.png?ex=68e55000&is=68e3fe80&hm=46d2bbb7262a20095356eb0fec852ca28e25ec85fa86d6c537f1f8199380e55c&
+
+{Reactions}
+🤞
+
+[10/2/2025 1:44 PM] burrmane
+someone should make a vid on how to mod specific weapons with specific perks
+
+
+[10/2/2025 1:45 PM] whiteshark2020
+its not that easy yet
+
+
+[10/2/2025 1:47 PM] whiteshark2020
+i tested it on local LLM, i advise to ask the AI to use python for execution
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423365783223926875/A0393361-2113-431F-AE66-0BD64EC078CB.png?ex=68e5522f&is=68e400af&hm=7f804b0056182fc19aa7d890c2ad3c9cee1065fd4b3e0da932793074ab918cb9&
+
+
+[10/2/2025 1:55 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423367832464392302/E31AC62F-211E-471E-A8ED-90FC42E5CA7F.png?ex=68e55418&is=68e40298&hm=053023718b61781687da173d13daaca56ad6cc7e117fb2d44fd162562e6ec38d&
+
+{Reactions}
+👍
+
+[10/2/2025 1:55 PM] whiteshark2020
+perfect kudos@Fearless
+
+
+[10/2/2025 1:57 PM] burrmane
+are they all just basic or is there some with really high dps?
+
+
+[10/2/2025 1:57 PM] whiteshark2020
+they random
+
+
+[10/2/2025 1:57 PM] whiteshark2020
+there is no speciality in the code its a random mitation and cross fingers to get sum goood stuff
+
+
+[10/2/2025 2:29 PM] wetillusions
+Thank you for clarifying. I must’ve gotten a broken batch last night that kept crashing my game on launch. I tried to delete the serials but it continued to crash :cryingmansad:
+
+
+[10/2/2025 3:17 PM] mattmab
+@𝕭𝖆𝖑𝖑𝖎𝖘𝖙𝖎𝖈  ```Important:
+
+If the inventory structure is invalid, your save will become corrupt.
+
+If the serials themselves are invalid, your character may fail to load.
+
+In this case, go back to the main menu and log in again — the game will “load” your save and move invalid serials to unknown items.
+
+If your game crashes outright, that means you’ve got a truly broken serial. Best bet is to throw those away and try different ones.
+
+If a particular crashing serial is important to you, ChatGPT can sometimes help debug why it’s failing and suggest mutations.```
+
+
+[10/2/2025 3:20 PM] unkempt3329
+Thank you for this, needed a local llm on linux.
+
+
+[10/2/2025 3:20 PM] wetillusions
+I used AI to “clean” my save twice and it still crashes 😭
+
+
+[10/2/2025 3:20 PM] mattmab
+send the yaml here
+
+
+[10/2/2025 3:21 PM] mattmab
+if you can
+
+
+[10/2/2025 3:21 PM] wetillusions
+I’m gonna try to fix when I get home. I think it has to do with my shader cache maybe
+
+
+[10/2/2025 3:21 PM] mattmab
+i wouldnt doubt gpt used an illegal character in the seed
+
+
+[10/2/2025 3:21 PM] wetillusions
+I can later. I think it would’ve been some sick gear, I hate that it started to bug out :cryingmansad:
+
+
+[10/2/2025 3:21 PM] whiteshark2020
+im working on a standalone tool rn
+
+
+[10/2/2025 3:21 PM] whiteshark2020
+almost finish
+
+
+[10/2/2025 3:22 PM] wetillusions
+What are the illegal characters? I know you can’t have a ‘ symbol in the code itself, is that the only one?
+
+
+[10/2/2025 3:22 PM] wetillusions
+GPT tried to tell me that maybe my code was too complex and could be causing crashes but idk 🤷🏼‍♂️
+
+
+[10/2/2025 3:23 PM] mattmab
+might be @ or something aswell
+
+
+[10/2/2025 3:23 PM] whiteshark2020
+i have a tool you give the seed it will make the inventory, im adding wrapping a character around the inventory and ill let yall know
+
+
+[10/2/2025 3:24 PM] wetillusions
+Okay. I know it had that in some codes, didn’t even think of that due to it being the start for all codes :TT_FacePalm:
+
+
+[10/2/2025 3:24 PM] wetillusions
+Good looks bro, I’ll try that as well and see if I can fix my save :preeyy:
+
+
+[10/2/2025 3:25 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423390468481355877/generate_serials.py?ex=68e5692d&is=68e417ad&hm=c577a61a28cbff08422ac5f7853aeefe4909a385384c9ec1710ee59a354a5442&
+
+
+[10/2/2025 3:25 PM] whiteshark2020
+this only make the whole gpt obsolete
+
+
+[10/2/2025 3:26 PM] whiteshark2020
+i still need add the wrapper for characters tho so you still need todo the copy paste yourself until im done
+
+
+[10/2/2025 3:27 PM] mattmab
+chatgpt has spit these back at me after feeding in what Dat Boi sent out.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391004064747713/serial_mutation_engine_mk14.py?ex=68e569ac&is=68e4182c&hm=853c0deb608db3a30185f30f893f0bb56cf32e0dc5a15ae442d96ce77fbff31e&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391004899410146/serial_mutation_engine_mk15.py?ex=68e569ac&is=68e4182c&hm=0c6543aee51a91dad99d16528f422084a52878dca66b167672f114ca5f0b548f&
+
+{Reactions}
+👍
+
+[10/2/2025 3:28 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391148772163616/Screenshot_2025-10-02_152551.png?ex=68e569cf&is=68e4184f&hm=7aab31e3f80c35ef05b0e0b51ea439700b49fc3609d62c39d64e95846da1a52a&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391149615218860/Screenshot_2025-10-02_144628.png?ex=68e569cf&is=68e4184f&hm=4ec2915bf3d78cbc6b44e91d3f732a284277d132de89e3fe414179e06ed1457c&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391150076727477/Screenshot_2025-10-02_151017.png?ex=68e569cf&is=68e4184f&hm=b1f078ddbe47502eb9a29ca79abd3863a1285a4b52781a1c8ab50f7b54da457b&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423391150617657434/Screenshot_2025-10-02_151023.png?ex=68e569cf&is=68e4184f&hm=fded39c4d826614fdf9d8e9ae75535e9244ea01bd1fb0dd447e393d1577871cf&
+
+{Reactions}
+🔥 (2)
+
+[10/2/2025 3:28 PM] mattmab
+these 2 have generated these 4 guns so far from the 749k damage finnity
+
+
+[10/2/2025 3:28 PM] whiteshark2020
+tn x @Mattmab
+
+
+[10/2/2025 3:28 PM] mattmab
+intresting mutations for sure
+
+
+[10/2/2025 3:29 PM] whiteshark2020
+yh trye im on the Dinner shield asked 10k got 3k valid and a few good ones
+
+
+[10/2/2025 11:13 PM] unkempt3329
+Updated version with the ChatGPT logic from @Mattmab 
+https://g.co/gemini/share/6f2d75b54d03
+
+
+Apologies for posting so much, This is just useful for people with no pro AI API
+
+{Embed}
+https://g.co/gemini/share/6f2d75b54d03
+‎Gemini - Borderlands Serial Mutation Engine
+Created with Gemini
+https://images-ext-1.discordapp.net/external/Z4LuUaMTCWLNotrLx-V_p3yhO9gbm4i3-a92jzH85do/https/lh3.googleusercontent.com/gg/AAHar4dtNToB2jUDltEuLoe2LUG2UtcmhZBwBDCaNLTNHU2RQ7S1Q5GGJxez98ojWcf2egI7LTTMJGJCMb4csax40mglWfqhSdQ8QunQFz1zGXZJOps2AaSKAmRIBUNTTcbc4mCdV8NPCPNmXi3rP1j4O-0-N29MjhfrjYzorxaOoHzXmx_XQZY%3Ds1200
+
+
+[10/2/2025 11:53 PM] spytor
+@Unkempt is there a list of what is allowed in the Advanced 2 section?
+
+
+[10/2/2025 11:56 PM] mattmab
+
+
+
+[10/2/2025 11:56 PM] mattmab
+thank you ChatGPT
+
+
+[10/2/2025 11:59 PM] tfk_yun
+how did you get gpt to output that tho like what did you tell or ask to get that
+
+
+[10/3/2025 12:07 AM] mattmab
+its a mix of hand editing and gpt mutations
+
+
+[10/3/2025 12:07 AM] mattmab
+
+
+
+[10/3/2025 12:10 AM] unkempt3329
+That's just kinda future proving, I'm not sure if people are able to get the certain serials for specific items, But eventually, That will be able to just implement the attachment/whatever else to it.
+
+{Reactions}
+👍
+
+[10/3/2025 12:12 AM] mattmab
+@Yun 악마 tbh i have been lengthining serials by hand then using chatgpt to mutate the skills on the class mod then extending manually again after gpt mutates.
+
+
+[10/3/2025 12:15 AM] unkempt3329
+@Mattmab , If you have anymore code you'd be willing to share to get the one I've been sharing up to date, I would appreciate that. 🙂 
+I do have the code you shared earlier so if there's no more than that, Than it's okay!
+
+
+[10/3/2025 12:19 AM] cyber710
+These words may have fixed the wall i have hit with gpt I'm have to test lol
+
+
+[10/3/2025 12:20 AM] mattmab
+@Unkempt best explination is i took one of my seed serials
+
+```@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92kpK```
+
+
+
+broke it apart to 
+Header
+```Ug!pHG2__CA41ms/KJ_=%$```
+midsection
+```$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92```
+Tail
+```kpK```
+
+
+i clone the midsection a ton
+
+so Header Mid Mid Mid Mid Mid Tail
+
+
+[10/3/2025 12:20 AM] mattmab
+load it into the game
+
+
+[10/3/2025 12:21 AM] mattmab
+then grab the current serial
+
+
+[10/3/2025 12:21 AM] mattmab
+then send to chatgpt for mutations
+
+
+[10/3/2025 12:21 AM] mattmab
+look through its results
+
+
+[10/3/2025 12:21 AM] mattmab
+take the best findings and hand edit again. Header Mid Mid Mid Mid Mid Tail
+
+
+[10/3/2025 12:22 AM] mattmab
+rinse and repeat
+
+
+[10/3/2025 12:22 AM] cyber710
+Is there a way to search said results more effectively i be getting like 6k 7k items
+
+
+[10/3/2025 12:23 AM] unkempt3329
+So what are the "best findings" going to look like? Is the serials just long?
+
+
+[10/3/2025 12:23 AM] mattmab
+if there isnt a state flag its considered a "new" item and is "unseen" meaning it has a ! in the inventory untill you look at it. 
+state_flag 1 = "seen" 
+state_flag 3 = Favorite 
+state_flag 5 = Trash 
+state_flag 17 = Tag group 1 
+state_flag 33 = Tag group 2 
+state_flag 65 = Tag group 3 
+state_flag 129 = Tag group 4
+
+
+[10/3/2025 12:23 AM] mattmab
+you can have chatgpt tag the items like this for sorting in the inventory
+
+
+[10/3/2025 12:24 AM] mattmab
+unfortunately  looking at the items is the slowest part
+
+
+[10/3/2025 12:24 AM] mattmab
+but generally more mods is more value
+
+
+[10/3/2025 12:25 AM] tfk_yun
+im assuming this kinda stuff only works on class mods ?
+
+
+[10/3/2025 12:25 AM] unkempt3329
+So, With what I've been using, I can target the tail length, It's been going off of everything that's been put it here, Is higher better?
+
+
+[10/3/2025 12:25 AM] cyber710
+So like tag group 3 I think is the most heavy mutated stuff so prolly go through there first
+
+
+[10/3/2025 12:26 AM] mattmab
+im thinking it will work on everything honestly
+
+
+[10/3/2025 12:26 AM] mattmab
+just found the method with the class mod
+
+
+[10/3/2025 12:26 AM] mattmab
+honestly smoked a bowl and started making craked items ngl!
+
+
+[10/3/2025 12:26 AM] cyber710
+Ohhh so that's the secret
+
+
+[10/3/2025 12:26 AM] cyber710
+Lol
+
+
+[10/3/2025 12:26 AM] tfk_yun
+so you making all the new mid sections thats where the "roles" are ?
+
+
+[10/3/2025 12:27 AM] mattmab
+seems to be so
+
+
+[10/3/2025 12:27 AM] mattmab
+i broke a serial apart and just started removing sections and was able to see the perks dropping
+
+
+[10/3/2025 12:27 AM] cyber710
+How did you guys pull the chats into html files for gpt
+
+
+[10/3/2025 12:27 AM] cyber710
+That's little off topic lol but thought it was cool
+
+
+[10/3/2025 12:27 AM] tfk_yun
+im just trying to figure out how to put legendary traits on other guns
+
+
+[10/3/2025 12:28 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527026958274570/Screenshot_2025-10-02_195221.png?ex=68e5e85b&is=68e496db&hm=271fdd074311c91662d460dc4f6d15fe6625613b9cbd2297205594cca7dddf9f&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527027268649083/Screenshot_2025-10-02_195228.png?ex=68e5e85b&is=68e496db&hm=755f6b3831d39f41a7572f3ceddd98aaeab394faf29b581994cc0f9408bb29fa&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527027616514048/Screenshot_2025-10-02_195233.png?ex=68e5e85b&is=68e496db&hm=6cbc8f759b883705ebff8e85a2aff17a014c2d0a78925c8d932fdf546cd39e46&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527027973296240/Screenshot_2025-10-02_202956.png?ex=68e5e85b&is=68e496db&hm=27b3a8ff301b27428fc6416e1943afdcd58bf5eb69d3006664fb743ee57031fb&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527028313030756/Screenshot_2025-10-02_203007.png?ex=68e5e85b&is=68e496db&hm=8483302c018fb56c63caa4d30ca43b887028a2c659e70e05e222f091d8c23abd&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527028639924357/Screenshot_2025-10-02_203013.png?ex=68e5e85b&is=68e496db&hm=1eed5eeab58d9837d826bfecbf88f1999a0abb110effce12f6f825343f85a8b0&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527028933791855/Screenshot_2025-10-02_203020.png?ex=68e5e85b&is=68e496db&hm=a9c9184341f9c261fdf463e0a03bffc360f09d3f0d07bf500152e7943920c1db&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527029235777586/Screenshot_2025-10-02_203027.png?ex=68e5e85b&is=68e496db&hm=015e3fda1ee3532d04a251df79c36df30e96e69b18b574b4ade2d1323d8c808c&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527029562671125/Screenshot_2025-10-02_203032.png?ex=68e5e85b&is=68e496db&hm=f07920df1ac023c1815851efc9954920a1d8e1e5b2882383d731e4137fea5fe8&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527029936230450/Screenshot_2025-10-02_203352.png?ex=68e5e85b&is=68e496db&hm=2e286194da72ae6b913e4239cba4d7008df2f25f3d5b83a17687a1e3f45a5f56&
+
+
+[10/3/2025 12:28 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527046713180190/Screenshot_2025-10-02_203503.png?ex=68e5e85f&is=68e496df&hm=e9596bde01fd0892496f41047b4f0585287db53a8297de7f83ca0c95967150ea&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527047166431335/Screenshot_2025-10-02_210246.png?ex=68e5e85f&is=68e496df&hm=0962d5d6ae6de72ae2ea923550c55b16d76550c7527deea92426883cc6ed569b&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527047481000048/Screenshot_2025-10-02_210252.png?ex=68e5e85f&is=68e496df&hm=94e4ee929c722c87af18cb907dba7286f1fa409456e965e73d5a7d9fa7c3b2f2&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527047803830344/Screenshot_2025-10-02_210256.png?ex=68e5e860&is=68e496e0&hm=452e44362212f10d487ed2948c8836294a4f94bf335f4e99720d8b81ade0ba3a&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527048193904741/Screenshot_2025-10-02_210302.png?ex=68e5e860&is=68e496e0&hm=347707a2b1190cc79c719b9f4c5040e3cb684b26b69a255c7f35197a4ce10875&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527048588038214/Screenshot_2025-10-02_210310.png?ex=68e5e860&is=68e496e0&hm=3cc808ddd4088dabf5a671caba2be395f338fc54a98fd9c60b40d40ad0db232f&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527048957132890/Screenshot_2025-10-02_210615.png?ex=68e5e860&is=68e496e0&hm=a51687fc98a93937b1eafc3bbf44d8dc7ca791455ef4b31ffbd48910c5eab652&
+
+
+[10/3/2025 12:28 AM] mattmab
+```@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYd
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+
+@Ug!pHG2__CA41ms/KJ_=%$D```
+
+
+[10/3/2025 12:28 AM] mattmab
+```        slot_0:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+'
+          state_flags: 1
+        slot_1:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY'
+          state_flags: 3
+        slot_2:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc'
+          state_flags: 5
+        slot_3:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~'
+          state_flags: 17
+        slot_4:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN'
+          state_flags: 33
+        slot_5:
+          serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f'
+          state_flags: 65```
+
+
+[10/3/2025 12:29 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527308127633500/Screenshot_2025-10-02_173535.png?ex=68e5e89e&is=68e4971e&hm=5387f6d9e0af9c20f78d7f393d6b0d1a26e8688bd9b63084d12a08e15f150bfe&
+
+
+[10/3/2025 12:29 AM] unkempt3329
+Holy shit
+
+
+[10/3/2025 12:29 AM] cyber710
+....
+
+
+[10/3/2025 12:29 AM] mattmab
+```serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+f?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlP&'```
+
+
+[10/3/2025 12:30 AM] mattmab
+```serial: '@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+f?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlV#QDlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlP&'```
+
+
+[10/3/2025 12:30 AM] mattmab
+```DlRH6```
+
+
+[10/3/2025 12:31 AM] cyber710
+So basically your telling me that RH6DL is what makes it good
+
+
+[10/3/2025 12:31 AM] cyber710
+Or is it ```DlRH6```
+
+
+[10/3/2025 12:31 AM] mattmab
+```'@Ug!pHG2_CA41ms/KJ=%$DrP)+8NYdgKC>vm#Q62i5zj6A%^+{-XY(UZcXN~7+f?xHrD7m^g07Z$a64EFaDjX{OL4v#DlV#QDlV#QDlV#QDlV#QDlV#QDlV#QDlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlRH6DlP&'```
+
+
+[10/3/2025 12:31 AM] mattmab
+they are a single perk
+
+
+[10/3/2025 12:31 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527971796418600/Screenshot_2025-10-02_171422.png?ex=68e5e93c&is=68e497bc&hm=1764ed45cc879f9404398fed2c04ad50e2d30dbe7f996d88a4f15b7bde790e8c&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527972094087250/Screenshot_2025-10-02_173252.png?ex=68e5e93c&is=68e497bc&hm=14190ace3ad4465da6eede3f561994b395f43d97093f328ffc357530c88c5992&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423527972450861146/Screenshot_2025-10-02_173535.png?ex=68e5e93c&is=68e497bc&hm=ef97315cb88dfc5c03dbd08f2cf1e898cb09a6b9e3b874adbfa3c82e387b1cc2&
+
+
+[10/3/2025 12:32 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423528031183441942/Screenshot_2025-10-02_180232.png?ex=68e5e94a&is=68e497ca&hm=66361bfc6c44973acbeac83faf32ae097cc4f7dc45c6263fa3076698fff9a955&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423528031502467145/Screenshot_2025-10-02_181325.png?ex=68e5e94a&is=68e497ca&hm=62457835e69786f2d36433d228dc47330c3508610d2374943cf27fda402c1a9e&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423528031858720788/Screenshot_2025-10-02_175937.png?ex=68e5e94a&is=68e497ca&hm=3af8c1a9cdc9651bcbe45c78f6644db247dd798b9eec834510869c4a3377fa6f&
+
+
+[10/3/2025 12:32 AM] cyber710
+Oh so how do ik how many times to duplicate the perk block
+
+
+[10/3/2025 12:32 AM] mattmab
+```#QDlV```
+
+
+[10/3/2025 12:32 AM] cyber710
+Just guess basically lol
+
+
+[10/3/2025 12:32 AM] mattmab
+some give +1 per copy some give like +8 per copy
+
+
+[10/3/2025 12:32 AM] ivviimcmxcix
+There was a shotgun in another channel than has infinite damage due to the same repeat. does that mean any weapon could be set to infinite if a specific group is repeated?
+
+
+[10/3/2025 12:32 AM] mattmab
+seems like 5x is a sweet spot to get a "max roll"
+
+{Reactions}
+🫡
+
+[10/3/2025 12:33 AM] mattmab
+sounds like it
+
+
+[10/3/2025 12:33 AM] cyber710
+Gpt told me the game let's you stack crit and dmg blocks infinity so if it was right ig ao
+
+
+[10/3/2025 12:33 AM] cyber710
+So
+
+
+[10/3/2025 12:33 AM] cyber710
+I just don't know how to pick out those blocks
+
+
+[10/3/2025 12:33 AM] mattmab
+i was just manually testing
+
+
+[10/3/2025 12:34 AM] cyber710
+What is your methodology
+
+
+[10/3/2025 12:34 AM] tfk_yun
+got some minor success just not the right trait
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423528627479380048/image.png?ex=68e5e9d8&is=68e49858&hm=3afbdc88e70f6ddd55e306c6bd750f6d7c5b518f5b673051160420a06d2a70ee&
+
+{Reactions}
+🔥 (2)
+
+[10/3/2025 12:34 AM] cyber710
+Like do you delete a section of the code see what disappears or take a section paste to another weapon
+
+
+[10/3/2025 12:34 AM] mattmab
+i  started deleting the tail 4 spaces at a time and verifying if the items still spawned in and what perks were lost with what 4 characters i deleted
+
+{Reactions}
+🤔
+
+[10/3/2025 12:35 AM] mattmab
+```@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>vm#Q
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYdgKC>
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+8NYd
+@Ug!pHG2__CA41ms/KJ_=%$DrP)+
+@Ug!pHG2__CA41ms/KJ_=%$D```
+
+
+[10/3/2025 12:35 AM] cyber710
+I see thanks
+
+
+[10/3/2025 12:35 AM] mattmab
+to get to a "blank mod"
+
+
+[10/3/2025 12:35 AM] mattmab
+to see what the header is
+
+
+[10/3/2025 12:35 AM] whodisisg
+I have a yaml file with a bunch of wombo combos if u need it
+
+
+[10/3/2025 12:35 AM] mattmab
+and you possibly have to keep the tail intact
+
+
+[10/3/2025 12:35 AM] tfk_yun
+i got a bunch im just trying to figure out how to add other legendary traits
+
+{Reactions}
+🫡
+
+[10/3/2025 12:36 AM] mattmab
+@Whiteshark-2022  <-- SHIFT @Unkempt some interesting findings here for you guys
+
+
+[10/3/2025 12:38 AM] unkempt3329
+Oh Im reading it, I'm just trying to add known serials to the engine.
+
+
+[10/3/2025 12:38 AM] mattmab
+trying to add them to your save?
+
+
+[10/3/2025 12:40 AM] cyber710
+I did this is this a smart thing or is chatgpt not smart enough lol ig would be a way to put it
+
+
+[10/3/2025 12:41 AM] unkempt3329
+No, With the gemini code generator I have some known serials it pulls from to try and add parts and whatnot
+
+
+[10/3/2025 12:42 AM] cyber710
+Ahhh I tried breaking down serials and logging the blocks and what they do and giving gpt that info
+
+
+[10/3/2025 12:42 AM] tfk_yun
+accidentally made this
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423530592984891492/image.png?ex=68e5ebad&is=68e49a2d&hm=90f7cd92ae9b12fab333a4094afe0f44e6138a617c8a0f5352e513ef90fecd1e&
+
+
+[10/3/2025 12:42 AM] unkempt3329
+I made a looming hellwalker, But I lost the code and file 🙁
+
+
+[10/3/2025 12:45 AM] mattmab
+also sorry that my post has ventured past basic beginner gpt mutations
+
+
+[10/3/2025 12:45 AM] mattmab
+but 🤷‍♂️
+
+
+[10/3/2025 12:45 AM] cyber710
+Listen they just got to scroll to the start of the course
+
+
+[10/3/2025 12:46 AM] cyber710
+That's all
+
+
+[10/3/2025 12:46 AM] mattmab
+haha Classes with Mattmab
+
+
+[10/3/2025 12:46 AM] unkempt3329
+Erase Beginners and make it All
+
+
+[10/3/2025 12:46 AM] tfk_yun
+has anyone else put a firmware on a weapon ?
+
+
+[10/3/2025 12:46 AM] tfk_yun
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423531662267908167/image.png?ex=68e543ec&is=68e3f26c&hm=34e6aaebfeb96373ef02c3d4699181822c8d65d176d0c8bf0bc7d526dc92dede&
+
+
+[10/3/2025 12:46 AM] cyber710
+Yes but they said it didn't work
+
+
+[10/3/2025 12:46 AM] cyber710
+I forgot who it was
+
+
+[10/3/2025 12:50 AM] mattmab
+Changed the channel name: Serial Mutations: From Beginner Basics to Advanced Builds
+
+{Reactions}
+🔥 (2)
+
+[10/3/2025 12:50 AM] mattmab
+^
+
+
+[10/3/2025 12:58 AM] scoob01474
+Would it be possible to put the stray sniper aim bot talent onto a smg? or the stray sniper aim bot talent onto another sniper?
+
+
+[10/3/2025 12:58 AM] mattmab
+
+
+
+[10/3/2025 12:59 AM] mattmab
+@Yun 악마 me 4 days ago xD
+
+
+[10/3/2025 1:00 AM] mattmab
+@Scoob probably possible but mutations are pretty much random other than lengthening serials. I proved that today.
+
+
+[10/3/2025 1:01 AM] scoob01474
+So I could try shaving down the stray id to find what that talent is and smack it onto a smg?
+
+
+[10/3/2025 1:02 AM] scoob01474
+Or I could do the same thing how you are making vex mods to another characters class mod?
+
+
+[10/3/2025 1:02 AM] mattmab
+Same principle should apply
+
+
+[10/3/2025 1:03 AM] mattmab
+As far as I can tell
+
+
+[10/3/2025 1:03 AM] scoob01474
+Interesting
+
+
+[10/3/2025 1:03 AM] cyber710
+This the real question is gpt pro worth
+
+
+[10/3/2025 1:03 AM] cyber710
+Lol
+
+
+[10/3/2025 1:03 AM] mattmab
+Pick your favorite Ai. See what happens
+
+
+[10/3/2025 1:03 AM] mattmab
+Choose your own adventure
+
+
+[10/3/2025 1:04 AM] cyber710
+Man I used ai for the first time yesterday this whole thing an adventure lmao
+
+
+[10/3/2025 1:04 AM] cyber710
+Took me like 12 hrs to get hang of it and get results
+
+
+[10/3/2025 1:04 AM] mattmab
+But you did!
+
+
+[10/3/2025 1:04 AM] cyber710
+Figured out I suck at prompting lol
+
+
+[10/3/2025 1:04 AM] mattmab
+Fearless had the thought to use gpt to prompt gpt
+
+
+[10/3/2025 1:05 AM] mattmab
+May be a thought
+
+
+[10/3/2025 1:05 AM] mattmab
+Explain your thoughts to gpt and ask it to make your prompts to the other gpt
+
+
+[10/3/2025 1:06 AM] mattmab
+I'm off for the night tho take care and happy modding!
+
+
+[10/3/2025 1:06 AM] cyber710
+Do you think making a bot like serial mutation thing with gpt would be better than doing it in a chat project thing
+
+
+[10/3/2025 1:06 AM] cyber710
+Lol love my wording thing this thing that 🤣
+
+
+[10/3/2025 1:06 AM] mattmab
+I dont know what you mean by in chat project thing
+
+
+[10/3/2025 1:07 AM] whodisisg
+I seen someone post something like that earlier 
+
+https://g.co/gemini/share/6f2d75b54d03
+
+i haven’t tried yet
+
+{Embed}
+https://g.co/gemini/share/6f2d75b54d03
+‎Gemini - Borderlands Serial Mutation Engine
+Created with Gemini
+https://images-ext-1.discordapp.net/external/8XlcrQjANMfa0VVOJPl7l97UQRUO0PDBE1i4oEkUf4Q/https/lh3.googleusercontent.com/gg/AAHar4fCdk87YLcrMTRUz6IkKapz8WVdKZWB7EXdPEB4TbyZ14q8Uy8tShR-C_Qm-Q1QhPj7lyv7IUp2O3HBxB_cx9V2oRorSiSY2Q0pSetyfW_11jJD5hF4Zuw5VzJZvLShM31ZFHZjPeSk9X1-EC_SW0bKRDsPAPQkW6jQAfHhsIJIIr74NV4%3Ds1200
+
+
+[10/3/2025 1:07 AM] cyber710
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423536950513504256/image.png?ex=68e548d9&is=68e3f759&hm=3e46449ae6510a3cc85d1affbcbc58e2648735dde4b274ea077ae8b3c6156da5&
+
+
+[10/3/2025 1:07 AM] cyber710
+those are the things im talkin bout i heard you can make bots with gpt
+
+
+[10/3/2025 1:08 AM] cyber710
+i was wondering if i give a bot like for example the mk15 py script would that be more reliable than using the chats in the project folders
+
+
+[10/3/2025 1:09 AM] cyber710
+cause gpt always like oh i forgot this please reupload file while the bot wouldnt have said problem
+
+
+[10/3/2025 1:09 AM] cyber710
+idk just theory crafting ig lol
+
+
+[10/3/2025 1:09 AM] mattmab
+Try it and post your results
+
+
+[10/3/2025 1:09 AM] mattmab
+Sounds like a sound theory
+
+
+[10/3/2025 1:10 AM] unkempt3329
+The mutation engine is rough right now but its a WIP; If you give it working serial codes, "It being the AI" It trys to pull items from the those guns and add them to the generated guns/items they make.
+
+
+[10/3/2025 1:52 AM] unkempt3329
+@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2ZNDt8=I>e4x5g)=u;D`>fBRx?3?tmf{sYpdCQjv<(7NJN*DpHY(R3rc
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423548330675404941/Screenshot_from_2025-10-03_01-25-29.png?ex=68e55372&is=68e401f2&hm=4cc005cbcf3368819137a8947bb6e5223010d3d68e608f9ccac4f998d5d008c0&
+
+
+[10/3/2025 1:56 AM] unkempt3329
+MAN.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423549140087865354/Screenshot_from_2025-10-03_01-54-38.png?ex=68e55433&is=68e402b3&hm=d019c3b078e08bf15b4bcebf32f3714f0bce1e62fca55e853231e59b534de1d5&
+
+{Reactions}
+emojismirk
+
+[10/3/2025 1:59 AM] unkempt3329
+https://g.co/gemini/share/d5db98fa7c7a
+
+The engine IS updated, I recommed using already modded serials, It gives the better outputs, the TG1.TG2.TG3 section is to indicate how much of each you want it to generate, Have fun! 🙂
+
+{Embed}
+https://g.co/gemini/share/d5db98fa7c7a
+‎Gemini - Borderlands Serial Mutation Engine
+Created with Gemini
+https://images-ext-1.discordapp.net/external/rMxHIxVLwAC_RaCGQbXbaiiCfc_ALqf8njjB7tZ6JHw/https/lh3.googleusercontent.com/gg/AAHar4eHsHRyBCSSzwg0f8O2gL3e2w-GlqWRt894ST969EQWLLeW5hu8AZol4fEV6sGe37e9fv0Yzop2Fii8oGwgPBFcBEjbLQ1BQeKl7BydE2dLhUyjrZhRQ46IAoWwct8H5NKD9EIrhOHhiLuo8LPne1Led6ApksQ7FzbwUFFS520z996afVA%3Ds1200
+
+
+[10/3/2025 1:59 AM] cyber710
+115m bruh
+
+
+[10/3/2025 1:59 AM] unkempt3329
+FOund a 190m
+
+
+[10/3/2025 1:59 AM] cyber710
+Got the code for the either
+
+
+[10/3/2025 2:00 AM] cyber710
+Wait updated ooo
+
+
+[10/3/2025 2:00 AM] unkempt3329
+Lemme finish searchinng and I'll post in modded items
+
+
+[10/3/2025 2:01 AM] cyber710
+Alright lol sorry to be feeen lol I try to keep a save with everything from the sever lmao I be ontop of the new stuff when I see it
+
+
+[10/3/2025 2:03 AM] karate.chop
+yeah I made a few 160m, though the recharge rate is kind of bummer. the ones under a million seem to have the best balance so far of recharge rate and demi-god capacity. Is there any quick way to insta recharge your shield in bl4?
+
+
+[10/3/2025 2:04 AM] unkempt3329
+Maybe a modded stim?
+
+
+[10/3/2025 2:04 AM] unkempt3329
+There are some that instantly start charging it
+
+
+[10/3/2025 2:07 AM] karate.chop
+oh neat! I noticed there were a good amount of health related repkits, wasn't sure about shield related ones. I'll dig through some now and see if I can come up with anything to pair with one of those shields 👍
+
+
+[10/3/2025 2:14 AM] unkempt3329
+@Mattmab ; If possible, Could you pin that gemini engine? If you'd like me to make my own post I will, Just figure it'll help!
+
+
+[10/3/2025 2:21 AM] unkempt3329
+What about.... THIS ONE?!?!
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423555485017178113/Screenshot_from_2025-10-03_02-20-21.png?ex=68e55a1c&is=68e4089c&hm=04d703b943cf36005eb7661865b4bad6edd92c3552c6d58c1719809dd0c04794&
+
+
+[10/3/2025 2:22 AM] cyber710
+Bro
+
+
+[10/3/2025 2:22 AM] cyber710
+Your nuts with da shields
+
+
+[10/3/2025 2:23 AM] unkempt3329
+It's this engine lol
+
+
+[10/3/2025 2:23 AM] cyber710
+I'm use dat engine then like what
+
+
+[10/3/2025 2:23 AM] cyber710
+Lol
+
+
+[10/3/2025 2:23 AM] cyber710
+My gpt dumb
+
+
+[10/3/2025 2:23 AM] unkempt3329
+Ill also be sharing that one.
+
+
+[10/3/2025 2:24 AM] unkempt3329
+Use the one I shared in here.
+
+
+[10/3/2025 2:24 AM] cyber710
+I will I'm try and mod some rafa mods
+
+
+[10/3/2025 2:24 AM] cyber710
+You know how it works with class mods yet? Same type of success?!!
+
+
+[10/3/2025 2:25 AM] unkempt3329
+Havent tried with those, Just guns and shields so far, But I have found that putting already modded items there puts better items out.
+
+
+[10/3/2025 2:26 AM] cyber710
+Alright I'll have to look into it i think the modded Rafa stuff we got still tame like 4 or 5 skills and couple points
+
+
+[10/3/2025 2:33 AM] unkempt3329
+Im gonna slow down from posting them, I just keep making higher and higher. I'll come back with some results later.
+
+{Reactions}
+❤️
+
+[10/3/2025 4:44 AM] sinofazrael
+No when you say hand editing wdym/how is this done?
+
+
+[10/3/2025 4:54 AM] sinofazrael
+Where would you put the talent in the new string if you did that method Scoob mentioned, also you said you take the tail 4 characters off every instance?
+
+
+[10/3/2025 5:52 AM] firedragon1445
+what the difference of TG1,TG2,TG3 and as for the tail length does it matter or recommended length ?
+
+
+[10/3/2025 7:59 AM] mattmab
+@SinofAzrael it was a lot of trial and error. I put my notes in here and how I was removing characters from serials.
+
+
+[10/3/2025 9:24 AM] thedarkness1404
+im getting nan on the weapons how do i fix that
+
+
+[10/3/2025 9:24 AM] mattmab
+if there isnt a state flag its considered a "new" item and is "unseen" meaning it has a ! in the inventory untill you look at it. 
+state_flag 1 = "seen" 
+state_flag 3 = Favorite 
+state_flag 5 = Trash 
+state_flag 17 = Tag group 1 
+state_flag 33 = Tag group 2 
+state_flag 65 = Tag group 3 
+state_flag 129 = Tag group 4
+
+
+[10/3/2025 9:25 AM] mattmab
+@FIREDRAGON1445
+
+
+[10/3/2025 9:25 AM] mattmab
+tell dont make modifications to the weapons headers
+
+
+[10/3/2025 9:25 AM] mattmab
+@thedarkness
+
+
+[10/3/2025 9:25 AM] sinofazrael
+Just wanted to clarify you remove 4 digits at a time right?
+
+
+[10/3/2025 9:25 AM] sinofazrael
+Starting at the tail
+
+
+[10/3/2025 9:26 AM] mattmab
+sometimes 4 sometimes 1 at a time
+
+
+[10/3/2025 9:26 AM] mattmab
+
+
+
+[10/3/2025 9:26 AM] mattmab
+
+
+
+[10/3/2025 9:26 AM] mattmab
+the save and the modifications and the results
+
+
+[10/3/2025 9:26 AM] sinofazrael
+I actually had a question about this too, when I told gpt to do this it renamed the state flag to  “Tag Group 4” for instance is this correct approach or will that cause issues?
+
+
+[10/3/2025 9:27 AM] mattmab
+as long as you tell it this
+```if there isnt a state flag its considered a "new" item and is "unseen" meaning it has a ! in the inventory untill you look at it. 
+state_flag 1 = "seen" 
+state_flag 3 = Favorite 
+state_flag 5 = Trash 
+state_flag 17 = Tag group 1 
+state_flag 33 = Tag group 2 
+state_flag 65 = Tag group 3 
+state_flag 129 = Tag group 4```
+
+
+[10/3/2025 9:28 AM] mattmab
+gpt has to have context
+
+
+[10/3/2025 9:29 AM] mattmab
+```please remake this marking the longest serials TG1 and the shortest TG2 the medium average as TG3```
+
+
+[10/3/2025 9:29 AM] mattmab
+generally longer serials are better
+
+
+[10/3/2025 9:29 AM] mattmab
+```how bout we make the longest 20 marked Favorite```
+
+
+[10/3/2025 9:29 AM] sinofazrael
+Ok awesome so in that example you gave you’d take
+
+EgRXdt#GDkK6 and duplicate it multiple times at end? Any , or other seperation needed between duplications
+
+
+[10/3/2025 9:30 AM] mattmab
+^^ these are some of my prompts
+
+
+[10/3/2025 9:30 AM] mattmab
+so 6 is the firmware
+
+
+[10/3/2025 9:30 AM] mattmab
+id drop that first
+
+
+[10/3/2025 9:30 AM] mattmab
+EgRXdt#GDkK
+
+
+[10/3/2025 9:30 AM] mattmab
+to this
+
+
+[10/3/2025 9:30 AM] mattmab
+i had luck here
+```@Ug#2fK2}TYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXdTYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXdTYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXdt#GDkK```
+
+
+[10/3/2025 9:30 AM] mattmab
+```@Ug#2fK2}TYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXTYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXTYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXdt#GDkK```
+
+
+[10/3/2025 9:30 AM] mattmab
+and here
+
+
+[10/3/2025 9:31 AM] mattmab
+```TYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRXd```
+```TYgOuY_jgW6OGgW8/UXHYc^YNkQOIH;EgRX```
+
+
+[10/3/2025 9:31 AM] mattmab
+cloning these made some mods
+
+
+[10/3/2025 9:31 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423663854310785088/image.png?ex=68e5bf09&is=68e46d89&hm=130a17133e4658c60bfbd1d6542695ba494c3b29e24db184a80fa6b832328357&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423663854696665241/image.png?ex=68e5bf09&is=68e46d89&hm=d137e27ea2911da5fd0329ffb90d6155fff63810fe9305fcdce9676cb0f8bed6&
+
+
+[10/3/2025 9:31 AM] mattmab
+added a perk
+
+
+[10/3/2025 9:31 AM] sinofazrael
+By clone do you mean just copy pasting onto the end of the string?
+
+
+[10/3/2025 9:32 AM] mattmab
+that was in the middle
+
+
+[10/3/2025 9:33 AM] thedarkness1404
+its still giving me nan im going the g.m.r
+
+
+[10/3/2025 9:33 AM] mattmab
+Header
+```@Ug#2fK2}```
+Tail
+```t#GDkK```
+
+
+[10/3/2025 9:33 AM] mattmab
+working in the middle seems to have the best results
+
+
+[10/3/2025 9:33 AM] mattmab
+extending the middle and leaving tails and headers alone
+
+
+[10/3/2025 9:34 AM] sinofazrael
+'@Ug#2fK2}TYgOuY_gW60GgW8/UXHYc^YNkQ0IH;EgRXdt#GDkK6'
+
+so in this string when you started removing things you notice it changes once EgRXdt#GDkK6 is gone, so from there you’d learn what? Sorry im slow
+
+
+[10/3/2025 9:35 AM] sinofazrael
+I guess my question also is why did you remove the tail first in that example, once the tail was gone it made the one perk go down a digit
+
+
+[10/3/2025 9:37 AM] sinofazrael
+I appreciate the help sorry for all the questions/clairifications
+
+
+[10/3/2025 9:39 AM] mattmab
+
+
+{Reactions}
+❤️
+
+[10/3/2025 9:39 AM] mattmab
+hand editing FTW
+
+
+[10/3/2025 9:39 AM] mattmab
+XD
+
+
+[10/3/2025 9:46 AM] sinofazrael
+@Mattmab huge W bro 🙌so to make that one you started with
+
+ '@Ug#2fK2}TYgOuY_gW60GgW8/UXHYc^YNkQ0IH;EgRXdt#GDkK6'
+
+then just copy pasted the mid section
+So it would be like
+
+'@Ug#2fK2}TYgOuY_gW60GgW8/UXHYc^YNkQ0IH;EgRXd TYgOuY_gW60GgW8/UXHYc^YNkQ0IHt#GDkK6' 
+
+For example or did i miss something?
+
+
+[10/3/2025 9:49 AM] mattmab
+@SinofAzrael  i manually changed the header to amon from my previous one
+
+{Reactions}
+❤️
+
+[10/3/2025 9:49 AM] mattmab
+i figured why reinvent the wheel if i had a good starting point
+
+
+[10/3/2025 9:51 AM] thedarkness1404
+I got a question for you how can i add more skill trees perks to the mod like you did bc i was going to take the siren one you did and make it have more bloodshot on it
+
+
+[10/3/2025 9:53 AM] thedarkness1404
+@Mattmab
+
+
+[10/3/2025 9:53 AM] mattmab
+@thedarkness thats where i ask chatgpt to make mutations
+
+
+[10/3/2025 9:54 AM] thedarkness1404
+oh
+
+
+[10/3/2025 10:00 AM] thedarkness1404
+its still giveing me oneand two im going to make some more
+
+
+[10/3/2025 10:02 AM] sinofazrael
+@Mattmab I dm’d you a question hope that was ok
+
+
+[10/3/2025 10:11 AM] whiteshark2020
+ooo the long fight u had with chat gpt, hey i have 1 2 3 please add 4, and gpt gives 1 3 4 deleting block and codes. they not ready to take over the world
+
+{Reactions}
+😂
+
+[10/3/2025 10:59 AM] duke7000
+For those hitting walls chat GPT is dumb as only started making decent progress today. When you ask it to create random codes it doesent take into account how the structures work.
+
+Give base codes and successful long ones but tell it "When I say create random codes create them based on the structure of the unsuccessful serials/codes generated" as AI is dumb.
+
+The AI thought at one point a class mod modified with no mods and no skill points was a normal drop 🤣
+
+
+[10/3/2025 12:01 PM] unkempt3329
+@Mattmab; I updated mine with those TWO things you posted earlier to tell it, and now it gives me an extra 2k items, thank you.
+
+
+[10/3/2025 12:03 PM] mattmab
+@Unkempt Awesome man!!
+
+
+[10/3/2025 1:26 PM] unkempt3329
+https://g.co/gemini/share/87d840e9345f
+
+Added a couple things! Outputs are a little better, as said before Im getting an extra 2-3k items now.
+
+{Embed}
+https://g.co/gemini/share/87d840e9345f
+‎Gemini - Borderlands Serial Mutation Engine
+Created with Gemini
+https://images-ext-1.discordapp.net/external/6hvndNfTo-G9FQeHDBCG5BWZ1MXO3MC58KN1bwqa6Hk/https/lh3.googleusercontent.com/gg/AAHar4fqFecwpVG9D12OJ7rGaTE5-MAxGkEIio6VGT2lv5ODNMNIMwt8-MoHKBr8dwTMwAf_pYa5OlVeKyx-o-fZ4j2DWbqvfaEdyeK7gzRFZgNf2N_HfaFRoDKw2NtjnvMsAxZkYltanpMcdvE_Bqrr4Sa1knD4NmFQ2c-JUEfqt103Nyqitlla%3Ds1200
+
+{Reactions}
+Fire (4)
+
+[10/3/2025 3:50 PM] firedragon1445
+As for the tail length does it matter?
+
+
+[10/3/2025 3:59 PM] hobamj
+can you also have it just ouput the serials only?
+
+
+[10/3/2025 4:04 PM] unkempt3329
+I haven't gone over 1k.
+
+
+[10/3/2025 4:05 PM] unkempt3329
+It's easier to leave them in, If you want to tell it to do that just hit "copy canvas" and the AI will pop up for you to edit it!
+
+
+[10/3/2025 4:47 PM] ivviimcmxcix
+Anyone else had success with repeating segments over and over? So far I got it to work on a songbird, pushing 1 mil. Right now I'm trying on a potato thrower but even the exact same ones seem to have different serials.
+
+
+[10/3/2025 4:50 PM] mattmab
+yes each has unique serials generally
+
+
+[10/3/2025 4:51 PM] mattmab
+but we are finding sections we can splice from ones to others
+
+{Reactions}
+✅
+
+[10/3/2025 5:31 PM] duke7000
+one I know of https://discord.com/channels/1306526445090111508/1419884940279021589/1423730472009338903
+as looks like this in notepad
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423784459416633345/image.png?ex=68e5869b&is=68e4351b&hm=86baab63ab7688e3a67add449549bfe789d5979c84350260cd2bbf10947854bf&
+
+
+[10/3/2025 5:31 PM] duke7000
+allot of repetition there 😉
+
+
+[10/3/2025 6:11 PM] ivviimcmxcix
+I haven't had much luck outside of a pre modded song bird I saw a single repetition in , I just added extra repetitions and it jumped from 90k to 1,500k DPS I'm trying to do the Slutty Potato thrower now but it's not having it.
+
+
+[10/3/2025 7:37 PM] keryox
+@Mattmab after consideration, we decided to give you the mod creator role. We hope you will keep helping others and push the modding scene further.
+
+
+[10/3/2025 7:58 PM] mattmab
+@KeRyoX Thanks
+
+
+[10/3/2025 9:37 PM] f3arlessttv
+I know that I can use that but I wanted to make a video so people that didn't know how to do it could start somewhere
+
+{Reactions}
+Meme_Sad_Cat_Thumbs_Up
+
+[10/3/2025 9:38 PM] serverhopp
+yea was just some advice seen everyone saying gpt this and gpt that. gpt kinda clunky on understanding prompts
+
+
+[10/3/2025 9:39 PM] serverhopp
+just wanted to be helpful:imgDogSmile:
+
+
+[10/3/2025 9:44 PM] mattmab
+@Aim Trainer doesnt matter if gpt is clunky if it gives results some of the best items so far have had heavy gpt modifications XD
+
+
+[10/3/2025 9:50 PM] serverhopp
+yup and now its gone, sorry for mentioning it. ill refrain
+
+
+[10/3/2025 9:51 PM] thatdonfc
+I'd be interested to hear about the tools you're using if they're different from what's in this thread
+
+
+[10/3/2025 10:01 PM] sphinxxxi
+any good repkits
+
+
+[10/3/2025 10:49 PM] mr.tminus
+Any Rafa dancer class mod that has been mutated ?
+
+
+[10/3/2025 11:33 PM] scoob01474
+Anyone succesfully put a sniper talent onto a smg?
+
+
+[10/4/2025 1:16 AM] tfk_yun
+chat did i cook ?
+
+```@UgeU_{Fme!KvQJQIRG/(vT<B3RQ6W+PP@CE!)TmAs>QKXl9`y{U52{g}D%7Ed3q9&3DkSPFP@_6ks6!1Gdek$ZLI3```
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423901645796016138/image.png?ex=68e54aff&is=68e3f97f&hm=8080c35ab19666f1cf12dc599eb2c622a556a32baae78221c085e28070bb8763&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423901646131302484/image.png?ex=68e54aff&is=68e3f97f&hm=626295da25b17d92fde966c291962a5767b533af79c1375adc9a77fc836186a8&
+
+
+[10/4/2025 2:28 AM] thedarkness1404
+how do i fix this I use the this code and giving me this 
+ ```@Uge8Usm/)}}!tgGjNWCv7=um@tAI&bID_4b+=#r`uMKB6>*(p+_rqq+YC_B)k3RMi~NB{ ```
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423919615150653510/image.png?ex=68e55bbb&is=68e40a3b&hm=fe377a6046310cc28993a2f4031e401f6552fec0377c623baa437dd43799ac4f&
+
+
+[10/4/2025 2:30 AM] thedarkness1404
+this is what is apose to give and its hobamj code
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423920071226556497/image.png?ex=68e55c28&is=68e40aa8&hm=c3df193145d4191e30aa9a5b7bfc5c9a5ad57fbf1c45b9d1d2ec10250e9c2fee&
+
+
+[10/4/2025 2:31 AM] whiteshark2020
+forward his message if he show that + a code let look at the code he posted first
+
+
+[10/4/2025 2:35 AM] whiteshark2020
+i just tested that code it works fine
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423921362967203840/F8EF3C32-8E4D-4020-87FD-818E49A3106F.png?ex=68e55d5c&is=68e40bdc&hm=1c194771ae9a8eeaf9cd3b5968ced49349dc9ea1bb6583a58f6fd2e9cd43fe6e&
+
+
+[10/4/2025 2:43 AM] thedarkness1404
+I mutated the code to see if i can get more with different stats
+
+
+[10/4/2025 2:44 AM] thedarkness1404
+when I did the top image is what I got
+
+
+[10/4/2025 2:48 AM] whiteshark2020
+not all mutations are working
+
+
+[10/4/2025 2:49 AM] whiteshark2020
+i run 10k mutations in a single go 4k is lost due to game sanity, and 2k are bad mutations
+
+
+[10/4/2025 2:54 AM] mattmab
+2k are clones or meh
+
+
+[10/4/2025 3:00 AM] whiteshark2020
+i wished i understood (read : u hd a tool)
+to understand 
+```@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2ZNDt8?a%6/#5j=uN@CY8kBRxci=#U<wLv)B8u_8Xiiue#N(nEBJ4(TB}M2FZBE8;`A2prKNc7%uE5j@gEbchb=Av#2d*byt@L%0YW(IIxE2a4YvP^2OisYpdCQjyvs6sbr>
+DpHY(RHPymsYpdCQjyvs6sbr>
+DpHY(RHPymsYpdCQjv;Oq_zk}
+DpHY(RHPymsYpdCQjv;Oq_zk}
+DpHY(RHPymsYpdCQjv;Oq_zk}
+DpHY(RHPymsYpdCQjv;Oq#_lmEkcosRHPymsYpdCQjv;Oq_zk}
+DpHY(RHPyS```
+i understand the stacking of prts i modded long time on BL3 but with an editor the bit and bytes are a bit harder
+
+
+[10/4/2025 3:02 AM] whiteshark2020
+like for example if i would copy ```DpHY(RHPymsYpdCQjv;Oq_zk}``` can i paste this in another shield or would that value due to encryption be useless
+
+
+[10/4/2025 3:09 AM] mattmab
+Not really encrypted. But seems each item has its own dictionary.
+
+
+[10/4/2025 3:10 AM] mattmab
+Each class mod has a unique header set that I was able to pretty reliably splice from one class to another.
+
+
+[10/4/2025 3:16 AM] whiteshark2020
+ok but example your Meme class mods you made, can i just like use my header from my class mod and paste your body to get the skills?
+
+
+[10/4/2025 3:20 AM] mattmab
+That is a basic explanation.
+
+
+[10/4/2025 3:20 AM] mattmab
+It is finding where the header of each the one modded and non modded and finding what to replace exactly.
+
+
+[10/4/2025 3:20 AM] mattmab
+The headers are slightly different
+
+
+[10/4/2025 3:23 AM] whiteshark2020
+```@Ug!pHG2}TYg41@<thw9WEgKA??aSbYtL6uCsHK<al+R>aa00``` my mod
+
+```@Ugr$K7m/*09;-o5-$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RUW00zT9>LFO^F<FnIVP#p#Gx%qF$rUrAnjjp-Q9fq5h!$qW+>vqwb;ppkAZSrS76OnirB3mlqg<auU)g7b+Yo{6U37H7YJDM(Ta4ok8t2sJ5wfsoK$$$Pt$rQs@urFX}JqHR@cdH0mCzH0mDe59%-KFRC=^9_kP3HR@dIE^4EBAxUw0fgva-A&qjO!lA++R5(<l;-X@t-ly6b)Lw&Xn_8Eu9ZiWGahV~7{-FM%{-R!^&ZSDD?x9Mf?xFsm{-XY(N~7+f{-9o?&ZX/6Hkucb6qgqmf^rhlC>JUmD*Qo(Lp3TcDn{yks+~dYHK?/!b*b9Xl*kd68B*vE>M!aq>NV<Isx;~zsx;~z>JREK>MyD^>K^J3>NV<I>Mm-dc_B%0d4VA)Cn1e;p~9iUA5=J0qvE1sBme```
+your mod
+
+so what is your header?
+
+
+[10/4/2025 3:25 AM] whiteshark2020
+```@Ugr$K7m/*09;-o5-$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!```
+
+
+[10/4/2025 3:25 AM] whiteshark2020
+this?
+
+
+[10/4/2025 3:26 AM] mattmab
+```@Ugr$K7m/*09;-o5-```
+
+Iirc
+
+
+[10/4/2025 3:26 AM] mattmab
+I like to call this the Dr pepper method xD
+
+
+[10/4/2025 3:26 AM] whiteshark2020
+🙂
+
+
+[10/4/2025 3:26 AM] mattmab
+Because this mid section starts with DrP
+
+
+[10/4/2025 3:26 AM] mattmab
+XD
+
+
+[10/4/2025 3:27 AM] mattmab
+
+
+
+[10/4/2025 3:27 AM] mattmab
+Original dr pepper mod
+
+
+[10/4/2025 3:27 AM] mattmab
+You can see the splice from before the $DrP
+
+
+[10/4/2025 3:28 AM] mattmab
+It wasn't easy.
+
+
+[10/4/2025 3:28 AM] mattmab
+Dr pepper saved me
+
+
+[10/4/2025 3:28 AM] whiteshark2020
+im sure it wasnt i remember even with the editors on bl3 i was a hasle
+
+
+[10/4/2025 3:29 AM] mattmab
+So there is my splice point
+
+
+[10/4/2025 3:30 AM] whiteshark2020
+@Ug!pHG2}TYg41@<thw9WEgKA??aSbYtL6uCsHK<al+R>aa00
+
+so in my code how would i splice it?
+
+
+[10/4/2025 3:31 AM] mattmab
+Idk XD I had to find what part to put before $DrP  so I took small sets from past HG2}TYg as I believe }TYG is the level 50 header. Then right past that is legendary effect
+
+
+[10/4/2025 3:32 AM] mattmab
+So ```@Ug!pHG2}TYg```
+
+Would be one point id try
+
+
+[10/4/2025 3:33 AM] mattmab
+Then add one character so add the 4 then the 1 then the @ then the <
+
+
+[10/4/2025 3:33 AM] mattmab
+See what loads right
+
+
+[10/4/2025 3:34 AM] crunchin
+so how do i get chat gpt to break the limits of the game cuz it jus tells me it cant do that when i ask it to add massive amounts of anything
+
+
+[10/4/2025 3:35 AM] mattmab
+Tell it the game doesn't have limits
+
+
+[10/4/2025 3:35 AM] mattmab
+Gaslight it
+
+
+[10/4/2025 3:35 AM] mattmab
+It may be referencing it's own limitations aswell not game limitations.
+
+
+[10/4/2025 3:36 AM] crunchin
+like when i paste ur guyes game codes it jus gives me the items yall already altered with so do i needa fresh item off the street to do it or??
+
+
+[10/4/2025 3:36 AM] mattmab
+But giving it gpt mutation engine 14 or 15 might help.
+
+
+[10/4/2025 3:36 AM] crunchin
+whats that???
+
+
+[10/4/2025 3:36 AM] mattmab
+No you should ask it to mutate based off the base85 language
+
+
+[10/4/2025 3:36 AM] mattmab
+Read through this post top to bottom
+
+
+[10/4/2025 3:36 AM] mattmab
+You'll find it. And tons of useful info
+
+
+[10/4/2025 3:37 AM] jslak_
+I have managed to make several guns, shields, enhancements, and even a class mod thanks to this thread. Much appreciated. But cant for the life of me improve this grenade. I cant get the damage increased, cant get any useful traits added to it, or really improve on it in anyway. Cant figure out what I am doing wrong all of a sudden. Anyone got tips or care to take shot at it?          '''@Uge8Xtm/)}}!r1+wL{(~iG&p36L=sE@'''
+
+
+[10/4/2025 3:37 AM] crunchin
+sounds good me an my buddy has been tryna figure it out we got lucky an made a nan weapon w the dmg as x
+
+
+[10/4/2025 3:37 AM] mattmab
+@Jslak  xthefallen0nex is the ordinance guru.
+
+
+[10/4/2025 3:37 AM] mattmab
+Nan means it cant fire.
+
+
+[10/4/2025 3:38 AM] crunchin
+k
+
+
+[10/4/2025 3:38 AM] crunchin
+ik
+
+
+[10/4/2025 3:38 AM] crunchin
+but it was still crazy tho
+
+
+[10/4/2025 3:38 AM] mattmab
+Yep
+
+
+[10/4/2025 3:38 AM] mattmab
+Sanity checks are few and far between obviously
+
+
+[10/4/2025 3:38 AM] crunchin
+and the perk was -dmg cap
+
+
+[10/4/2025 3:39 AM] crunchin
+so i was tryna make weapons do that but actually are able to fire
+
+
+[10/4/2025 3:39 AM] crunchin
+anytips on how to do that
+
+
+[10/4/2025 3:39 AM] crunchin
+or is it jus here somewhere
+
+
+[10/4/2025 3:39 AM] mattmab
+Feed it the mutation engines it will help
+
+
+[10/4/2025 3:39 AM] crunchin
+so 14-15
+
+
+[10/4/2025 3:39 AM] mattmab
+Yes
+
+
+[10/4/2025 3:39 AM] crunchin
+so how would i do that??
+
+
+[10/4/2025 3:40 AM] mattmab
+Do you have a gpt account?
+
+
+[10/4/2025 3:40 AM] crunchin
+yes
+
+
+[10/4/2025 3:40 AM] crunchin
+pro
+
+
+[10/4/2025 3:40 AM] mattmab
+Then drag and drop onto the chat
+
+
+[10/4/2025 3:40 AM] mattmab
+Should upload.
+
+
+[10/4/2025 3:40 AM] mattmab
+Did you upload step1 and step2.txt or the startup prompt?
+
+
+[10/4/2025 3:41 AM] crunchin
+yuh
+
+
+[10/4/2025 3:41 AM] mattmab
+Try the engines see what happens from there.
+
+
+[10/4/2025 3:41 AM] crunchin
+how do u use the engines im new to this sorry lmao
+
+
+[10/4/2025 3:41 AM] mattmab
+This thread has evolved as I've gained knowledge.
+
+
+[10/4/2025 3:41 AM] mattmab
+Upload to chatgpt
+
+
+[10/4/2025 3:41 AM] mattmab
+There is a way to upload like images and files
+
+
+[10/4/2025 3:42 AM] crunchin
+oh ok an it gives u the option
+
+
+[10/4/2025 3:52 AM] whiteshark2020
+this is what i got working but its the wrong mod, the other are right mod but no skills
+do i keep adding?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423940857123569804/795AE681-0422-4584-A102-3B6B04CCC8CD.png?ex=68e56f83&is=68e41e03&hm=97b877db3eeb2b18292986867f560bfadb529f8dd093628c5f229dd70b28c18f&
+https://cdn.discordapp.com/attachments/1423057138993070090/1423940857362513970/50FAD220-7C2B-4D7F-9BAB-58276007DF3F.png?ex=68e56f83&is=68e41e03&hm=9a532c4add4dfae78b48f315f4696c94e8c92374703c40717258a10cd0d58c33&
+
+
+[10/4/2025 3:57 AM] mattmab
+What are you trying with this?
+
+
+[10/4/2025 3:58 AM] mattmab
+This looks like my other siren mod serial already
+
+
+[10/4/2025 3:58 AM] whiteshark2020
+i try get illutionist to be the main mod with skills
+
+
+[10/4/2025 3:58 AM] mattmab
+
+
+
+[10/4/2025 3:58 AM] whiteshark2020
+ilusionist has a badass stat
+
+
+[10/4/2025 3:58 AM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423942444935811172/2D15FB41-851D-4F29-93AC-79DD1702D934.png?ex=68e570fe&is=68e41f7e&hm=edc970b8dc62e6ef291179654162e51e77a440898c2b53b73f8c6f23d7e72b3c&
+
+
+[10/4/2025 3:59 AM] whiteshark2020
+this is vex blah i need the badass
+
+
+[10/4/2025 3:59 AM] whiteshark2020
+wich s default from illutionist
+
+
+[10/4/2025 3:59 AM] mattmab
+I would literally just ask gpt to mutate the code I just forwarded myself
+
+
+[10/4/2025 4:00 AM] mattmab
+Seems good at morphing that
+
+
+[10/4/2025 4:00 AM] mattmab
+10k iterations.
+
+
+[10/4/2025 4:00 AM] whiteshark2020
+pl imm try that mk17 good?
+
+
+[10/4/2025 4:01 AM] whiteshark2020
+enable header mutation also?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423943123221872660/67D7FBC1-2756-4712-B957-74074E8379ED.png?ex=68e571a0&is=68e42020&hm=a4ebb8dbcc64c3bafc086d3eac07abce6dd922846a450126aa0f28c9906cd265&
+
+
+[10/4/2025 4:09 AM] thedarkness1404
+@Mattmab can you help me?
+
+
+[10/4/2025 4:10 AM] mattmab
+Tfw it's 4am and everyone needs help
+
+
+[10/4/2025 4:10 AM] mattmab
+XD
+
+
+[10/4/2025 4:10 AM] mattmab
+❤️
+
+{Reactions}
+🔥
+
+[10/4/2025 4:10 AM] thedarkness1404
+lol
+
+
+[10/4/2025 4:10 AM] mattmab
+Unfortunately not rn.
+
+
+[10/4/2025 4:10 AM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423945388968120391/E1222554-0994-436D-BF9F-73E6703D0734.png?ex=68e573bc&is=68e4223c&hm=b563b58e5b6e33d7a4659b0350b718cc7d7b5f85c18bb0b02e92aae4a77949a9&
+
+
+[10/4/2025 4:10 AM] mattmab
+See
+
+
+[10/4/2025 4:10 AM] whiteshark2020
+ty ty Mathlab
+
+
+[10/4/2025 4:10 AM] mattmab
+❤️
+
+
+[10/4/2025 4:10 AM] mattmab
+Bet paid off
+
+
+[10/4/2025 4:10 AM] mattmab
+XD
+
+
+[10/4/2025 4:11 AM] mattmab
+ChatGPT go BRRRRRTTTTT
+
+
+[10/4/2025 4:11 AM] mattmab
+@Whiteshark-2022  <-- SHIFT Mathlab?
+
+
+[10/4/2025 4:12 AM] thedarkness1404
+im trying to make it have more but it wont go pass 9 is there a way i can get it to?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423945775787802756/image.png?ex=68e57418&is=68e42298&hm=1706076038a753d315fcbdfb65ee5ba589b4167124cf8f8bedc626a2b8117d9f&
+
+
+[10/4/2025 4:13 AM] mattmab
+
+
+
+[10/4/2025 4:14 AM] mattmab
+
+
+
+[10/4/2025 4:14 AM] thedarkness1404
+thats the one im using but chatgpt dont like healping a brother out
+
+
+[10/4/2025 4:15 AM] mattmab
+
+
+
+[10/4/2025 4:20 AM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1423947900357967932/mutated_items_10k.yaml?ex=68e57613&is=68e42493&hm=a0afe3226a308d1c52dba98948161ac54100f529c39424e729a0be4278926cb8&
+
+
+[10/4/2025 4:21 AM] mattmab
+Here look to your hearts content. Anything past +12 perks doesn't show up on card but does work.
+
+
+[10/4/2025 4:21 AM] mattmab
+@thedarkness
+
+
+[10/4/2025 4:38 AM] thedarkness1404
+Do you want me to rebuild this as a 20-code test batch where your seed is 100% intact and I carefully slot in up to 9 guaranteed stats (so every one spawns properly), or do you still want me to try to brute-force 13+ (knowing it risks breaking again)? thats what chat gpt is saying to me right now
+
+
+[10/4/2025 4:40 AM] mattmab
+Trial and error baby the name of the game ask for 20 perks go big or go home.
+
+
+[10/4/2025 4:41 AM] mattmab
+And 20 at a time is too few
+
+
+[10/4/2025 4:42 AM] thedarkness1404
+so i need to do more
+
+
+[10/4/2025 4:44 AM] mattmab
+Out of 10000 1000-3000 may load in.
+
+
+[10/4/2025 4:45 AM] mattmab
+So out of out of 20 you may get 1 to 6 that load in. And of those they are all useless.
+
+
+[10/4/2025 4:46 AM] mattmab
+If you do 10k you get 1000-3000 or more and say 80% of those are junk but 20% are interesting and 1% is useful.
+
+
+[10/4/2025 4:47 AM] thedarkness1404
+nothing spawn in lol
+
+
+[10/4/2025 4:48 AM] mattmab
+I can try to help troubleshoot tommorow
+
+
+[10/4/2025 4:48 AM] mattmab
+Check out the 10k I generated for you.
+
+
+[10/4/2025 4:49 AM] thedarkness1404
+will do
+
+
+[10/4/2025 4:54 AM] classupgrade1
+can someone help me im generating them but when i put them on my character nothing loads
+
+
+[10/4/2025 4:59 AM] unkempt3329
+Idk if anyone can anything w this but this is the header for Firewerks; 5 Missiles. ```@Ugr%Scm/)}}!bqQ>M```
+
+
+[10/4/2025 4:59 AM] unkempt3329
+Wait no, Bundled star perk, sorry.
+
+
+[10/4/2025 5:18 AM] classupgrade1
+can someone talk me through cos when i put the items in my inventory nothing loads or everything just breaks
+
+
+[10/4/2025 9:37 AM] lshift
+does anyone have the seed for a golden god?
+
+
+[10/4/2025 11:04 AM] xthefallen0nex
+you mean like a non modded?
+
+
+[10/4/2025 11:08 AM] lshift
+i just need a seed so I can start mutating it
+
+
+[10/4/2025 11:29 AM] xthefallen0nex
+i know ive picked one up
+
+
+[10/4/2025 11:29 AM] lshift
+well, if you find it, could you send it my way please
+
+
+[10/4/2025 11:30 AM] xthefallen0nex
+ya ill look right now
+
+
+[10/4/2025 11:34 AM] xthefallen0nex
+its level 43
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424057121636614144/Screenshot_211.png?ex=68e5dbcb&is=68e48a4b&hm=5cd26d2c339285f6db3c03633c41a91e6075379ccb2bad03389721eefe4d550c&
+
+
+[10/4/2025 11:35 AM] whiteshark2020
+for class mods...
+Consistent Red Skill Characters:
+g → Always produces orange skull +2
+4 → Produces orange leaf +1 AND orange boot +7 (position-dependent!)
+/ → Produces orange shield +4
+0 → Produces orange empty +3
+
+Key Findings:
+Position matters! Character 4 produces different red skills based on position:
+Position 4: Orange leaf +1
+Position 6: Orange boot +7 (highest bonus!)
+
+Consistent red characters:
+g → Orange skull +2
+4 → Orange skills (position-dependent)
+/ → Orange shield +4
+0 → Orange empty +3
+trying  making a full red class mod
+
+
+[10/4/2025 11:36 AM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424057616577069177/5F615E33-4117-4CDC-B222-9E7E1E5998C1.png?ex=68e5dc41&is=68e48ac1&hm=f61e3b4e3bd5e4b13285c2ccc9ec2eb3ef88e1450693fcce5fc6a1413bb414ff&
+
+
+[10/4/2025 11:36 AM] xthefallen0nex
+@Ugd77*Fk28/>K4!$RG/)422~Pu5;X?Z2XzZI76A
+
+
+[10/4/2025 11:36 AM] whiteshark2020
+still working on it
+
+
+[10/4/2025 11:38 AM] lshift
+thanks bro
+
+
+[10/4/2025 11:54 AM] sinofazrael
+Anyone found a more streamline way of boosting/maxing damage on a weapon
+
+
+[10/4/2025 11:56 AM] sinofazrael
+Like can someone give short example of how they pushed weapons to the millions of damage
+
+
+[10/4/2025 12:00 PM] duke7000
+took a small section of code and repeated it allot is the quick and dirty way so dont recommend it.
+
+
+[10/4/2025 12:18 PM] thedarkness1404
+bro im losing my mind
+
+
+[10/4/2025 12:23 PM] thedarkness1404
+hobamj can i borrow you for a min in the vc chat ?
+
+
+[10/4/2025 1:06 PM] ticollado51
+Do you know any consistents on the blue tree?
+
+
+[10/4/2025 1:48 PM] whiteshark2020
+im only testing red for now but its really complicated. i wrote now a script to identify how many part in tail, so example i have 41 parts in tail the script will ask me now what part i want mutate so i can say part 24 and it should only mutate skill 24
+
+
+[10/4/2025 1:49 PM] whiteshark2020
+i do get promising results but its not like..perfect
+
+
+[10/4/2025 1:49 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424091167762677913/9ED62D6C-F6AF-438E-A038-1331F7E50F70.png?ex=68e552c0&is=68e40140&hm=ede723d761dab996336446363aee43310031d0e7e3c871da7357d5ac348c7777&
+
+
+[10/4/2025 1:50 PM] whiteshark2020
+but yh AI always says its gonna be ok, mostly means your fkd
+
+
+[10/4/2025 1:52 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424091769607553035/54ABFD5F-C51F-47FC-9594-43E5DFFC0836.png?ex=68e55350&is=68e401d0&hm=2199074ef9319cd442ded6e5aef185e32f841c8b5c2183d18b6a37912ff3af6b&
+
+
+[10/4/2025 1:53 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424092090371018752/CCAB07A0-6739-47E1-8E43-8208B20889EC.png?ex=68e5539c&is=68e4021c&hm=241aa414cf35be20fabdaf7a09c8746e7fd6fee6977043a85d45e6165b2369de&
+
+
+[10/4/2025 1:58 PM] whiteshark2020
+issues i encounter is...
+i modified only part 1
+so why
++30
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424093315472822503/C6414714-A6A7-4C51-B38E-87C33B22B4F6.png?ex=68e554c0&is=68e40340&hm=b3f524d7cdf751bbe2e5710e086cb9cede930a7f7a5039e5714d9a9132425932&
+
+
+[10/4/2025 1:58 PM] whiteshark2020
++15
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424093448507625472/BB23CEB6-7908-4CE8-B16C-AC33FBDB72F7.png?ex=68e554e0&is=68e40360&hm=45c8bb1fdcf46876b49823caa3b7b6a0754cbfdcf15a1377862cd1cf484ad1ac&
+
+
+[10/4/2025 2:01 PM] whiteshark2020
+here +39 does this mean +39 hidden stats or +39 points on that skill
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424093988369072229/B1E7C31E-A94D-4563-B3A5-12CAD9D70668.png?ex=68e55561&is=68e403e1&hm=d36d2c1295329eba2ed0cf8d4940a4ddffba3e0d782f146582ecf89ddc052dae&
+
+
+[10/4/2025 2:05 PM] igcnv8
+If you don't mind me asking, what AI Model are you using? Just GPT 5 and from their website? Or are you using an IDE like Cursor?
+
+
+[10/4/2025 2:06 PM] whiteshark2020
+Cursor
+
+
+[10/4/2025 2:09 PM] igcnv8
+which model are you using?
+
+
+[10/4/2025 2:11 PM] whiteshark2020
+'m running on Claude 3.5 Sonnet,
+
+
+[10/4/2025 2:12 PM] whiteshark2020
+and i also run local LLM 70B
+
+
+[10/4/2025 2:12 PM] whiteshark2020
+on Ollama
+
+{Reactions}
+💯
+
+[10/4/2025 2:15 PM] igcnv8
+thank you
+
+
+[10/4/2025 2:28 PM] thedarkness1404
+@Whiteshark-2022  <-- SHIFTwhat did you ask to get it that high ?
+
+
+[10/4/2025 2:34 PM] xxshadowxx0001
+Is there a place I can ask a question abt editing a file?
+
+
+[10/4/2025 2:36 PM] whiteshark2020
+i can share you this it runs from within the folder, theres a yaml file included that you might want to replace with sum more conveniant
+@thedarkness 
+basicly it was messing with generating WILD items
+so i specified that the serial was a header DO NOT TOUCH
+a body consisting of many or single parts.
+and a tail
+then i asked to identify the parts
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424102781643522139/skill.rar?ex=68e55d91&is=68e40c11&hm=ed490cba292201c98a724b750d2ed15b13138a1a22c35889fc66b09fda3b0a0b&
+
+
+[10/4/2025 2:36 PM] whiteshark2020
+so that i would be able to mess individually with them
+
+
+[10/4/2025 2:36 PM] whiteshark2020
+and i can confirm that part 1 for now.... works i generated 10k mods and its only the last on the right wich is moving
+
+
+[10/4/2025 2:38 PM] mattmab
+@Whiteshark-2022  <-- SHIFT the ±30 is 30 skill points
+
+
+[10/4/2025 2:39 PM] whiteshark2020
+ok so there are 17MAX skills right?
+
+
+[10/4/2025 2:39 PM] mattmab
+The one I produced for vex was 16 I believe.
+
+
+[10/4/2025 2:40 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424103896602771486/5D66C7BA-C1FA-4282-B4B0-6CA6C4F42AAB.png?ex=68e55e9b&is=68e40d1b&hm=495e86c28520a424759afebad7b6b40e657889c32cad8c360239c64958eb537f&
+https://cdn.discordapp.com/attachments/1423057138993070090/1424103897064149012/C68F0120-B602-437C-A3E6-E8C74AF58C41.png?ex=68e55e9b&is=68e40d1b&hm=1bb1e6df4dfb9aa869cb2fa06cdd050e5ab1a3d6d63b8aa20066d6e1b7f78a51&
+
+
+[10/4/2025 2:40 PM] whiteshark2020
+as shown on invalid part1 16
+
+
+[10/4/2025 2:40 PM] whiteshark2020
+on valid the right RED 17
+
+
+[10/4/2025 2:41 PM] whiteshark2020
+nvm 16
+
+
+[10/4/2025 2:42 PM] whiteshark2020
+but the point is that we can actually python the stuff until sum better comes along to mutate and im sure that i can ask the AI the work out an partadder
+
+
+[10/4/2025 2:42 PM] mattmab
+Yep. Im working on a new tool myself now.
+
+
+[10/4/2025 2:42 PM] whiteshark2020
+oooo nice
+
+
+[10/4/2025 2:43 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424104584288145448/image.png?ex=68e55f3f&is=68e40dbf&hm=53b4e68b0dd2ec686837611b4b6fee6cbf3febad048eca24dafe454fcf577992&
+
+
+[10/4/2025 2:43 PM] mattmab
+sneak peak
+
+
+[10/4/2025 2:43 PM] mattmab
+❤️
+
+
+[10/4/2025 2:43 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424104631226728609/6C571AF2-BB0F-49B2-BFBE-B9D877E274F4.png?ex=68e55f4a&is=68e40dca&hm=b7609e45ea329f63bc25ccd033a3f11f2d634463a883b27c8be11327f5085750&
+
+
+[10/4/2025 2:43 PM] whiteshark2020
+i wonder if there are only 16 skills why we have 41 part tho
+
+
+[10/4/2025 2:43 PM] whiteshark2020
+ill figure it out eventually
+
+
+[10/4/2025 2:44 PM] hobamj
+stacked multiple of the same part
+
+
+[10/4/2025 2:45 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424105081405706300/458ED3C8-6BBC-4572-AF0D-56956ABE56B6.png?ex=68e55fb6&is=68e40e36&hm=9fd4cd1dd509dd1486b41d911faf7fa1ca0b217e50a1b2dc5608d8ac16f9d5e2&
+
+
+[10/4/2025 2:45 PM] whiteshark2020
+17?
+
+
+[10/4/2025 2:45 PM] whiteshark2020
+he added 2skills on part1 muta
+
+
+[10/4/2025 2:46 PM] hobamj
+https://tenor.com/view/emoji-smiley-google-eyes-omg-puppy-eyes-gif-10042173
+
+{Embed}
+https://tenor.com/view/emoji-smiley-google-eyes-omg-puppy-eyes-gif-10042173
+https://images-ext-1.discordapp.net/external/wSMRVfyaOCqbcXCOIjBbpshnG5qAZyH3qywSFXpYiq8/https/media.tenor.com/96zQm_GxfTcAAAAe/emoji-smiley.png
+
+
+[10/4/2025 2:46 PM] hobamj
+need a tester
+
+
+[10/4/2025 2:47 PM] mattmab
+SoonTM still arguing with chatgpt
+
+{Reactions}
+🤣 ☝️
+
+[10/4/2025 2:52 PM] duke7000
+Exactly - why do you keep changing the god damm formatting for backpack and lostloot output when I show you establish the rules and you confirm it to change it the next day 🤣 I have given up 😭
+
+
+[10/4/2025 2:55 PM] mattmab
+?
+
+
+[10/4/2025 2:55 PM] mattmab
+@BCD7000 (Duke)
+
+
+[10/4/2025 2:56 PM] duke7000
+I am also arguing with chat gpt 🤣
+
+
+[10/4/2025 2:56 PM] mattmab
+Ahhhh
+
+
+[10/4/2025 2:56 PM] mattmab
+XD
+
+
+[10/4/2025 2:56 PM] mattmab
+Gpt does the same to me about formatting
+
+
+[10/4/2025 2:59 PM] duke7000
+In some ways I wish I didnt start with your way instead setting rules like
+
+This is how many weapon types are in game ....manufactures ect and so on so it had a reference database started then started feeding it codes that way with targeted farming 🤣 
+Then started building them.
+I am in too deep to be bothered now 🤣
+
+
+[10/4/2025 3:01 PM] mattmab
+I was a beginner when I made the original post so 🤷 lol
+
+
+[10/4/2025 3:02 PM] duke7000
+thats fair and also realised those two files I made in text format may have help the upload file workaround but lost out with no images to compare to codes.
+
+
+[10/4/2025 3:23 PM] whiteshark2020
+OOOPS
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424114694578372793/26DED3FD-C507-455E-A423-FE38A298AA32.png?ex=68e568a9&is=68e41729&hm=f79da8b6c33baaada3d4e601984dcd399bb0fee015c9de1c6271a0bc7b83c4ed&
+
+
+[10/4/2025 3:30 PM] duke7000
+😭  can tell not a vex one 🤣
+
+
+[10/4/2025 3:45 PM] tfk_yun
+no clue what happened here
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424120139103604957/image.png?ex=68e56dbc&is=68e41c3c&hm=644bf8704de952120f87db547f33d2f34928e93441f4b32f14fe6f89694077a9&
+
+
+[10/4/2025 3:46 PM] tfk_yun
+so i guess one of the primary stats was replaced with an enchantments
+
+
+[10/4/2025 3:46 PM] tfk_yun
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424120588045389855/image.png?ex=68e56e27&is=68e41ca7&hm=2f2b1fed1fe9012bbf4c2d10ee9c7955a7397d633f2d9420d4feb721bcbd6587&
+
+
+[10/4/2025 3:47 PM] xxshadowxx0001
+That's kinda cool ngl
+
+
+[10/4/2025 3:48 PM] tfk_yun
+ill drop code here in a min if anyone wants to look into it
+
+
+[10/4/2025 3:49 PM] cocavanille
+@Whiteshark-2022  <-- SHIFT How did you do it?
+
+
+[10/4/2025 3:49 PM] xxshadowxx0001
+I'll def tamper w it later w I get home see if I can add something interesting
+
+
+[10/4/2025 3:53 PM] tfk_yun
+```@UgzR8/2}TYg41fkzs6@>~RjLkZ73!8@00```
+
+
+[10/4/2025 4:00 PM] whiteshark2020
+i posted a script to do it, its a mutator to mutate 1 skill at the ttime
+
+
+[10/4/2025 4:14 PM] cocavanille
+@Whiteshark-2022  <-- SHIFT How do you know which skill you want to mount with how many points?
+
+
+[10/4/2025 4:14 PM] cocavanille
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424127612124401694/rn_image_picker_lib_temp_d8e034b0-9740-4066-8736-4c5bdbd8dd4e.jpg?ex=68e574b1&is=68e42331&hm=f6fa5c8e7e8024480aa48216f381b4f2aadda9b17cd2864e79976c6ed72e88da&
+
+
+[10/4/2025 4:15 PM] whiteshark2020
+if its skill on the right choose 1
+
+
+[10/4/2025 4:15 PM] zeeee____
+-3b damage is wild
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424127843499245588/image.png?ex=68e574e8&is=68e42368&hm=d28950700691fe9be65ca8dd44d0fc548da8432056420ae7c87c5d495c36c8d1&
+
+
+[10/4/2025 4:15 PM] whiteshark2020
+count from right to left and keep in mind some are stacks so you will only see point going up or stats
+
+
+[10/4/2025 4:17 PM] whiteshark2020
+im just done with part 1 i have 1 red of each, so now i xan choose part 2 and see what changes where i will use 1 mod with a red on the right spot as seed
+
+
+[10/4/2025 4:17 PM] whiteshark2020
+if skill 2 doesnt move... then its stats or point i need keep eye on
+
+
+[10/4/2025 4:18 PM] cocavanille
+I don't understand anything, I'm too stupid and I have trouble with English, which doesn't help.
+
+
+[10/4/2025 4:19 PM] whiteshark2020
+just run it and look choose 1
+then choose 2 you can always use the original seed and run part 1 on iriginal, part 2 on original and see what moves
+
+
+[10/4/2025 4:20 PM] whiteshark2020
+i asked the script to NOT touch header at any given time
+
+
+[10/4/2025 4:20 PM] whiteshark2020
+so you shouldnt see mission items
+
+
+[10/4/2025 4:20 PM] .zatoh
+guys im coping and pasting the serial on yaml files but in-game it does not show the items
+
+
+[10/4/2025 4:21 PM] cocavanille
+While the game is on?
+
+
+[10/4/2025 4:22 PM] .zatoh
+nope i close the game of course
+
+
+[10/4/2025 4:22 PM] whiteshark2020
+and you encrypt to sav
+
+
+[10/4/2025 4:22 PM] .zatoh
+yes
+
+
+[10/4/2025 4:22 PM] whiteshark2020
+post the yaml
+
+
+[10/4/2025 4:22 PM] .zatoh
+ok
+
+
+[10/4/2025 4:23 PM] .zatoh
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424129719556903063/Dropperx4.yaml?ex=68e576a8&is=68e42528&hm=cd9f72260cdb2ec6a548a73494ccd251366b280580e257e9182de5767f7dadbd&
+
+
+[10/4/2025 4:28 PM] whiteshark2020
+there an error in the keys lemme chk wich 1
+
+
+[10/4/2025 4:31 PM] whiteshark2020
+no problem your save is fine retart game maybe
+
+
+[10/4/2025 4:32 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424132005787861032/1CA8565E-2FF7-4AC7-86F8-F81096736C1F.png?ex=68e578c9&is=68e42749&hm=2b2e74cf61382e48c6fbc1eb234a6cb44325a3c0fd8024775c80d7645927a02a&
+
+
+[10/4/2025 4:33 PM] .zatoh
+i copes this @Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2Zh#j#aK7@<F5glSjdZ75-0YxfOk&0BLA{D7fMJiH}id3W`wM8gWk&0BLA{7Y
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424132376841424927/E1222554-0994-436D-BF9F-73E6703D0734.png?ex=68e57921&is=68e427a1&hm=5d42ee2c2b6626b38fed36bca51f4fab881e9ae80f943fea70077ca9749f7056&
+
+
+[10/4/2025 4:33 PM] .zatoh
+but it did not show
+
+
+[10/4/2025 4:38 PM] .zatoh
+now showing this lol
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424133710466257037/Screenshot_98.png?ex=68e57a5f&is=68e428df&hm=d23d7fac30736e2b7a0200c5d2e4356ca5065e2f0553b4d45e80f0bd9298edcc&
+
+
+[10/4/2025 4:55 PM] cocavanille
+@Whiteshark-2022  <-- SHIFT Would you make a mermaid class mod with the stats at 500 or more or less because I can't seem to make it? Ty
+
+
+[10/4/2025 5:03 PM] whiteshark2020
+part 2 seem to be influencing
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424139864995008582/B2859ECD-8EA0-49F1-972F-3C36EB155D95.png?ex=68e5801b&is=68e42e9b&hm=a7f349268c2fd2e7109f19b1c97238802d4cd7243420ec6836cadaca57df7513&
+
+
+[10/4/2025 5:12 PM] whiteshark2020
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424142159250063501/F95E1DFB-8922-459C-81EC-BAE3DF8228DF.png?ex=68e5823e&is=68e430be&hm=a05932b7cdd09f07b2bbdbc45fc4da4b421216ed83fb9284c033c64d7cf9f799&
+
+
+[10/4/2025 5:12 PM] whiteshark2020
+this gun....
+
+
+[10/4/2025 5:17 PM] sinmxchine
+Do we still us chatgpt for weapon gen or do we use gemini now?
+
+
+[10/4/2025 5:36 PM] whiteshark2020
+Part 1: Overall stat type + base values
+Part 2: Core stat bonuses (Critical Hit, Damage, etc.)
+Part 3: Manufacturer bonuses (Jacobs COV, Dahl, etc.)
+Part 4: Extra bonus stats (layer 1)
+Part 5: Extra bonus stats (layer 2)
+Part 6: Hybrid stats (bridge to skill system)
+
+
+[10/4/2025 5:36 PM] whiteshark2020
+for classmods
+
+
+[10/4/2025 5:47 PM] hobamj
+
+
+
+[10/4/2025 5:58 PM] seanypoo123474
+@Hobamj where do i get ahk
+
+
+[10/4/2025 6:02 PM] sinmxchine
+I never saw the link to the CE Table. Could I get it plz.
+
+{Reactions}
+👍
+
+[10/4/2025 9:12 PM] duke7000
+I decided to start again from scratch and farm each legendary for genuine codes bit by bit to build a data base of sorts around 50 of each seems about right but need to play the game a bit to get the unlocks in place for each boss/farm location.
+
+Not sure if anyone else has tried this or not 🤔
+
+
+[10/4/2025 11:31 PM] .luve
+I just needa figure out how to make a basic "Bod" with Smg fire mode and mod a jackobs ric on it
+
+
+[10/5/2025 12:12 AM] unkempt3329
+If people are still wanting/using it, I made a read me and now its hosted on your local! Run it through a virus site if you don't trust. ❤️ 🙂 
+Still made by the community here!
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424247929656574032/SerialEngine.zip?ex=68e5e4bf&is=68e4933f&hm=f0a2505eeebfdea677ed654587ca6a973a3b5c47089dbc0179ea9ab1a23d7f37&
+
+
+[10/5/2025 12:51 AM] mattmab
+
+
+
+[10/5/2025 1:14 AM] zeeee____
+''@Ugydj=2}TYg48IB5hbq*f5_PCX4H?RZT8Wy8YKeM@3WK_X3WfTEx`j%I8o~h{#s&)j''
+
+
+this code doesnt have a ! after the header, would I then put it after the "TYg" as it being a katagawa revenge?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424263338397012008/image.png?ex=68e54a59&is=68e3f8d9&hm=2b41cccc366b1058c7f2bdccd8b9aa0eb39eb4b1d1699a325a4d76658bd556dd&
+
+
+[10/5/2025 1:22 AM] unkempt3329
+Could be wrong but it could be before the }
+
+
+[10/5/2025 1:23 AM] unkempt3329
+try loading a gun in with just the as the serial and see if katagawa loads.
+
+
+[10/5/2025 1:23 AM] mattmab
+}TYg is level 50
+
+
+[10/5/2025 1:23 AM] .zatoh
+Can I ask a question does the big hunter in the class mode works
+
+
+[10/5/2025 1:24 AM] mattmab
+Don't know just posted it
+
+{Reactions}
+😆
+
+[10/5/2025 1:24 AM] lshift
+He said that you have to figure that out yourself hahahhaa
+
+
+[10/5/2025 1:24 AM] mattmab
+Too busy looking for cool stuff
+
+
+[10/5/2025 1:24 AM] .zatoh
+Ok
+
+
+[10/5/2025 1:24 AM] lshift
+He's not testing. He's just uploading
+
+
+[10/5/2025 1:24 AM] .zatoh
+That's cool too
+
+
+[10/5/2025 1:24 AM] unkempt3329
+We just mess with code and give it out.
+
+
+[10/5/2025 1:25 AM] lshift
+Chasing the high
+
+{Reactions}
+❤️
+
+[10/5/2025 1:25 AM] unkempt3329
+I took a day break today cause fuck, 2 days non stop is insane lol
+
+
+[10/5/2025 1:26 AM] mattmab
+Im prolly about to hit up Harlowe amon and rafa next. Might have to wait till the morning.
+
+{Reactions}
+🤍
+
+[10/5/2025 2:15 AM] cyber710
+I couldn't get this too work I feel really dumb first one I couldn't use
+
+
+[10/5/2025 2:15 AM] cyber710
+Am I missing something maybe
+
+
+[10/5/2025 2:16 AM] unkempt3329
+Does the generate not work?
+
+
+[10/5/2025 2:16 AM] cyber710
+Yep that do be the problem
+
+
+[10/5/2025 2:16 AM] unkempt3329
+One sec.
+
+
+[10/5/2025 2:16 AM] unkempt3329
+Should be fixed in this one. @KaizokuOrufi
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424279116563091498/SerialEngine.zip?ex=68e5590b&is=68e4078b&hm=eef3c79c7035005c42dd65b580fb107e3c97bd8590cd5ea886686994f4021d45&
+
+
+[10/5/2025 2:17 AM] unkempt3329
+If not let me know and I'll redo the html!
+
+
+[10/5/2025 2:19 AM] cyber710
+fixed it generated it this time appreicate it trying to get past this wall im stuck at but this shield refuses to go over 500k
+
+{Reactions}
+❤️
+
+[10/5/2025 2:20 AM] mattmab
+
+
+
+[10/5/2025 2:21 AM] mattmab
+
+
+
+[10/5/2025 2:21 AM] mattmab
+
+
+
+[10/5/2025 2:21 AM] mattmab
+
+
+
+[10/5/2025 2:21 AM] mattmab
+
+
+
+[10/5/2025 2:21 AM] cyber710
+So are long codes anything past 400 characters
+
+
+[10/5/2025 2:22 AM] mattmab
+hasnt been determined sai is gonna set a precedent tommorow
+
+
+[10/5/2025 2:30 AM] cyber710
+Lol @Unkempt anyone ever told you they could kiss you lmaooooo finally got a acceptable modded shield after a day and half with the second try on your engine
+
+{Reactions}
+❤️
+
+[10/5/2025 2:31 AM] cyber710
+Appreciate it lol idk what logic you got in that thing but it works lmao
+
+
+[10/5/2025 2:31 AM] unkempt3329
+It's everyone combined, You gotta kiss A LOT of people. 🤣
+
+
+[10/5/2025 2:32 AM] cyber710
+Lmao yall deserve it fr
+
+
+[10/5/2025 2:32 AM] unkempt3329
+I made this with Hex's mod.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424283209839022131/Screenshot_from_2025-10-05_02-01-04.png?ex=68e55cdb&is=68e40b5b&hm=060f8ad5219db49d911888dff752b89bd555453d2e931b022a18436b72397327&
+
+
+[10/5/2025 2:33 AM] cyber710
+not stupid crazy yet but went from 500k to this
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424283275056382034/image.png?ex=68e55cea&is=68e40b6a&hm=95526546981a00d3f16cf0e5bda0aaf7156b50fdb11840d705620d7b9cc162f8&
+
+
+[10/5/2025 2:33 AM] cyber710
+its acceptable now to post so im happy
+
+
+[10/5/2025 2:33 AM] unkempt3329
+Put his 35m gun in that engine and second try that camee out. And hell yeah!
+
+
+[10/5/2025 2:34 AM] unkempt3329
+If you put THAT one in, It SHOULD gen some with crazy cap.
+
+
+[10/5/2025 2:34 AM] cyber710
+your right im feed it that one before i post
+
+
+[10/5/2025 2:35 AM] unkempt3329
+I ALWAYS have that "Why not just one more time" feeling lmao
+
+
+[10/5/2025 2:35 AM] cyber710
+Lmao I would have that if i didn't feel like I was loosing my mind fighting with gpt to try to get it bigger than 500k it was like no your a cheater lmao
+
+
+[10/5/2025 2:35 AM] cyber710
+The update they had today for gpt doesn't like borderlands
+
+
+[10/5/2025 2:36 AM] cyber710
+I didn't have this problem yesterday but got a notification when I got on today saying the memory was improved and since then gpt has been refusing to do lots
+
+
+[10/5/2025 2:36 AM] unkempt3329
+"improved" xD
+
+
+[10/5/2025 2:38 AM] unkempt3329
+Low damage though.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424284569804472372/Screenshot_from_2025-10-05_02-37-17.png?ex=68e55e1f&is=68e40c9f&hm=81f4996c438faf37b326859f4e107d1b08552cc0c0c47689efe6c78070c26421&
+
+
+[10/5/2025 2:50 AM] mattmab
+@KaizokuOrufi glad to see you've gotten something ai related to work ❤️
+
+
+[10/5/2025 2:51 AM] unkempt3329
+Do I go off this one or the one before?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424287980113231882/Screenshot_from_2025-10-05_02-51-05.png?ex=68e5614c&is=68e40fcc&hm=94cf2421a78dee2d68c7e220842dfaa627228c0ef63d0804f39867b79d8a2dfb&
+
+
+[10/5/2025 2:56 AM] cyber710
+Me too hadn't ever touched it once 2 days ago so yall good teachers
+
+
+[10/5/2025 2:56 AM] cyber710
+I mean I'm not smart but not dumb either lol so may have helped
+
+
+[10/5/2025 2:57 AM] cyber710
+I would say I got the baseline knowledge for how stuff works I'm definitely better at prompted ai now
+
+
+[10/5/2025 2:57 AM] cyber710
+Lower firerate
+
+
+[10/5/2025 2:58 AM] cyber710
+If you want it too be useful at least cause when the firerate on guns get high so many bad things happen lol
+
+
+[10/5/2025 2:58 AM] cyber710
+At least imo
+
+
+[10/5/2025 2:58 AM] unkempt3329
+Yeah just had one gen that came with COV and EW
+
+
+[10/5/2025 2:58 AM] unkempt3329
+Could reload it though lmao
+
+
+[10/5/2025 2:59 AM] .zh.
+im not sure what im doing wrong but chatgpt keeps telling me this when i try
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424289836654788647/image.png?ex=68e56307&is=68e41187&hm=0ebad7662c3c65c01d2f747a6b25cfa7fe717aa0ce8173b2875572d683168c86&
+
+
+[10/5/2025 2:59 AM] cyber710
+thats good most the time it breaks
+
+
+[10/5/2025 2:59 AM] .zh.
+can someone point me in the right direction?
+
+
+[10/5/2025 2:59 AM] cyber710
+got to gaslight it
+
+
+[10/5/2025 2:59 AM] .zh.
+really?
+
+
+[10/5/2025 3:00 AM] unkempt3329
+I uploaded a file that works.
+
+
+[10/5/2025 3:00 AM] unkempt3329
+ITS LOW FIRE RATE CAUSE IT'S RIPPER 😢
+
+
+[10/5/2025 3:01 AM] cyber710
+i use ai to get the base modded weapon going then i use @Unkempt newest engine to get the crazy stats normally gpt doesnt argue with me when my shield is slighltly modded
+
+
+[10/5/2025 3:01 AM] cyber710
+or gun or whatever im modding its when i start to get into the terriotry of being unkillable/ one shotting that gpt gets angry
+
+
+[10/5/2025 3:02 AM] .zh.
+im trying to do a non modded weapon, not sure if thats a problem
+
+
+[10/5/2025 3:02 AM] .zh.
+1 of the twitch drop weapons
+
+
+[10/5/2025 3:02 AM] cyber710
+ive had succes making a new project folder and starting the gpt over basically reupload all the steps and give it the serial again
+
+
+[10/5/2025 3:02 AM] unkempt3329
+Wait, It's ACTUALLY, Jakobs, torgue, Maliwan, AND COV
+
+
+[10/5/2025 3:02 AM] cyber710
+that bypasses the gpt dumbness sometiems
+
+{Reactions}
+❤️
+
+[10/5/2025 3:04 AM] unkempt3329
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424291014675271701/Screenshot_from_2025-10-05_03-03-11.png?ex=68e5641f&is=68e4129f&hm=d90b1faab608b033d1a7ea13a957b79e47a3f5ae8d9231e889d59e29b49cc2fe&
+
+
+[10/5/2025 3:09 AM] cyber710
+if im not mistaken since i made sure it stayed 1 segment you should regen the 800m shield every 10 seconds right lol
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424292473370443861/image.png?ex=68e5657b&is=68e413fb&hm=e7450ebf5ac1aab8a05646ae5baa3f5e3e1fde1d6d1cdbbd037217c4e126c772&
+
+
+[10/5/2025 3:10 AM] cyber710
+way better regen than before with the old ones
+
+
+[10/5/2025 3:11 AM] cyber710
+should i push it further than 800 mil
+
+
+[10/5/2025 3:11 AM] cyber710
+```@Uge92<m/)}}!h8ia>QU{ZxgmCBC62sQ5tNrGq9Wo$dPqtSxgmCBC62sQ5tNrGq9Wo$dPqtSQ4#SWJtU=v+z>mm5=UOD2+B(oQ4#``` code isnt long yet so i got room in the length department
+
+
+[10/5/2025 3:13 AM] unkempt3329
+It should, Could always equip it and find out if thats the oine youre trying to go with! 
+You could just upload that one and keep going if you want.
+
+
+[10/5/2025 3:17 AM] .zh.
+so i tried my first batch and loaded the character to an empty backpack
+
+
+[10/5/2025 3:17 AM] .zh.
+told chatgpt it didnt work and it said they were only placeholder codes that cand be used in game
+
+
+[10/5/2025 3:17 AM] unkempt3329
+Did you erase the "state:" above the inventory in the editor?
+
+
+[10/5/2025 3:18 AM] .zh.
+yes
+
+
+[10/5/2025 3:18 AM] unkempt3329
+Oh. what one are you suing.
+
+
+[10/5/2025 3:18 AM] .zh.
+what do you mean?
+
+
+[10/5/2025 3:18 AM] .zh.
+what chatgpt?
+
+
+[10/5/2025 3:19 AM] unkempt3329
+Are you just straight using gpt?
+
+
+[10/5/2025 3:19 AM] .zh.
+yes
+
+
+[10/5/2025 3:19 AM] .zh.
+is that wrong?
+
+
+[10/5/2025 3:19 AM] unkempt3329
+https://discord.com/channels/1306526445090111508/1423057138993070090/1424279116840177754
+
+
+[10/5/2025 3:20 AM] unkempt3329
+Put the serial in that.
+
+
+[10/5/2025 3:20 AM] unkempt3329
+Gotta open the html
+
+
+[10/5/2025 3:26 AM] .zh.
+ok backpack was still empty i must be doing something wrong imm go over the steps again and backtrack
+
+
+[10/5/2025 3:26 AM] unkempt3329
+Are you also erasing your equipped gear?
+
+
+[10/5/2025 3:27 AM] synfulegirl
+Can anyone explain the whole mutations? I'm pretty new to modding and I was using the Gemini mutation to try and get codes as well as trying other codes when I drop it into the decryptor it just doesn't show up in lodt loot :/
+
+
+[10/5/2025 3:28 AM] synfulegirl
+If anyone wants to teach me more that'd be greatly appreciated I'm going to bed for the night but hmu and add me
+
+
+[10/5/2025 3:36 AM] .zh.
+i did it🎉
+
+{Reactions}
+❤️
+
+[10/5/2025 3:36 AM] .zh.
+my first batch
+
+
+[10/5/2025 3:36 AM] unkempt3329
+Was that it?
+
+
+[10/5/2025 3:37 AM] .zh.
+im honestly not sure i just back tracked and redid the steps and it just worked lol
+
+
+[10/5/2025 3:37 AM] unkempt3329
+Well... Good. xD Glad it started working!
+
+
+[10/5/2025 3:39 AM] .zh.
+now i gotta figure out how to get crazy damage numbers
+
+
+[10/5/2025 3:44 AM] unkempt3329
+I just take the best I find and run it rhough again.
+
+
+[10/5/2025 3:53 AM] .zh.
+what is tg1-4?
+
+
+[10/5/2025 3:53 AM] .zh.
+should i be messing with those or leave at 0
+
+
+[10/5/2025 3:53 AM] unkempt3329
+They depend on how modified that item is, I usually keep mine at 4k each.
+
+
+[10/5/2025 3:54 AM] unkempt3329
+Including the NEW category.
+
+
+[10/5/2025 3:54 AM] unkempt3329
+The NEW category will ALWAYS have the longest serials.
+
+
+[10/5/2025 3:54 AM] .zh.
+then i assume increasing the tail limit will lead to more broken stuff
+
+
+[10/5/2025 3:55 AM] .zh.
+or leave that as be
+
+
+[10/5/2025 3:55 AM] unkempt3329
+Usually, I tend to keep that at 500, My order goes, 100, 1000, 500 .
+
+
+[10/5/2025 3:56 AM] .zh.
+thank you youve been much help
+
+{Reactions}
+❤️
+
+[10/5/2025 4:13 AM] jimmywangtang_jwtcxtxms
+what all would i need to increase the dps on a gun?
+
+
+[10/5/2025 6:17 AM] mattmab
+@°¤*💎 𝐉𝐖𝐓-𝐂𝐗𝐓𝐗𝐌𝐒 💎 *¤° this entire thread. Just start reading top to bottom.
+
+
+[10/5/2025 6:31 AM] jimmywangtang_jwtcxtxms
+I used chat gpt do I have to upgrade?? Bc it limited me from going to the second step
+
+
+[10/5/2025 8:30 AM] thedarkness1404
+I can't wait man to use it and how do you stack dmg on each other like you do ?
+
+
+[10/5/2025 8:35 AM] codebam
+hey so I have 3 weapon serials and 2 of them have the same parts. I want to put the parts from the first 2 codes onto the third one. is this possible with the gemini serial mutation engine, or is this just for generating random items? I don't really understand how to use it for what I want
+
+
+[10/5/2025 10:22 AM] duke7000
+@Mattmab making a start on a database would you be interested in the data it will be in format like this. Starting with Repkits as smallest pool.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424401267429605508/Repkits_Farming_Template_Enhanced_ModLayers.txt?ex=68e5cace&is=68e4794e&hm=b7404b21f19db5cdad1d8afc119516deff19d3700c9b83fc5b51202697dde301&
+
+
+[10/5/2025 10:38 AM] thatdonfc
+This is actually really good for gathering and recording data on serials. I feel like we do need a "central database" with serials to reference
+
+
+[10/5/2025 10:49 AM] bandito0810
+how do i ad a specific seed to my account ?
+
+
+[10/5/2025 11:19 AM] mattmab
+@BCD7000 (Duke) everyone would appreciate it.
+
+
+[10/5/2025 11:19 AM] duke7000
+genuine ones only too no modding involved that way we could literally have a god roll machine where the codes get updated that then gets used to help with modding we went down the modd like crazy route rather than the definitively Identify how normal codes are made first.
+
+This would also go a long way if they then took all ingame codes and tweaked them a fraction and you could just compare items before and after and keep upto date/ahead of issue.
+
+This is a huge undertaking though so will do Repkits and see how that goes to start with.
+Using we mod to speed up farming with
+
+100% drop chance - doing legendaries all the time would be pointless.
+Teleport to save - Instantly next to boss (Farming Horace atm normally has a delay with hatch so bypassed that)
+Teleport to waypoint as the reset is out in the open
+Unlimited Jumps to jump to reset point 
+
+quickest way so far
+
+
+[10/5/2025 11:22 AM] duke7000
+also the above template need to be tweaked as ingame items can actually have mutation's of the exact same items where everything is the same but then Instant Heal, Healing over time and cooldown change 🤣
+
+
+[10/5/2025 11:35 AM] keiko324428
+how yall do when chatgpt is limited ?
+
+
+[10/5/2025 11:44 AM] keiko324428
+ok gemini works more or less
+
+
+[10/5/2025 12:53 PM] duke7000
+Limited how? also do you pay for gemini as been using the free chatgpt to mutate codes and works well enough using the data I fed it.
+I am just starting a fresh one with a different more structured approach this time.
+
+
+[10/5/2025 12:56 PM] keiko324428
+Well, with ChatGpt, if I'm not wrong there is a limited number of message you can do
+Tho Gemini have a strange way to mutate serials that most of the time give nothing new or corrupt the item
+
+
+[10/5/2025 12:58 PM] lancelotako16
+Morning how do you know what part of the code to repeat to stack a skill? I am trying see it myself. Please and thank you
+
+
+[10/5/2025 12:59 PM] alphao_
+Brutforce
+
+{Reactions}
+☝️
+
+[10/5/2025 12:59 PM] duke7000
+most people here have been feeding AI the data themselves like this
+
+person 1 - 2% mapped in their own personal ai
+person 2 - 5% mapped in their own personal ai
+person 3 -30% mapped in their own personal ai
+
+and so on which is why everyone is on a different level - some people can create codes and others cant which is why I am farming some genuine data rather than constant mutations so for example you mutate a code for a rep kit 1000 times you get more sucessful results.
+
+
+[10/5/2025 12:59 PM] alphao_
+Try and see
+
+
+[10/5/2025 12:59 PM] mattmab
+
+
+{Reactions}
+😍 (2)
+
+[10/5/2025 1:00 PM] mattmab
+some of my notes @lancelotako16
+
+
+[10/5/2025 1:00 PM] mattmab
+took a lot of hand iteration to find this
+
+
+[10/5/2025 1:01 PM] whiteshark2020
+my advise is to create a preformated document explaining core things to your AI
+explaining what a serial is, what language it is base85
+then explain theheader function and the tail 
+explain what you actually trying todo and so on
+feed the document instead of asking 50 questions. that why you stay in context and dont burn through your free daily limit
+
+{Reactions}
+👍
+
+[10/5/2025 1:02 PM] whiteshark2020
+also once you have a wworking generator ask for the python code so your independant of ai
+
+
+[10/5/2025 1:03 PM] whiteshark2020
+@Keiko
+
+
+[10/5/2025 1:03 PM] duke7000
+Thats what I am doing with my second version more structured like I created 1 document that list every legendary in the game and so on for references so you start a new ai every so often so its cleaner each version.
+
+
+[10/5/2025 1:04 PM] lancelotako16
+From your notes each line are individual code + the tail end
+
+
+[10/5/2025 1:06 PM] keiko324428
+big brain to ask the generator has a python code
+
+
+[10/5/2025 1:46 PM] cyber710
+I didn't know gpt had limits besides for uploads
+
+
+[10/5/2025 1:49 PM] cyber710
+Just how much yall messaging lol I send like 400-500 some messages prolly total and upload like at least 170 things a say
+
+
+[10/5/2025 1:49 PM] cyber710
+Day
+
+
+[10/5/2025 1:49 PM] cyber710
+And i only ever get upload limited sometimes
+
+
+[10/5/2025 1:54 PM] whiteshark2020
+mt gpt online unpaid i ask like 10 questions and it stop for the day
+
+
+[10/5/2025 1:54 PM] whiteshark2020
+thats why i use cursor
+
+
+[10/5/2025 1:54 PM] cyber710
+I use free gpt as well what
+
+
+[10/5/2025 1:54 PM] cyber710
+Yalls gpt hates you
+
+
+[10/5/2025 1:54 PM] cyber710
+Lol
+
+
+[10/5/2025 1:56 PM] cyber710
+I'm look into cursor seems cool
+
+
+[10/5/2025 1:57 PM] cyber710
+Can I still upload 50 files
+
+
+[10/5/2025 1:57 PM] cyber710
+Lol
+
+
+[10/5/2025 1:57 PM] cyber710
+On cursor
+
+
+[10/5/2025 1:57 PM] cyber710
+That's how many i got to feed the ai before I try to gen codes
+
+
+[10/5/2025 1:57 PM] whiteshark2020
+cursor works like Vsstudio you have a project and stay within context als o writes and read straight from your files
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424455430133776595/C4506775-EB94-4962-913C-325022C272B0.png?ex=68e5547f&is=68e402ff&hm=3a674346183ee0b3caba4d7acad7aa33680b149374c77e7230a0e2ba6c1e3532&
+
+
+[10/5/2025 1:57 PM] cyber710
+Ooh I see
+
+
+[10/5/2025 1:58 PM] whiteshark2020
+its 'free' wink wink
+
+
+[10/5/2025 1:58 PM] cyber710
+I see i see
+
+
+[10/5/2025 2:01 PM] mattmab
+@Whiteshark-2022  <-- SHIFT
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424456572926689403/strong_seeds_mutator.py?ex=68e55590&is=68e40410&hm=ac54398f49c570220cef3cfe1f68b32afe4e50299c12e156a9778f96b57e9eb7&
+
+
+[10/5/2025 2:02 PM] mattmab
+strongest generator ive had yet
+
+
+[10/5/2025 2:02 PM] whiteshark2020
+OMg TY saves me days of work 🙂
+
+
+[10/5/2025 2:03 PM] mattmab
+well mutator
+
+
+[10/5/2025 2:03 PM] mattmab
+
+
+
+[10/5/2025 2:03 PM] mattmab
+made all these
+
+
+[10/5/2025 2:04 PM] whiteshark2020
+you aint gonna hurt me 🙂
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424457154999357491/D8BC4CBA-C66A-42F1-A03E-512CCC95E322.png?ex=68e5561a&is=68e4049a&hm=7c6e96b3ece951d7c4b96d3b716651b92800e2007fcd6dbb06f841cfa8762916&
+
+
+[10/5/2025 2:04 PM] mattmab
+I have crashed the game with these mutations too just fyi
+
+
+[10/5/2025 2:05 PM] thatdonfc
+What item is this? I have a list of all known (to me) headers #deleted-channel and I'd love to keep it updated if we see more
+
+
+[10/5/2025 2:05 PM] whiteshark2020
+yh im joking the game aint using all that anyway so yh i believe you
+
+
+[10/5/2025 2:05 PM] mattmab
+That was a part of a class mod iirc.
+
+
+[10/5/2025 2:05 PM] mattmab
+Paste the code in and find out
+
+
+[10/5/2025 2:06 PM] thatdonfc
+Interesting. I wonder if it's different than what I have seen because it's white?
+
+
+[10/5/2025 2:06 PM] mattmab
+
+
+
+[10/5/2025 2:06 PM] thatdonfc
+I don't think I checked any white level 50 items. Most were leg or epic but even those have the same headers
+
+
+[10/5/2025 2:06 PM] whiteshark2020
+thats nothing the white is just a visual thing
+
+
+[10/5/2025 2:07 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424457933617369138/message.txt?ex=68e556d4&is=68e40554&hm=7dd236437efcf3abdf8ef56eaa59e80816d71a652c5973595c4b57ad6d0a8bc1&
+
+
+[10/5/2025 2:07 PM] mattmab
+I think it was this
+
+
+[10/5/2025 2:07 PM] whiteshark2020
+not for console users prolly that one
+
+
+[10/5/2025 2:07 PM] mattmab
+How I made the meme serial
+
+
+[10/5/2025 2:07 PM] mattmab
+It collapses
+
+
+[10/5/2025 2:08 PM] mattmab
+
+
+
+[10/5/2025 2:08 PM] mattmab
+Collapses to this is believe
+
+
+[10/5/2025 2:09 PM] mattmab
+@THATDONFC
+
+
+[10/5/2025 2:09 PM] mattmab
+Need any more info on this one?
+
+
+[10/5/2025 2:12 PM] whiteshark2020
+have tested the limits? like how skills you could get into 1? im at 22 max for now but guess we can have waay more?
+
+
+[10/5/2025 2:13 PM] whiteshark2020
+@Mattmab
+
+
+[10/5/2025 2:13 PM] mattmab
+I had 19 skills so far
+
+
+[10/5/2025 2:13 PM] mattmab
+And like 12 modifier
+
+{Reactions}
+👍
+
+[10/5/2025 2:14 PM] whiteshark2020
+i found out mutating the stacks
+
+
+[10/5/2025 2:14 PM] mattmab
+
+
+
+[10/5/2025 2:14 PM] whiteshark2020
+by acciden 🙂
+
+
+[10/5/2025 2:14 PM] thatdonfc
+Thanks for that! I'll do a search next time I have the game open to see if I can find any other serials with that header
+
+
+[10/5/2025 2:15 PM] mattmab
+
+
+
+[10/5/2025 2:15 PM] whiteshark2020
+im worry bout this part tho
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424459939501445163/96588106-2391-4A32-B090-EF36BF74FC9E.png?ex=68e558b2&is=68e40732&hm=78e088495237119e3f61bea1bca065ae9ea6077a81768e936a56542fe0e7384e&
+
+
+[10/5/2025 2:15 PM] mattmab
+
+
+
+[10/5/2025 2:15 PM] whiteshark2020
+like we dont want vex oranges on rafa , i remember on bl 3 despite not supported it was possible to happen
+
+
+[10/5/2025 2:15 PM] mattmab
+
+
+
+[10/5/2025 2:16 PM] mattmab
+my notes on harlowes 4 orange perks
+
+
+[10/5/2025 2:16 PM] mattmab
+before and after collapse
+
+
+[10/5/2025 2:16 PM] mattmab
+
+
+
+[10/5/2025 2:16 PM] mattmab
+these are the chunks i removed that removed those perks
+
+
+[10/5/2025 2:17 PM] whiteshark2020
+tats why i nvy you,  you look at those, i more like try en error
+
+
+[10/5/2025 2:17 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424460471590850560/image.png?ex=68e55931&is=68e407b1&hm=efb607e1b3858be96a5daf32d6ebabb1ed3eeed9a225e99e4ffe9863337539b3&
+
+
+[10/5/2025 2:17 PM] mattmab
+my mutation engine wtf
+
+
+[10/5/2025 2:17 PM] mattmab
+out of 20k serials
+
+
+[10/5/2025 2:17 PM] whiteshark2020
+lol
+
+
+[10/5/2025 2:17 PM] whiteshark2020
+thats not bad actually thats 75%
+
+
+[10/5/2025 2:18 PM] mattmab
+forgot to clamp the header lenght
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424460671059230892/image.png?ex=68e55961&is=68e407e1&hm=29fd225bd37a1cd1d15226798cad9b93743d6a6b609afb373d272460ab4c9c4c&
+
+
+[10/5/2025 2:18 PM] whiteshark2020
+ai
+
+
+[10/5/2025 2:18 PM] whiteshark2020
+dang ai has a new meaning i ment aiii
+
+
+[10/5/2025 2:20 PM] mattmab
+but this still made like 10k of these
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424461145946849432/image.png?ex=68e559d2&is=68e40852&hm=563d70e19f6a1a0af6cf75e4495c02dfd7eeeb2c511f267c654ee1bc2eb2c5ad&
+
+
+[10/5/2025 2:21 PM] whiteshark2020
+did you see occurances of stacked this? like 200%
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424461487493091560/2107CD60-3116-46C4-8A18-050B530FE431.png?ex=68e55a23&is=68e408a3&hm=9fb4574ee7dae8ebd9022a1df1f91452fdcbe32ac398608d652c330be38459c5&
+
+
+[10/5/2025 2:21 PM] mattmab
+my vex mod is stacked at 800% damage dealt and 1200% gun damage
+
+
+[10/5/2025 2:22 PM] mattmab
+the meme one
+
+
+[10/5/2025 2:22 PM] whiteshark2020
+lol
+
+
+[10/5/2025 2:54 PM] mattmab
+
+
+
+[10/5/2025 2:54 PM] mattmab
+after hand splicing
+
+
+[10/5/2025 2:54 PM] mattmab
+
+
+
+[10/5/2025 2:55 PM] mattmab
+```@Ug!pHG2}TYg41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92hkBoCXHa_$s%>grs&+Iba>QkZ6#9eui~5UtjXIYqjk<>_jk<^WgZhj5iz<z}hx&thjXIaQi`r;jNK#y0U<k@dNTXb+aH#MH6%N&?xTqMZ_o;RUwacK=r2e4(qW+>@qt2yDqwb+fqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&$+Ek/Ypzfhcqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&w`h)t5`ipvvI+rSqx`!%_x`+CM`iuIDDvi2_`h$9nI+wbO+Gt)#Qe0kO2+B!F3!_}9aH#MH6%KW%_o;RUwb!89rq-ouM^hq4TxLk2Kd8T`zo^%!bE(p(d#KW=d#FFCzo@^c(x`i=Kd9HJbE&(ijpl_U#pMNtpqzv>%7qGt3V%@HP>qU<ijjJsYG+Wp3@T0P59%-KFX}bwT&gtc9;!6z9_kP3FX}I<H0mDe59&4QT<R`rqj@1oae09uC?_E;jB=sEp~4?j
+
+$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RUW00zT9>LFO^F<Farq&?gvA8qB&1O;R5(=lg9?XgR9sYy)caIBgW79QZBy$~wWBGKBQ7(f&>z%a)L+zV)VWk?)IC&b)IHQ6)L+zJRB6;b)F0Gq)Vb7M)JF3{lH&3LLr_ja8s$QTLxn%6aHvMbMa4+HPqj0sy$01bwJudVni4tUGD8aeLH$MjMZHFyOO;05LzPC/L;XShMg2vUM%_dGLA^$uOWj3nG%qA6E-x?y<s_t0E>t*F_=5_EYE)cQjMV#7JA>M5P;FD/QnjNgks~fMq/hJKU({dJYt*?^Y1BPbY1BQ`AJkveUsP$-J=7o6Yt*^aUDQVNLXzV00z*(vLK@{lg+qlusBox8#YM$P
+
+
+I8-D6```
+
+
+[10/5/2025 2:55 PM] mattmab
+just so you can see where the splice is
+
+
+[10/5/2025 3:03 PM] duke7000
+Heres something to annoy whether or not it is known or not 2 identical items in everyway but different codes 😭 
+
+@Ugr$lGm/)}}!dNJvM-}RPG}?q38r1nh0{{
+@Ugr$lGm/)}}!o*CVM-}RPG}^=(8r1nh0{{
+
+I checked 5 times just to make sure 😭
+
+
+[10/5/2025 3:03 PM] duke7000
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424472046846480584/Screenshot_2025-10-05_200045.png?ex=68e563f9&is=68e41279&hm=fe1fdcd50ef9a21ef6274e51e5e8fb605a579cbdb51c0efa363d00936ecd7a5e&
+
+
+[10/5/2025 3:04 PM] duke7000
+now is makes sense why when you sort items identical items are not grouped together as technically they are not on a coding level. This is annoying for farming.
+
+
+[10/5/2025 3:07 PM] mattmab
+Identical items with different serials seem to have different part orders
+
+
+[10/5/2025 3:08 PM] mattmab
+@Nicnl
+
+
+[10/5/2025 3:08 PM] nicnl
+?
+
+
+[10/5/2025 3:08 PM] mattmab
+The one bcd just posted might be some use to you
+
+
+[10/5/2025 3:08 PM] duke7000
+@Ugr$lGm/)}}!o+Q$M-}RPG}@#Z8r1n{a!D2d
+@Ugr$lGm/)}}!rXnJM-}RPG}@#Z8r1n{a!D2d
+
+More identifiable here so must be the timestamp or something.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424473398519795804/image.png?ex=68e5653b&is=68e413bb&hm=e4480a33b677def2c9e1568072a46734fdf82e66e024cf60c58fbd94d9a08a43&
+
+
+[10/5/2025 3:08 PM] nicnl
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424473420510400532/image.png?ex=68e56540&is=68e413c0&hm=c41693f50a78b7546f84a2cfd9b365b3c4ee437fdf6b22becd96902a26209dd3&
+
+
+[10/5/2025 3:09 PM] nicnl
+i'm not sure, but I think these bytes change the price
+
+
+[10/5/2025 3:09 PM] nicnl
+i've seen price variation at around this location
+
+
+[10/5/2025 3:09 PM] nicnl
+but yours don't it seems
+
+
+[10/5/2025 3:10 PM] mattmab
+The only price variations I've seen are by part.
+
+
+[10/5/2025 3:10 PM] mattmab
+I haven't specifically found a "value"
+
+
+[10/5/2025 3:10 PM] duke7000
+price is the same these are identical items in everyway via the tooltip.
+
+I checked on a whim as was going to delete duplicates to have more unique samples 🤣
+
+
+[10/5/2025 3:11 PM] duke7000
+70 backpack sucks
+
+
+[10/5/2025 3:11 PM] mattmab
+Bcd use we mod and set to 999
+
+
+[10/5/2025 3:11 PM] nicnl
+are they perfectly identical though? looks like the healing is not the same
+
+
+[10/5/2025 3:11 PM] mattmab
+Also if you are having gpt flag tag groups you can sell whole tag groups at the vendor
+
+
+[10/5/2025 3:12 PM] mattmab
+That was 2 sets of 2 identical items  I think nicnl
+
+
+[10/5/2025 3:12 PM] nicnl
+ah okay sorry
+
+
+[10/5/2025 3:12 PM] duke7000
+Let me double check got a migraine been throwing me off 😉
+
+
+[10/5/2025 3:12 PM] nicnl
+i thought the pair of screenshots were from these serials
+
+
+[10/5/2025 3:12 PM] mattmab
+I think they are from either "identical" item
+
+
+[10/5/2025 3:13 PM] mattmab
+Screenshots are same so no use double posting.
+
+
+[10/5/2025 3:13 PM] duke7000
+All the same basically one screenshot applies to 2 different serials
+
+
+[10/5/2025 3:13 PM] mattmab
+^
+
+
+[10/5/2025 3:14 PM] nicnl
+here is a bruteforce, all the possible combinations of the 8 bits difference from those two items
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424474812788772894/combinations.txt?ex=68e5668c&is=68e4150c&hm=75516351cc6e1d405778041a84918a0afcd99c7a191b18ef311549810afe1d40&
+
+
+[10/5/2025 3:14 PM] nicnl
+i'm gonna try them
+
+
+[10/5/2025 3:14 PM] nicnl
+thank you for the heads up
+
+
+[10/5/2025 3:14 PM] nicnl
+those kind of items are interesting
+
+
+[10/5/2025 3:19 PM] duke7000
+sorting doesn't help as 2 were beside the nova but the amps were apart
+Unless there is a sort option that does based on unique effect people have found?
+
+
+[10/5/2025 3:20 PM] nicnl
+yep all 256 did spawn, and are identical
+
+
+[10/5/2025 3:22 PM] duke7000
+make things easier or harder now?
+
+
+[10/5/2025 3:24 PM] duke7000
+Also was there a ruling on spamming repetitive code structures like the InfM, yes or no as it seems that what people are doing it more now?
+
+
+[10/5/2025 3:26 PM] nicnl
+dunno, it's added to the pile of mysteries about serials lmao
+
+{Reactions}
+🤣 👍
+
+[10/5/2025 3:27 PM] nicnl
+i've kept those serials safe for the future
+
+
+[10/5/2025 3:29 PM] duke7000
+if I find anymore I will post and @ you
+
+
+[10/5/2025 3:38 PM] duke7000
+we mod can 🤣 just set mine to 300 i think that 200 should be my pool limit or will neve get past 1 repkit type 🤣 then if there are true duplicate codes it is what it is 😉
+
+Although if I get several and are all different it may bolster the timestamp idea.
+
+
+[10/5/2025 3:43 PM] nicnl
+i'm convinced there is some unique identifier, wether it is a timestamp or not
+
+
+[10/5/2025 3:43 PM] nicnl
+i noticed this:
+- paste the same serial into two inventory slots
+- equip just one of them
+=> the inventory says "item equipped" on **BOTH**
+
+
+[10/5/2025 3:44 PM] nicnl
+my guess is: the devs added a value with random properties (seed? timestamp?) in order to avoid this from happening
+
+
+[10/5/2025 3:48 PM] duke7000
+AMP
+@Ugr$lGm/)}}!dNJvM-}RPG}?q38r1nh0{{
+@Ugr$lGm/)}}!o*CVM-}RPG}^=(8r1nh0{{
+Nova
+@Ugr$lGm/)}}!o+Q$M-}RPG}@#Z8r1n{a!D2d
+@Ugr$lGm/)}}!rXnJM-}RPG}@#Z8r1n{a!D2d
+
+The pacemaker Nova is the most noticeable as the amps are slightly more mutated
+
+On the Nova's 
+o+Q$
+rXnJ
+
+I wonder if you randomise those 4 if possible into anything will the same valid item be produced?
+
+
+[10/5/2025 3:49 PM] nicnl
+the  mutation is actually.... three bits
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424483749772529854/image.png?ex=68e56edf&is=68e41d5f&hm=3af99e984eb2d1545a55b769d41fd318d442d8f4a8664a9a14939fed9944b75a&
+
+
+[10/5/2025 3:50 PM] nicnl
+they're actually a 99.55% match
+
+
+[10/5/2025 3:50 PM] nicnl
+this is why base85 fragments are vicious
+
+
+[10/5/2025 3:51 PM] duke7000
+I meant characters of the serial 🤣  I am sticking to gathering data bit now. I built my current mutator based on using serials leting it work out that stuff 😉
+
+
+[10/5/2025 3:52 PM] nicnl
+are those pair of serials identical in-game?
+
+
+[10/5/2025 4:16 PM] duke7000
+can you expand more what you mean the items are the same but the serials are differnt and the Nova Roll specificall only has 4 characters in the serial differently.
+
+@Ugr$lGm/)}}!o+Q$M-}RPG}@#Z8r1n{a!D2d
+@Ugr$lGm/)}}!rXnJM-}RPG}@#Z8r1n{a!D2d
+
+with only those 4 characters changing or am I missing what your asking?
+
+@Ugr$lGm/)}}!____M-}RPG}@#Z8r1n{a!D2d
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424490460272922774/image.png?ex=68e5751f&is=68e4239f&hm=fa64113ed5a523926f91434b42757499879542e3bd089bea493a0e095b56615d&
+
+
+[10/5/2025 4:16 PM] duke7000
+I got the codes live ingame using the cheatengine table
+
+
+[10/5/2025 4:28 PM] duke7000
+@Nicnl it happend again
+For the AMP version of Pacemaker
+
+Originally posted
+
+1. @Ugr$lGm/)}}!dNJvM-}RPG}?q38r1nh0{{
+2. @Ugr$lGm/)}}!o*CVM-}RPG}^=(8r1nh0{{
+
+New code
+
+3. @Ugr$lGm/)}}!qDEJM-}RPG}?q38r1nh0{{
+
+Almost identical to the first except for those 4 characters
+
+
+[10/5/2025 4:33 PM] nicnl
+> _"can you expand more what you mean the items are the same but the serials are differnt"_
+
+The "serials" you are working with ( `@Ug$lM....`) are encoded in base85.
+Base85 associates GROUPS of four bytes into 5 characters, those are the "fragments" you are working with.
+The problem with base85 is this: at a bit level, a single bitflip results in a WILDLY different base85 encoding.
+This is because a single bitflip from any byte will affect the multiple characters of the fragment.
+
+People have been feeding the serials into LLMs, and those LLM figured out "multiple fragment encoding schemes".
+Answer: there is not, it's a sideeffect of working with the wrong data format.
+
+Example:
+We discovered that selling and buying back a weapon from a vending machine changes the serial.
+- The serial gets longer
+- Visually (in base85) it seems to be totally different.
+
+```
+Original: @Ugy3L+2}TYgOyvyviz?KiBDJYGs9dOW2m
+Buyback:  @Ugy3L+2}Ta0Od!Hk&Y-`jLLDkno0@~lg(`;t
+```
+Do you notice any pattern between those two items?
+
+
+[10/5/2025 4:36 PM] duke7000
+All I have been doing is spawning in Horace and killing them then pick up the drops so when you say different if the tooltip is exactly the same do you mean this like kill the game restart and see if it changes the serials?
+
+
+[10/5/2025 4:41 PM] nicnl
+i don't realy understand your question
+
+
+[10/5/2025 4:55 PM] duke7000
+I say the serial are different but the results in game are the same
+I notice some versions of the serial for these have near identical serials except for 4 characters
+You ask me "Do you notice any pattern between those two items?"
+If the Items are identical and from the same source.
+
+What pattern are you asking me to look for if I have given you all the relevant information to how these items are obtained are well as the ingame code and screenshot?
+
+You responses imply that you never checked in game the different codes produce the same items and think I am making it up when converting them to the code your using so I wont go down this path further with you and wish you luck.
+
+In relation to the buy back yes I am aware as if you mutate a code and it reads as ?? you sell it and buy it back to get a valid code as I have done it before.
+
+
+[10/5/2025 5:00 PM] nicnl
+Here are the same two items, after performing the conversions we discovered
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424501532849737969/image.png?ex=68e57f6f&is=68e42def&hm=5910f5c6b99b6f05a1250c1de33f6f5bc9b9f4bba92a0371bf1ff35292fc5027&
+
+
+[10/5/2025 5:00 PM] nicnl
+The underlying data hidden behind the serial, it's almost identical
+
+
+[10/5/2025 5:01 PM] nicnl
+> You responses imply that you never checked in game the different codes produce the same items and think I am making it up when converting them to the code your using so I wont go down this path further with you and wish you luck.
+I don't undertand this sentence fully
+I don't think I'm implying anything?
+
+
+[10/5/2025 5:02 PM] nicnl
+English is not my first language, I'm trying my best, I don't mean any harm
+
+
+[10/5/2025 5:05 PM] thedarkness1404
+how do you use the stronger mutations ?@Mattmab
+
+
+[10/5/2025 5:07 PM] blackberryshadoe
+I'm sorry to jump into this conversation, but I have a question about the last part of your post concerning the selling items and then buying them back to get valid codes. The codes that have been released for modded items so far, have they been ran through that buyback to see if the codes stay the same?
+
+
+[10/5/2025 5:08 PM] nicnl
+I've never tried
+
+
+[10/5/2025 5:09 PM] blackberryshadoe
+To the best of my knowledge, no one else has tried that either. Hence why I'm asking the question. I might end up doing it just because I'm curious. If they are different, that would be very strange
+
+
+[10/5/2025 5:11 PM] nicnl
+It gets ~30% longer
+
+
+[10/5/2025 5:18 PM] blackberryshadoe
+🤔
+
+
+[10/5/2025 5:19 PM] blackberryshadoe
+I wonder what it does to that stupid infm Shield that's been wiping console backpack / Banks
+
+
+[10/5/2025 5:21 PM] nicnl
+there's an item that wipes stuff??
+
+
+[10/5/2025 5:21 PM] nicnl
+wtf
+
+
+[10/5/2025 5:23 PM] shirtnoservice
+I'll test that theory right now.
+
+
+[10/5/2025 5:24 PM] shirtnoservice
+```@Ug#2fK2}TZ*Od!exBFw!6N`v~;EL01FT4_*gQHh#`+SIyKqGq957}ToNdQ`82+J{<;+L1budQ`82+SIyKqGq95rq-nrH4D/kpjI8!KGa&&j?{_Nqk0/GzSJz#rdFlaA5;s2T9sOl>UB{2P-{^;Qae&7QZ-X64Qeea#X+4&)lL8```
+
+
+[10/5/2025 5:24 PM] shirtnoservice
+before buyback
+
+
+[10/5/2025 5:25 PM] shirtnoservice
+```@Ug#2fK2}TZ*Od!exBFw!6N`v~;EL01FT4_*gQHh#`+SIyKqGq957}ToNdQ`82+J{<;+L1budQ`82+SIyKqGq95rq-nrH4D/kpjI8!KGa&&j?{_Nqk0/GzSJz#rdFlaA5;s2T9sOl>UB{2P-{^;Qae&7QZ-X64Qeea#X+4&)lL8```
+
+
+[10/5/2025 5:25 PM] shirtnoservice
+after
+
+
+[10/5/2025 5:26 PM] shirtnoservice
+Hmmm
+
+
+[10/5/2025 5:26 PM] blackberryshadoe
+Was created by accident. It doesn't affect anything on PC so people didn't realize what it was doing until numerous reports started coming in from people on console. As a result, now codes are being tested for compatibility on Console before being released. Live and learn I guess
+
+
+[10/5/2025 5:26 PM] shirtnoservice
+Ah, it's because I already bought back that item before so it already has the code
+
+{Reactions}
+😹
+
+[10/5/2025 5:27 PM] nicnl
+probably
+
+
+[10/5/2025 5:27 PM] nicnl
+it works everytime on looted weapons
+
+
+[10/5/2025 5:27 PM] nicnl
+but I've never tried with modded items
+
+
+[10/5/2025 5:27 PM] mattmab
+@BlackberryShadoe that was on my list to try and modded items do sell and buyback from the vendor fine.
+
+
+[10/5/2025 5:28 PM] blackberryshadoe
+I figured that they do buy back, but I was curious whether the code changes as a result
+
+
+[10/5/2025 5:28 PM] mattmab
+Original
+```@Ug!pHG2}TYg41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92hkBoCXHa_$s%>grs&+Iba>QkZ6#9eui~5UtjXIYqjk<>_jk<^WgZhj5iz<z}hx&thjXIaQi`r;jNK#y0U<k@dNTXb+aH#MH6%N&?xTqMZ_o;RUwacK=r2e4(qW+>@qt2yDqwb+fqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&$+Ek/Ypzfhcqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&w`h)t5`ipvvI+rSqx`!%_x`+CM`iuIDDvi2_`h$9nI+wbO+Gt)#Qe0kO2+B!F3!_}9aH#MH6%KW%_o;RUwb!89rq-ouM^hq4TxLk2Kd8T`zo^%!bE(p(d#KW=d#FFCzo@^c(x`i=Kd9HJbE&(ijpl_U#pMNtpqzv>%7qGt3V%@HP>qU<ijjJsYG+Wp3@T0P59%-KFX}bwT&gtc9;!6z9_kP3FX}I<H0mDe59&4QT<R`rqj@1oae09uC?_E;jB=sEp~4^3`&2uF+G/j4Q/nT-qbZRiE;FRiAJkveU({>Vxm0P?JydDbJ=7o6U({bzY1BQ`AJl8qxzt_MM)N/F;_?DRP)<S`<wAu+g+Hips7A#_#YnwRwKJ%_2GusTE>%045;@{BLkj&t{YCvny+)l&l}6n/l}6n/{XzXj{Y8~V-9!CBy+)l&-9>FQFC-~0FE9k<B&1O;R5(=lg9?XgR9sYy)caIBgW79QZBy$~wWBGKBQ7pK<d?9Rpqzv>%7qGt3V%@HP>qU<ijjJsYG+V;4XSNwU8;68C33`Nh7/gP`iuIDdW/}lDvi2_Dvi2_`h)t5`im-!x`+CMdW/}lx{KOqUPw}0USJ5yNl2qysBoz82Ne$0sJN&YsrRXN2DR6q+NRc}YDZHdM_gt/p+Bg<sK2P!sB@{(sC%f=sC%eCsK2PcsM4r=s6VLJsB@{isEy`@B*o<ghM=5;G/GhvhYEjC;ZTi=i;9tYpK51Ndkv~>YF(;!G$nGxWrh^`gZhj5i+YVZmnx0AhboP_hx&v1i~5Tyjk<^WgL;iRm%5AEXkJKCTwY)Z%1KD0T&QrU@COwR)u_0r7zq```
+
+
+[10/5/2025 5:28 PM] mattmab
+Buyback
+```@Ug!pHG2}Ta0Od!Gl=p5=(e^Y%7>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&w`h)t5`ipvvI+rSqx`!%_x`+CM`iuIDDvi2_`h$9nI+wbO+Gt)#Qe0kO2+B!F3!_}9aH#MH6%KW%_o;RUwb!89rq-ouM^hq4TxLk2Kd8T`zo^%!bE(p(d#KW=d#FFCzo@^c(x`i=Kd9HJbE&(ijpl_U#pMNtpqzv>%7qGt3V%@HP>qU<ijjJsYG+Wp3@T0P59%-KFX}bwT&gtc9;!6z9_kP3FX}I<H0mDe59&4QT<R`rqj@1oae09uC?_E;jB=sEp~4?jIMkuur`j3RUW00zT9>LFO^F<FnIVP#p#Gx%qF$rUrAnjjp-Q9fq5h!$qW+>vqwb;ppkAZSrS76OnirB3mlqg<auU)g7b+Yo{6U37H7YJDM(Ta4ok8s~sFbNqWoi%V9;!6z9_kP3FX}I<H0mDe59&4QT<R`rqj@1oae09uC?_E;jB=sEp~4?jIMkuur`j3RUW00zT9>LFO^F<FnIVP#p#Gx%qF$rUrAnjjp-Q9fq5h!$qW+>vqwb;ppkAZSrS76OnirB3mlqg<auU)g7b+Yo{6U37H7YJDM(Ta4ok8s~s5GfRsK2PcsMn}-snV!>sM4r=s6VK`sK2PvsC%eCsMn}-sk^9+=7l81<pqYIoP@M6%7qGt3V%@HP=/V-YG+V;4XSNwU8;68C33`Nh7/gP`iuIDdW/}lDvi2_Dvi2_`h)t5`im-!x`+CMdW/}lx{KOqUPw}0USJ5yNl2qysBoz82Ne$0sJN&YsrRXN2DQte(xm>N{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64Jsb7b+Yo{6W1>wKJ%_2GusTE>%045;@{BLkj&t{YCvny+)l&l}6n/l}6n/{XzXj{Y8~V-9!CBy+)l&-9>FQFC-~0FE9k<B&1O;R5(=lg9?XgR9sYy)caIBgW79QZBy$~wWBGKBQ7(f&>z%a)L+zV)VWk?)IC&b)IHQ6)L+zJRB6;b)F0Gq)Vb7M)JF3{lH&3LLr_ja8s$QTLxn%6aHvMbMa4+HPqj0sy$01bwJudVni4tU;_^d&35yBJNl2qysBoz82Ne$0sJN&YsrRXN2DR6q+NRc}YDZHdM_gt/p+Bg<sK2P!sB@{(sC%f=sC%eCsK2PcsM4r=s6VLJsB@{isEy`@B*o<ghM=5;G/GhvhYEjC;ZTi=i;9tYpK51Ndkv~>YF(;!G$nGxWrh^`gZhj5i+YVZmnx0AhboP_hx&v1i~5Tyjk<^WgL;iRm%5AEXkJKCTwY)Z%1KD0T&QrU@COwR)u_0r7^(NEb_TWApxUO^rD{i0B1c?iNTENdzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgfz;93Wo}RP~lLGii?Vo00```
+
+
+[10/5/2025 5:28 PM] mattmab
+my most recent vex mod
+
+
+[10/5/2025 5:29 PM] blackberryshadoe
+Well at that point, which one is the right one
+
+
+[10/5/2025 5:29 PM] mattmab
+completely rewritten but on a bit level im sure its just part swapped with a bit of extra data like @Nicnl has been finding
+
+
+[10/5/2025 5:29 PM] mattmab
+the top was the one i posted
+
+
+[10/5/2025 5:29 PM] mattmab
+the bottom is buyback
+
+
+[10/5/2025 5:30 PM] blackberryshadoe
+wouldn't the buyback code actually be the correct one since it is being properly generated by the game
+
+
+[10/5/2025 5:30 PM] mattmab
+"properly" XD
+
+
+[10/5/2025 5:30 PM] mattmab
+both are valid serials
+
+
+[10/5/2025 5:30 PM] mattmab
+just parts in different orders
+
+{Reactions}
+🫡
+
+[10/5/2025 5:30 PM] nicnl
+yep
+
+
+[10/5/2025 5:31 PM] blackberryshadoe
+Does the order matter?
+
+
+[10/5/2025 5:31 PM] mattmab
+no
+
+
+[10/5/2025 5:31 PM] mattmab
+not that i can tell
+
+
+[10/5/2025 5:31 PM] nicnl
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424509280081543238/image.png?ex=68e586a6&is=68e43526&hm=c256d48d80665712808d388aaf657914d931c9a2cd3d1eb4732025958f9f8491&
+
+
+[10/5/2025 5:31 PM] nicnl
+this tiny bit is added at the start
+
+
+[10/5/2025 5:31 PM] nicnl
+and it rewrite the entire thing
+
+
+[10/5/2025 5:31 PM] mattmab
+so it is identical
+
+
+[10/5/2025 5:31 PM] blackberryshadoe
+How fucking random
+
+
+[10/5/2025 5:31 PM] mattmab
+with the "vendor" data
+
+
+[10/5/2025 5:31 PM] mattmab
+its not tho
+
+
+[10/5/2025 5:31 PM] mattmab
+remove the "vendor" data its identical
+
+
+[10/5/2025 5:32 PM] mattmab
+so it didnt even move any parts around @Nicnl
+
+
+[10/5/2025 5:32 PM] mattmab
+?
+
+
+[10/5/2025 5:32 PM] blackberryshadoe
+I still don't understand why it would move the parts around
+
+
+[10/5/2025 5:33 PM] mattmab
+with the white sniper Nicnl was working on they moved around
+
+
+[10/5/2025 5:33 PM] mattmab
+
+
+
+[10/5/2025 5:33 PM] mattmab
+sorry this is kind of now forking his original conversation
+
+
+[10/5/2025 5:33 PM] blackberryshadoe
+It'll be nice when we have more access to the game and know what the hell is actually going on behind the scenes
+
+
+[10/5/2025 5:33 PM] mattmab
+there is some missing context
+
+
+[10/5/2025 5:33 PM] blackberryshadoe
+Agreed
+
+
+[10/5/2025 5:44 PM] nicnl
+didn't seem so, no
+
+
+[10/5/2025 5:44 PM] nicnl
+no we didn't move around
+this is how the same exact sniper compares now that we are reading the serial better
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424512688163127306/image.png?ex=68e589d3&is=68e43853&hm=bb689105f6f1e3a09bb7712682b8f227f76abe19f7bd78c950007ffb58490f10&
+
+
+[10/5/2025 5:45 PM] nicnl
+oh hey wtf guys
+
+
+[10/5/2025 5:46 PM] nicnl
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424513195825041440/image.png?ex=68e58a4c&is=68e438cc&hm=2ac6c7268eac9c60d5d58bcda4fca33d9a0c540ac937d360d0f051863cc4782e&
+
+
+[10/5/2025 5:47 PM] nicnl
+why does this mod class contains `cafebabe` in hexadecimal?
+
+
+[10/5/2025 5:47 PM] nicnl
+who made this item??
+
+
+[10/5/2025 5:47 PM] mattmab
+me
+
+
+[10/5/2025 5:47 PM] nicnl
+:megaWeird:
+
+
+[10/5/2025 5:47 PM] nicnl
+how
+
+
+[10/5/2025 5:49 PM] mattmab
+```@Ug!pHG2}TYg41ms/KJ_=%$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3cAG^szRzo@^c*Qj%;(x`i=(x`i=Kd8T`zo^ovd#FFC*Qj%;yQq!kg(Su01%{xUgtRcqg$joXe^B92hkBoCXHa_$s%>grs&+Iba>QkZ6#9eui~5UtjXIYqjk<>_jk<^WgZhj5iz<z}hx&thjXIaQi`r;jNK#y0U<k@dNTXb+aH#MH6%N&?xTqMZ_o;RUwacK=r2e4(qW+>@qt2yDqwb+fqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&$+Ek/Ypzfhcqwb;pp#Gx%qDrIgq5hy=qt2!7qBfcrk`$L07=m&V(!wYgDjX{OL4`vd>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RE`v&w`h)t5`ipvvI+rSqx`!%_x`+CM`iuIDDvi2_`h$9nI+wbO+Gt)#Qe0kO2+B!F3!_}9aH#MH6%KW%_o;RUwb!89rq-ouM^hq4TxLk2Kd8T`zo^%!bE(p(d#KW=d#FFCzo@^c(x`i=Kd9HJbE&(ijpl_U#pMNtpqzv>%7qGt3V%@HP>qU<ijjJsYG+Wp3@T0P59%-KFX}bwT&gtc9;!6z9_kP3FX}I<H0mDe59&4QT<R`rqj@1oae09uC?_E;jB=sEp~4?j
+
+$DrP)+8NYdgKC>vm#Q62i5zj6A%*^+{-XY(UZc*XN~7+fN~7+f{-FM%{-R2w?xFsmUZc*X?xHrD7m^g07Z`$a64EFaDjX{OL4`v#DlRHU>V2x6LG3lDwyAZg+R>EA5tkWK=nv{I>M!aw>RhTc>K>{z>K^J3>M!aqsx;~z>JREQ>RjqBYNL4}NpX3BAt)yyjdG#Fp~4?jI8>wJqGF`pr`j3RUW00zT9>LFO^F<Farq&?gvA8qB&1O;R5(=lg9?XgR9sYy)caIBgW79QZBy$~wWBGKBQ7(f&>z%a)L+zV)VWk?)IC&b)IHQ6)L+zJRB6;b)F0Gq)Vb7M)JF3{lH&3LLr_ja8s$QTLxn%6aHvMbMa4+HPqj0sy$01bwJudVni4tUGD8aeLH$MjMZHFyOO;05LzPC/L;XShMg2vUM%_dGLA^$uOWj3nG%qA6E-x?y<s_t0E>t*F_=5_EYE)cQjMV#7JA>M5P;FD/QnjNgks~fMq/hJKU({dJYt*?^Y1BPbY1BQ`AJkveUsP$-J=7o6Yt*^aUDQVNLXzV00z*(vLK@{lg+qlusBox8#YM$P
+
+
+I8-D6```
+
+
+
+1000 IQ play of copying my entire harlowe class mod into my vex mod so ```I8-D6``` went right at the end of ```;jB=sEp~4?j``` and i took everything from my harloew mod but a few characters and pasted it in.
+
+
+[10/5/2025 5:49 PM] mattmab
+
+
+
+[10/5/2025 5:49 PM] mattmab
+
+
+
+[10/5/2025 5:49 PM] mattmab
+so these
+
+
+[10/5/2025 5:50 PM] nicnl
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424514026783899789/image.png?ex=68e58b12&is=68e43992&hm=623d194437f318ab6f4d9879d097010ad28802f20ed851a916bd278542cb4d59&
+
+
+[10/5/2025 5:50 PM] mattmab
+my Dr Pepper mods strike again
+
+
+[10/5/2025 5:50 PM] mattmab
+XD
+
+
+[10/5/2025 5:50 PM] nicnl
+this one doesn't have it
+
+
+[10/5/2025 5:50 PM] mattmab
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424514123688972308/image.png?ex=68e58b29&is=68e439a9&hm=2364f405a22d9d0b7ced9a432fffa4079bf90fd6e69f26ee5b8387ba6dbdeef0&
+
+
+[10/5/2025 5:50 PM] mattmab
+vex was mutated
+
+
+[10/5/2025 5:50 PM] mattmab
+one sec ill post original vex
+
+
+[10/5/2025 5:51 PM] mattmab
+
+
+
+[10/5/2025 5:51 PM] mattmab
+and that came from one of Hobamjs mods
+
+
+[10/5/2025 5:51 PM] mattmab
+mutated from i should add
+
+
+[10/5/2025 5:51 PM] mattmab
+ai has had a heavy hand in this along with hand modding
+
+
+[10/5/2025 5:52 PM] nicnl
+oh
+it's cafeCabe
+and not cafeBabe
+dyslexia is hitting again
+
+
+[10/5/2025 5:52 PM] mattmab
+hahaha
+
+
+[10/5/2025 5:52 PM] mattmab
+
+
+
+[10/5/2025 5:52 PM] mattmab
+original came from the 14 perk mod here
+
+
+[10/5/2025 5:58 PM] mattmab
+is this good @Nicnl
+
+
+[10/5/2025 6:10 PM] unkempt3329
+Im getting there lmao
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424519098330775726/Screenshot_from_2025-10-05_18-08-22.png?ex=68e58fcb&is=68e43e4b&hm=cecb12ef3e82bc016d135349441a764cdd6bf27c8263e22cd1b083baa787bee8&
+
+
+[10/5/2025 6:25 PM] xxshadowxx0001
+Do people throw these codes into a program to test if they are usable or is it just trial and error?
+
+
+[10/5/2025 6:26 PM] mattmab
+load them into the game
+
+
+[10/5/2025 6:26 PM] mattmab
+game crashes its unusable if not then it should be good may turn into an unknow item
+
+
+[10/5/2025 6:29 PM] mattmab
+also since dura published his brain
+
+https://chatgpt.com/share/68e1f3b6-0734-8010-8ea8-80366ec20405
+
+{Embed}
+https://chatgpt.com/share/68e1f3b6-0734-8010-8ea8-80366ec20405
+ChatGPT - Seed list processing options
+A conversational AI system that listens, learns, and challenges
+https://images-ext-1.discordapp.net/external/Mq33KQa9wHEU5skTeK_xn-9R8-j7XejheyqZ-sxdGwk/https/cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp
+
+
+[10/5/2025 6:29 PM] mattmab
+new GPT link to try as a mutator
+
+
+[10/5/2025 6:30 PM] xxshadowxx0001
+Tyty
+
+
+[10/5/2025 6:30 PM] mattmab
+Thank @Dura / Clanker He is the GOAT
+
+
+[10/5/2025 6:31 PM] xxshadowxx0001
+Ty @Dura / Clanker
+
+
+[10/5/2025 10:35 PM] dura_del
+:dicaprio_cheers:
+
+
+[10/5/2025 11:01 PM] purevargos
+Do you just trial and error until it turn into the correct skill?
+
+
+[10/5/2025 11:02 PM] mattmab
+lots of gpt mutation and hand edits
+
+
+[10/5/2025 11:02 PM] mattmab
+the vex mods are my magnum opus
+
+
+[10/5/2025 11:02 PM] purevargos
+I have been trying to make the same thing but with the amon kill skill activate on melee + forge drones + the affinity skills. Since the drones activate your kill skill, it auto max all your kill skill
+
+
+[10/5/2025 11:02 PM] purevargos
+It even activate the overkill specialization skill
+
+
+[10/5/2025 11:03 PM] mattmab
+not a guarenteed way to make it.
+
+
+[10/5/2025 11:04 PM] purevargos
+I have a base that have the skill itself, can i mutate it til it reach your level?
+
+
+[10/5/2025 11:35 PM] sinmxchine
+I can't get some guns with a say a small based dmg on 4K up to 200K+. what part of the code would I randomize? Also does anyone have the cheat engine table so I can see what item code I'd like to extract?
+
+
+[10/6/2025 12:49 AM] unkempt3329
+Did someone say..... EXXXXXPLLLLLOOOOOOOOSSSSSSIIIOONNNSSS?!?!!?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424619574577467412/Screenshot_from_2025-10-06_00-48-26.png?ex=68e5449e&is=68e3f31e&hm=626a4e9a913b52b68d6830836128881e6c19fbfe78ea8f95f723e44b38f990dc&
+
+{Reactions}
+🔥
+
+[10/6/2025 1:44 AM] mattmab
+
+
+
+[10/6/2025 1:44 AM] mattmab
+New mixes and mutations from kalidesplode.
+
+
+[10/6/2025 1:45 AM] mattmab
+
+
+
+[10/6/2025 1:47 AM] cyber710
+I've been working on trying to make a good one all day had similar luck as you
+
+
+[10/6/2025 2:03 AM] shirtnoservice
+I got damage to go up big time but at the cost of a dismal fire rate of 0.1 or 0.2. Wasn't worth it unless you want it for a one shot.
+
+
+[10/6/2025 2:05 AM] cyber710
+What you get dps too
+
+
+[10/6/2025 3:40 AM] shirtnoservice
+In the millions
+
+
+[10/6/2025 12:10 PM] purevargos
+i managed to make this, which includes the important "my touch is death" skill
+
+`@Ug#2fK2}Ta+9O_elQ+*8TeX5;7?KP;jsdcH^(Uiy$ml;y%59%-KFX}bwT&gtc9;!6z9_kP3FX}I<H0mDe59&4QT<Rrqj@1oae09uC?_F}a-qVZ!XH#PRHNdeVx-=u+8NX?gG!V7gZhj5i+YVZmnx0AhboP_hx&v1i~5Tyjk<^WgL;iRm%5AEXkJKCTwY)Z%1KBIqg<$PsPG3B4t1#asdfgn*Pz;_)}?AkQzA!PW=NqwsK2PcsMn}-snV!>sM4r=s6VKsK2PvsC%eCsMn}-sk^9+=7l81<pqYIoP;#Wg$joXe^B92jf#tkk$RtMXHdHgDoyGS>M!aq>NV<Isx;~zsx;~z>JREK>MyD^>K^J3>NV<I>Mm-dc_B%0d4VA)Cm}722DRg$cA@5?YNBdKvqc5~`
+
+how do i make it so the values are maximized?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424790881759920259/image.png?ex=68e5e429&is=68e492a9&hm=9323d8f6045790d29aea33c2bbd049b2ed5998675ddcb75f43677fd6919b4a2a&
+https://cdn.discordapp.com/attachments/1423057138993070090/1424790882221297736/image.png?ex=68e5e429&is=68e492a9&hm=a7fc1c5178cb1388101e108f9b08bcb4f366d4c3599f5feca67389ea8ade1e90&
+
+
+[10/6/2025 12:26 PM] groundcontrol_1969
+Is this ready for release it looks incredible
+
+
+[10/6/2025 1:36 PM] duke7000
+I have around 157 peacemaker pool but logging each one is taking time 1/3 done but will lower the pool to around 50 going forward.
+Here is an example utilising all fields
+
+Code: @Ugr$lGm/)}}!f30YM-}RPG}^=(8r1n{a)}iQ00
+Altered Name: Mega Cryogenic Pacemaker
+Base Stats:
+  Instant Heal: 2175
+  Healing Over Time:
+    Total Healing: 4039
+    Time: 8
+  Cooldown:29 
+Standard Mod: Nova: Releases an elemental Nova upon use.
+Element (if applicable): Cryo Nova 
+Firmware (if applicable): God Killer
+
+
+[10/6/2025 2:53 PM] internal9871
+Tried this method with Repkits and doesn't seem to follow the same pattern. Tail seems to have no affect but copying each 4 indexs from the middle cloning it then throwing it in mutation engine does not seem to yeild any results except a repkit with a single perk stat lol 
+
+losing my mind
+
+
+[10/6/2025 2:55 PM] mattmab
+most my work has revolved around class mods enhancements and a small set of weapons. finnity xxxl koledisplode and hot slugger the wombo combo. if repkits dont follow the same logic then may need a different approach
+
+
+[10/6/2025 2:56 PM] internal9871
+Yeah i'm trying to understand it as a programatic approach but it seems to have a certain set to delulu to it
+
+
+[10/6/2025 2:59 PM] internal9871
+```@Ugr$xKm/)}}!eqLjM-}RPG}&Yt8r1n{eo3Q2osZ_1RFPXE00```
+
+removed a bit from the 2nd item to see it if would remove 1 perk but it removed perks out of order... Going for stacking nova's and cloning doesn't work 
+
+```@Ugr$xKm/)}}!eqLjM-}RPG}&Yt8r1n{eo3Q2osZ{eo2d```
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424833425742893066/image.png?ex=68e56308&is=68e41188&hm=12d433d74a4eb1400b1fe5a67d5f850b2dba303be77d9dca51b9a59d41b715fb&
+https://cdn.discordapp.com/attachments/1423057138993070090/1424833426191679561/image.png?ex=68e56308&is=68e41188&hm=b457683a8debd919c60878d0258e8a60eb1a7390df9476785528e9ae187bdd4b&
+
+
+[10/6/2025 3:14 PM] groundcontrol_1969
+Thanks for all your work on class mods. I can’t wait to see what you come out with next
+
+
+[10/6/2025 3:18 PM] duke7000
+Thats why when I started farming them I found out you could have unique codes for the exact same repkit effects which was not known at the time.
+
+
+[10/6/2025 3:19 PM] internal9871
+I am noticing that currently just picked up something silimar and the codes are the same sooo i'm like ughhh
+
+
+[10/6/2025 3:19 PM] duke7000
+almost halfway logging them farming is so much quicker than logging them 🤣
+
+
+[10/6/2025 3:20 PM] duke7000
+I was killing Horace so fast that I was killing him again before the legendaries even finished dropping 🤣
+
+
+[10/6/2025 3:26 PM] internal9871
+i don't have that speed i just use killenemies console command for farming certain types of things lol
+
+
+[10/6/2025 3:28 PM] internal9871
+right now i'm only picking up repkits to see what the deal is. doesn't seem like mutating the middle gets much of anything with legendries either the item becomes washed away or it just reverts to having only the legendary stat it comes with 
+
+I could be doing everything wrong as i just start tinkering with this today during work lol
+
+
+[10/6/2025 3:38 PM] internal9871
+was able to manually splice to make a modded repkit 
+```@Uge8#%m/)@{!caS)M-}RPG}@#Z8r1n{eo3Q2osZ_1RFPXE00{bV&g```
+
+the { is a break between effects seems like they are 4 - 8 characters long so splace and nova are in the {eo3Q2osZ_1RFPXE00 section while the closing { is from the 2nd item i spliced from
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424843205240819942/image.png?ex=68e56c24&is=68e41aa4&hm=af57550494cdaed4347da492d631f5e854b19257434ba53ab37d0716df0ece04&
+
+
+[10/6/2025 3:45 PM] duke7000
+It only works so well if the reset point or boss is outside as wemod has 2 teleports
+
+1. Fixed you can save - set this near horace and bypassing the hatch opening delay for the chute
+2. Tied to your waypoint - teleport outside
+
+Then just use unlimited jumps 😉
+
+
+[10/6/2025 3:54 PM] internal9871
+ummm okay? Thanks for the quick kill tip
+
+
+[10/6/2025 4:52 PM] codebam
+if I want to mod a sniper to be a different elemental what flags should I create a lot of mutations for, and what should I make my tail length?
+
+
+[10/6/2025 6:58 PM] mattmab
+flags are just for you to sort by. and there is no answer to that question untill the serials have a library we can referance
+
+
+[10/6/2025 7:59 PM] codebam
+okay thank you!
+
+
+[10/6/2025 8:43 PM] whiteshark2020
+making progress identifying weapon parts so i can build my own stuff like the good ol days in bl
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424919958055288912/D0BA4948-3626-4D54-95E6-57031D42991A.png?ex=68e5b39f&is=68e4621f&hm=7ef1f3686618adb32422cf9d869c4cd20263349906d8b0b1323b88d1d260fa55&
+
+
+[10/6/2025 8:45 PM] whiteshark2020
+🙂
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1423057138993070090/1424920449305018448/3365FC3B-BFC1-4CF6-9BE0-B07661ACB13C.png?ex=68e5b414&is=68e46294&hm=5d46f2534b657f8cc55cbe61538385e2ac8491f2094b6bddafa7604590e819d3&
+
+{Reactions}
+🍻 (2) 🔥 (2)
+
+[10/6/2025 9:27 PM] mattmab
+So you are aware whiteshark the sections we have been finding are part of a whole 2 to 3 characters make up many parts.
+
+
+[10/6/2025 9:52 PM] whiteshark2020
+im dumping everytime the convos in my cursor he interprets it and that E1 i told my ai dont focus on tht bl parts need to be compatible you cant just install anything on any gun mostly brand locked
+
+
+[10/6/2025 9:53 PM] whiteshark2020
+it asked to make a script to detect the parts and tommorow ill test the script to see if he can pinpoint every gun parts on the blocks
+
+
+[10/6/2025 9:53 PM] whiteshark2020
+@Mattmab
+
+
+[10/6/2025 9:54 PM] whiteshark2020
+the end script should tell me all part detected on a seed
+
+
+[10/6/2025 9:54 PM] whiteshark2020
+im using the docu from @Nicnl
+
+
+[10/6/2025 9:54 PM] whiteshark2020
+that he meticulously document
+
+
+[10/6/2025 9:56 PM] whiteshark2020
+Ah! That's a crucial insight! You're saying that the 2-3 character sections we've been finding (like mzS59, sCuY(, dZ>3h) are actually part of a whole - they're components that make up many parts together.
+So instead of thinking:
+mzS59 = 1 barrel part
+sCuY( = 1 stock part
+dZ>3h = 1 magazine part
+It's more like:
+Multiple 2-3 character sections combine to form 1 complete barrel
+Multiple 2-3 character sections combine to form 1 complete stock
+Multiple 2-3 character sections combine to form 1 complete magazine
+This explains why:
+Our single pattern insertions aren't working properly
+We need multiple related patterns to form complete parts
+The working modded seeds probably have complete part sets
+We're inserting incomplete parts that cause malus
+So we need to:
+Identify complete part sets (multiple related patterns)
+Insert entire part sets instead of individual patterns
+Study the working modded seeds to see their complete part combinations
+Understand the part structure better
+This is a much more complex system than we initially thought! Should I create a system that analyzes complete part sets instead of individual patterns?
+
+
+[10/6/2025 10:02 PM] mattmab
+exactly white
+
+
+[10/6/2025 10:02 PM] mattmab
+when taken down to hex and binary and put in the right order parts can be sort of read. but hard to determine exactly whats going on right now. more research is needed.
+
+
+[10/6/2025 10:05 PM] whiteshark2020
+yh i see he just wrote  an seed analyzer to chk that
+Key Findings:
+Working Seed 1 has 3 complete parts:
+2 stock parts (155e15ee) at positions 8 and 12
+1 barrel part (e9e9e9e9) at position 32
+Pattern Relationships:
+Barrel patterns: mzS, S59, Pmz, 9mz - these are the 2-3 character components
+Stock patterns: sCu, CuY, EsC - these combine to form complete stock parts
+
+
+[10/6/2025 11:18 PM] unkempt3329
+In the modded section.
+
+
+==============================================================
+Exported 978 message(s)
+==============================================================

@@ -1,0 +1,558 @@
+Item Data & Code Structure Analysis
+This document consolidates information regarding item data schemas, code structures, analysis, and tools for decoding item serials.
+
+1. Item Data Schema
+This section outlines the known schema for decoding item properties, including parts, perks, firmware, and rarity.
+
+1.1. Decoder Schema Segments
+The following are known markers and blocks within an item's code.
+
+Segment Type	Markers / Fragments
+Header	@COM, @UgrSWBm, @UgP1HG2aYQ
+Rarity Marker	{{r45Sl}}, +lr45Sl, ({r45Sl)
+Perk Block	OpSovl, xl_ARwW, ByHFwls, emD+7kven
+Stat Block	EO}Jsg, JRWR7S8, LDh~1j?FT, +JRq=st+, J5#S-J5sq
+Firmware Tail	Z00, T00, jR&q=s+;, JRgbn, wz=zSXjh
+Checksum	/A@gxHP, 6LSa_00, 100
+State Flag	/z4E, }}}, */09
+
+Export to Sheets
+1.2. Validation Rules
+named_item_lockout: true
+
+perk_point_limit: 7
+
+stat_block_alignment: true
+
+firmware_checksum_required: true
+
+1.3. Item Parts
+Part ID	Function	Linked IDs	Stats	Code Fragment
+prt_barrel_01	Standard ballistic barrel	WPN_001	{ "damage": "+10%", "accuracy": "+5%" }	LDh~1j?FT
+prt_barrel_02	Explosive payload barrel	WPN_002	{ "splash_radius": "+2.5m", "reload_penalty": "+0.3s" }	JRWR7S8
+prt_barrel_05	Cryo-enhanced barrel	WPN_004	{ "element_type": "Cryo", "slow_effect": "+30%" }	EO}Jsg
+prt_core_elemental	Elemental core (Maliwan)	MANUF_002	{ "element_type": "Shock", "status_chance": "+20%" }	EO}sg
+prt_core_cooling	Cooling core	CORE_002, WPN_003	{ "heat_dissipation": "+40%", "cooldown_rate": "+15%" }	LDh~1jTZ00
+prt_monitor_chip	Overflow monitor chip	CHIP_001	{ "monitor_interval": "0.5s", "alert_threshold": "110%" }	jR&q=s+;
+prt_ai_chip	Targeting AI chip	CHIP_002	{ "target_lock_speed": "+25%", "tracking_accuracy": "+18%" }	JR#£q0
+prt_amplifier_core	Damage amplifier	MOD_003	{ "damage_multiplier": "x1.35", "energy_cost": "+12%" }	LDh~1jtBq
+prt_overflow_valve	Overflow valve	OVR_003	{ "overflow_threshold": "115%", "venting_rate": "+20%" }	+JRq=st+
+prt_augment_penetrator	Penetrator augment	DAGGER_001	{ "crit_on_grenade_target": "+15%", "AoE_sustain": "JWRv7S8" }	EO}dk;
+
+Export to Sheets
+1.4. Skill Perks
+Perk Name	Icon	Levels	Effect	Code Fragments
+Bloodshot	Green crosshair	+1 to +5	Crit damage / sniper synergy	OpSovl, R4;?tZBV
+Guns & Needles	Green syringe	+1 to +3	Ammo regen / reload speed	xl_ARwW, J5#s-J5sq
+Infernal Sum	Green bullet	+1 to +2	Elemental damage / DoT	ByHFwls, ypSovl
+Grave Vitality	Green shield	+1 to +2	Health regen / lifesteal	emD+7kven, xl_3g>
+
+Export to Sheets
+1.5. Firmware Traits
+Trait Name	Behavior	Code Fragments
+Heating Up	Damage scaling over time	Z00, T00
+Risky Boots	Splash damage + movement synergy	JRWR78
+Reel Big Fist	Status effect application	jR&q=s+;
+Atlas EX	Shield regen / skill damage	jR#£q0, JRgbn
+Trickshot	Max health boost	wz=zSXjh
+Get Throwin'	Movement speed / crit synergy	j?j@^00
+
+Export to Sheets
+1.6. Rarity & State Encoding
+Category	Value	Encodings
+Rarity	Legendary	+lr45Sl, {{r45Sl}}
+Epic	({r45Sl), {{fP2Xa}}
+State Flag	Equipped	/z4E
+Inventory	}}}
+Storage	*/09
+
+Export to Sheets
+2. Item Code Structure & Analysis
+Analysis suggests a general structure for item codes.
+
+Proposed Structure:
+[BRAND+TYPE] [LEVEL BLOCK] [RARITY BLOCK] [PERK/STAT BLOCK] [TAIL/FIRMWARE]
+
+2.1. Item Prefixes & Headers
+The initial part of the code appears to define the item's manufacturer and type.
+
+<details>
+<summary><strong>View Compiled Item Headers</strong></summary>
+
+Sniper Rifles
+
+Daedalus Sniper: (Header not listed)
+
+Jakobs Sniper: @Ugy3L+2}TYg
+
+Maliwan Sniper: @Ugydj=2}TYg
+
+Order Sniper: @Ugy>*^2}TYg
+
+Ripper Sniper: @Ugxp/&2}TYg
+
+Tediore Sniper: (Header not listed)
+
+Torgue Sniper: (Header not listed)
+
+Vladof Sniper: @Uguq~c2}TYg
+
+SMGs
+
+Daedalus SMG: @UgwSAs2}TYg
+
+Jakobs SMG: (Header not listed)
+
+Maliwan SMG: @Ugw$Yw2}TYg
+
+Order SMG: (Header not listed)
+
+Ripper SMG: @Ugv?-o2}TYg
+
+Tediore SMG: (Header not listed)
+
+Torgue SMG: (Header not listed)
+
+Vladof SMG: @UgxFw!2}TYg
+
+Assault Rifles
+
+Daedalus AR: @Ugfs(8Fme!K
+
+Jakobs AR: @UgzR8/2}TYg
+
+Maliwan AR: (Header not listed)
+
+Order AR: @UgggUGFme!K
+
+Ripper AR: (Header not listed)
+
+Tediore AR: @Ugg66CFme!K
+
+Torgue AR: @Ugv4Ng2}TYg
+
+Vladof AR: @Ugvelk2}TYg
+
+Shotguns
+
+Daedalus Shotgun: @UgdhV<Fme!K
+
+Jakobs Shotgun: @Ugd_t@Fme!K
+
+Maliwan Shotgun: @UgeU_{Fme!K
+
+Order Shotgun: (Header not listed)
+
+Ripper Shotgun: @Ugd77*Fme!K
+
+Tediore Shotgun: @Uge(J0Fme!K
+
+Torgue Shotgun: (Header not listed)
+
+Vladof Shotgun: (Header not listed)
+
+Pistols
+
+Daedalus Pistol: @UgavnFme!K`
+
+Jakobs Pistol: @UgbV{rFme!K
+
+Maliwan Pistol: (Header not listed)
+
+Order Pistol: @Ugb)KvFme!K
+
+Ripper Pistol: (Header not listed)
+
+Tediore Pistol: @UgcJizFme!K
+
+Torgue Pistol: @Ugct)%Fme!K
+
+Vladof Pistol: (Header not listed)
+
+Ordinance
+
+Daedalus Ordinance: @Uge8Xtm/)}}
+
+Jakobs Ordinance: @Ugr$WBm/)}}
+
+Maliwan Ordinance: @Ugr$%Mm/)}}
+
+Order Ordinance: @Uge8aum/)}}
+
+Ripper Ordinance: @Uge8jxm/)}}
+
+Tediore Ordinance: @Ugr%DXm/)}}
+
+Torgue Ordinance: @Uge8>*m/)}}
+
+Vladof Ordinance: @Ugr$)Nm/)}}
+
+Heavy Ordinance
+
+Maliwan Heavy Ord: @Ugr$%Mm/)}}
+
+Ripper Heavy Ord: @Ugr$iFm/)}}
+
+Torgue Heavy Ord: @Ugr$fEm/)}}
+
+Vladof Heavy Ord: @Uge8pzm/)}}
+
+Shields
+
+Daedalus Shield: @Uge9B?m/)}}
+
+Jakobs Shield: @Uge92<m/)}}
+
+Maliwan Shield: @Ugr$oHm/)}}
+
+Order Shield: @Ugr$-Om/)}}
+
+Ripper Shield: @Uge8^+m/)}}
+
+Tediore Shield: @Ugr$!Lm/)}}
+
+Torgue Shield: @Ugr%Scm/)}}
+
+Vladof Shield: @Ugr$uJm/)}}
+
+Class Mods
+
+Amon Class Mod: @Ug#2fK2}TYg
+
+Harlowe Class Mod: @Ugr$K7m/)}}
+
+Rafa Class Mod: @Uge8Cmm/)}}
+
+Vex Class Mod: @Ug!pHG2}TYg
+
+Repkits
+
+Daedalus Repkit: @Ugr$lGm/)}}
+
+Jakobs Repkit: @Ugr$TAm/)}}
+
+Maliwan Repkit: @Uge8Rrm/)}}
+
+Order Repkit: @Ugr$xKm/)}}
+
+Ripper Repkit: @Uge8dvm/)}}
+
+Tediore Repkit: @Uge8#%m/)}}
+
+Torgue Repkit: @Ugr$N8m/)}}
+
+Vladof Repkit: @Ugr$ZCm/)}}
+
+Enhancements
+
+Atlas Enhancement: @Uge8s!m/)}}
+
+CoV Enhancement: @Uge8v#m/)}}
+
+Daedalus Enhancement: @Ugr$Rm/)}}`
+
+Hyperion Enhancement: @Uge8Oqm/)}}
+
+Jakobs Enhancement: @Uge8Usm/)}}
+
+Maliwan Enhancement: @Ugr$cDm/)}} or @Ugr$cDm/)@{
+
+Order Enhancement: @Ugr$rIm/)}}
+
+Tediore Enhancement: @Uge8&&m/)@{
+
+Torgue Enhancement: @Ugr%1Tm/)}}
+
+Vladof Enhancement: @Uge98>m/)}}
+
+Ripper Enhancement: @Uge8;)m/)@{
+
+</details>
+
+2.2. Level Encoding Analysis
+The item's level appears to be encoded in a specific byte, but the encoding is not straightforward.
+
+Hot Slugger Level Progression (Index 6 Byte):
+The byte at index 6 appears to control the level. The first half of the byte jumps by two for every 16 levels, while the second half increments normally.
+
+Level Range	Hex Range	Binary Prefix
+1-15	0x11 - 0x1F	0001xxxx
+16-31	0x30 - 0x3F	0011xxxx
+32-47	0x50 - 0x5F	0101xxxx
+48-50	0x70 - 0x72	0111xxxx
+
+Export to Sheets
+Sniper Level Encoding Issues:
+Analysis of sniper rifle levels shows inconsistencies, suggesting that some bits may cross byte borders or that there is error correction involved when loading items. For example, a Level 34 sniper code had a level marker that appeared to be 18, while a Level 18 sniper's marker appeared as 50. This indicates a more complex encoding system than simple integer values.
+
+2.3. Skill Token Analysis
+Specific fragments in the perk/stat block correspond to certain character skills.
+
+Undead Eye Skill Tokens:
+
+Bloodshot: Always present, token unclear.
+
+Guns & Needles: &+J, +JR, s&+JR, WEO
+
+Grave Vitality: W7FS, W7FSx, 7FSx, hgW7F
+
+Infernal Sum: pR4;?, spR, NXHd…, SovI…`
+
+Teen Witch Skill Tokens:
+
+Blood Is Magic: hx%08), hx*… prefixes
+
+Corporeal: QG$, Gj;, zkG$
+
+Grave Thirst: R6B! motif
+
+Conjunction: RPAU, %VN motifs
+
+2.4. Other Findings
+Dullahan Shotgun Mode Swap: The firing mode (spread vs. knife launcher) can be changed by altering the final bytes of the code.
+
+Spread: @Ugd_t@Fme!K<}XlbRG}KRs6#y}9%>%y9cnLX4k{FC7HSs)
+
+Knife: @Ugd_t@Fme!K<}XlbRG}KRs6#y}9%>%y9cnLX4k{FC6e<>~90C
+
+Rip Rockets Perk Theory: The fragments i7M2, i7Hg, or i7M0 are hypothesized to be related to this perk.
+
+Grenade Rarity: The rarity of grenades can be changed by swapping specific fragments.
+
+Legendary: @Ugr$WBm/)}}$pj({r45SIpw>roL#{/A@gxHP
+
+Epic (Purple): @Ugr$WBm/)}}$pj({tPXnApw>roL#{/A@gxHP
+
+3. Specific Item Code Examples
+3.1. High-Value & Modded Items
+2 Billion Shield:
+@Uge9B?m/)}}!ffxLNwtrrhUgJFvP19)9>F7c1drg69->2ZNDt8=I>e4x5g)=udWa6uAw5Kg=ny+%MSKVsfg?J^j_?pXf=7CY4$&b!M2F}QJ7PtA2p54PI>e6jK=Hc+id3W6{$!?DpFg7A{D7fMJiH}00`
+
+Valid Modded Code (Stacked Barrels):
+@Ugd_t@Fme!K0CW~rs6~}U)kO^/CaNdu9_k+I9%FVEYzX44SfmfhkA$ViRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!iRy{!i2w`
+
+Plasma Coil (Duplicated Mid-section):
+@Ugw$Yw2}TYg41oTj3e~7XEo$gcKh!?dOVmnKr=/fVY9{KTadB~RadB~RadAO$adB~JaS53uEQR)=_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!Hn_M!HnmIzg<qXKK00`
+
+Hellwalker (Alternate Version):
+@Ugd_t@Fme!K0CW~rs6~}U)kO^/CaNdu9_k+I9%FVEYzX44SfmfhkA$ViRy{!iRy{!iRy{!i2w`
+
+3 Legendary Perk Gun:
+@Uguq~c2}TYg41h/a3YDlu4H+6#PgGdcPE;6F9aJsUJ=7Rfr6v^zl?wF=H4UgHDp8AyiJFJXhl+<PR83T(78MgU50wuU4^^m7g+bLp)k57vjX_mvQgKkJP_IzafNG)=wWye=d8mA-c&I/vL?vobF;VkSB3ptg(}o5)HI-)s6;I)CTbokA1WTIP&HABT2xHbJXAhZJXE1R6$VuYRSR_wH3n6wNyR~>LcKyw1FDHi)S_ad=ArVT;-Lyv6P2h%#YD/R<wM0o6{?!hJXAhZJXCR@ny5rADkf?kDjzBys!%miiCR=l)I3x^R6JCnKJ}?jed<%6qZaB0R
+
+3.2. Repkit Bases & Perks
+Bases:
+
+@Ugr$xKm/)}} -- (Order) 2 charges
+
+@Ugr$lGm/)}} -- (Daedalus) Pacemaker
+
+@Uge8#%m/)}} -- (Tediore) Pocket Doc
+
+@Uge8dvm/)}} -- (Ripper) Scabber/Augmenter
+
+@Ugr$ZCm/)}} -- (Vladof) Sobirat
+
+Perks (Note: Compatibility seems restricted based on prefix $ or !)
+
+$pj*dr3FgVqs~WzO{j?;fhGw6 -- Amp 200 Lifesteal (Epic)
+
+!psLXs!->n!6wxtlh6_Z -- Amp 200 Enrage (Epic)
+
+!r-f*M-}RPG}>eu8r1p50ss -- Lifesteal (Legendary)
+
+!tAM_M-}RPG}=TO8r1n{pveL -- 200 Amp (Legendary)
+
+!gSc6M-}RPG}%NN8r1pf0ss -- Move Speed (Legendary)
+
+!ay&eM-}RPG}&Yt8r1n{atRh$00 -- Nova (Legendary, Radiation)
+
+!tk4*M-}RPG}pu$8r1pL0ss -- Accelerator (Legendary)
+
+!bs_$M-}RPG}=TO8r1pj0ss -- GoGoGadget (Legendary)
+
+$pj)?nh7Q9QRk!4CetL7&=Lg -- 200 Amp Enrage 30 (Epic)
+
+!tDN_MiuIOG}@$^KoV#G -- 200 Amp Splash Damage 25 (Epic)
+
+!dTm&M-}RPG}=TO8r1o20ss -- Medic (Legendary)
+
+4. Debug & Inspection Output
+<details>
+<summary><strong>View Raw Debug Logs</strong></summary>
+
+--inspect-bytes '@Ugw$Yw2}TYg47~)(hbmN~?x8ky2UQAH3snvQ'
+
+[DEBUG load_true_spec] normalized (3,'tail') prefs = [2, 3, 4]
+[INFO] Loaded 2 quarantined blocks from quarantine.json
+
+[INSPECT BYTES] len=27  prefix='@Ugw' type='w'
+ index  dec   hex   chr  zone
+ -----  ----- ----- ---  ----
+     0      3  0x03   ·  mid
+     1     18  0x12   ·  mid
+     2    124  0x7C   |  mid
+     3     47  0x2F   /  mid
+     4    235  0xEB   ·  mid
+     5    134  0x86   ·  mid
+     6    198  0xC6   ·  mid
+     7    146  0x92   ·  mid
+     8     83  0x53   S  mid
+     9    198  0xC6   ·  mid
+    10    211  0xD3   ·  mid
+    11    187  0xBB   ·  mid
+    12    213  0xD5   ·  mid
+    13    254  0xFE   ·  mid
+    14    205  0xCD   ·  mid
+    15     61  0x3D   =  mid
+    16    205  0xCD   ·  mid
+    17     21  0x15   ·  mid
+    18    247  0xF7   ·  mid
+    19     83  0x53   S  mid
+    20    230  0xE6   ·  mid
+    21      9  0x09   ·  tail
+    22    102  0x66   f  tail
+    23     58  0x3A   :  tail
+    24    138  0x8A   ·  tail
+    25    197  0xC5   ·  tail
+    26    134  0x86   ·  tail
+[COMPARE] Output 1
+
+ A len=29  prefix='@Ugw' type='w'
+ B len=26  prefix='@Ugw' type='w'
+ A blocks: [(26, 21, 'mid'), (10, 8, 'tail')]
+ B blocks: [(26, 21, 'mid'), (6, 5, 'tail')]
+
+ idx   A(dec/hex)  B(dec/hex)  chrA chrB  mark
+ ----  -----------  -----------  ---- ----  ----
+    0         3/03         3/03     ·    ·   =
+    1        18/12        18/12     ·    ·   =
+    2       124/7C       124/7C     |    |   =
+    3        47/2F        47/2F     /    /   =
+    4       235/EB       235/EB     ·    ·   =
+    5       134/86       134/86     ·    ·   =
+    6       204/CC       198/C6     ·    ·   !=
+    7       171/AB       144/90     ·    ·   !=
+    8       242/F2       148/94     ·    ·   !=
+    9       215/D7       218/DA     ·    ·   !=
+   10       194/C2       115/73     ·    s   !=
+   11       101/65       223/DF     e    ·   !=
+   12        51/33       252/FC     3    ·   !=
+   13       131/83       222/DE     ·    ·   !=
+   14       253/FD        38/26     ·    &   !=
+   15       147/93       189/BD     ·    ·   !=
+   16        90/5A        71/47     Z    G   !=
+   17       156/9C        91/5B     ·    [   !=
+   18        41/29       200/C8     )    ·   !=
+   19       116/74        16/10     t    ·   !=
+   20       192/C0       133/85     ·    ·   !=
+   21       225/E1        27/1B     ·    ·   !=
+   22       167/A7       212/D4     ·    ·   !=
+   23         9/09       183/B7     ·    ·   !=
+   24        77/4D         0/00     M    ·   !=
+   25       109/6D       124/7C     m    |   !=
+   26       227/E3       ---/--     ·    ·   !=
+   27        18/12       ---/--     ·    ·   !=
+   28        86/56       ---/--     V    ·   !=
+[COMPARE] Output 2
+
+ A len=30  prefix='@Ugw' type='w'
+ B len=30  prefix='@Ugw' type='w'
+ A blocks: [(26, 21, 'mid'), (11, 9, 'tail')]
+ B blocks: [(26, 21, 'mid'), (11, 9, 'tail')]
+
+ idx   A(dec/hex)  B(dec/hex)  chrA chrB  mark
+ ----  -----------  -----------  ---- ----  ----
+    0         3/03         3/03     ·    ·   =
+    1        18/12        18/12     ·    ·   =
+    2       124/7C       124/7C     |    |   =
+    3        47/2F        47/2F     /    /   =
+    4       235/EB       235/EB     ·    ·   =
+    5       134/86       134/86     ·    ·   =
+    6       198/C6       197/C5     ·    ·   !=
+    7       150/96        25/19     ·    ·   !=
+    8        31/1F         1/01     ·    ·   !=
+    9        85/55       124/7C     U    |   !=
+   10       157/9D       150/96     ·    ·   !=
+   11        82/52        95/5F     R    _   !=
+   12       231/E7       132/84     ·    ·   !=
+   13       193/C1       130/82     ·    ·   !=
+   14       157/9D        83/53     ·    S   !=
+   15       198/C6       128/80     ·    ·   !=
+   16        10/0A       228/E4     ·    ·   !=
+   17       177/B1       203/CB     ·    ·   !=
+   18        77/4D       113/71     M    q   !=
+   19       145/91       236/EC     ·    ·   !=
+   20       121/79       252/FC     y    ·   !=
+   21        69/45        69/45     E    E   =
+   22       147/93       146/92     ·    ·   !=
+   23       121/79       221/DD     y    ·   !=
+   24        84/54        12/0C     T    ·   !=
+   25        59/3B       160/A0     ;    ·   !=
+   26       174/AE        23/17     ·    ·   !=
+   27        52/34        75/4B     4    K   !=
+   28       247/F7        17/11     ·    ·   !=
+   29        12/0C       242/F2     ·    ·   !=
+</details>
+
+5. Raw Item Code Lists
+<details>
+<summary><strong>View Leveled Item Code Lists (SMG, Pistol, etc.)</strong></summary>
+
+5.1 SMG & Pistol Codes (Level 1-50)
+A large collection of item codes for SMGs and Pistols from level 1 through 50 was provided. Due to its length, it is collapsed here.
+Level-by-level codes for SMG and Pistol from 1 to 50 are listed in the source data.
+
+5.2. Buybacks
+ORIGINAL L50 Legendary Cooking Ambushing Truck: @Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l34$a-qf{00
+
+BUYBACK L50 Legendary Cooking Ambushing Truck: @Ugy3L+2}Ta0Od!I{*S=LLLKTRY91;d>K-Z#Y7QzFY8(O`
+
+ORIGINAL L50 Common Unseen Xiuhcoatl: @Ugy3L+2}TYgOyvyviz?KiBDJYGs9dOW2m
+
+BUYBACK L50 Common Unseen Xiuhcoatl: @Ugy3L+2}Ta0Od!Hk&Y-jLLDkno0@~lg(;t
+
+ORIGINAL L50 Legendary Ambushing Truck: @Ugy3L+2}TYgjMogxi7Hg07IhPq4>b?9sX3@zs9y*
+
+BUYBACK L50 Legendary Ambushing Truck: @Ugy3L+2}Ta0Od!H/&7hp9LM3WZH&OXe^H7_bgUW^ag#Z
+
+ORIGINAL L49 Uncommon Playful Kitty: @Ugct)%FmVuJXn{hb3U#POJ!&6nQ*lsxP_0lm5d
+
+BUYBACK L49 Uncommon Playful Kitty: @Ugct)%FmVuN0uhE5C^V{2hg#I5_MtWv2ek*)3Uw0!
+
+ORIGINAL L49 Common Karkadann: @UgzR8/2__CAOuq;Eiz?Kj9yO^ss8y(TsD20
+
+BUYBACK L49 Common Karkadann: @UgzR8/2__DrOd!Jad!WClLMf1lbVBCg=&ZDhX4`
+
+ORIGINAL L49 Common Thrown Quality-Assured Widget: @UgcJizFmVuJFlEqRRG}I*bSP4ldV~6dh_Zs00`
+
+BUYBACK L49 Common Thrown Quality-Assured Widget: @UgcJizFmVuN0ucsN2K_}9s!>CSB2}q3s6VJ*sImw
+
+5.3. Item Level Progressions
+A series of codes demonstrating how the level block changes for a specific item.
+
+Purple Daedalus Aramid GCX (Level 1-50)
+
+Level 1: @UgwSAs2_^y}Oz#USjp~P5)S(jfsJ*DNsIaI@g+bLpr9!Pj^+J_H00
+
+Level 50: @UgwSAs2}TYgOz#USjp~P5)S(jfsJ*DNsIaI@g+bLpr9!Pj^+J_H00
+
+(Codes for levels 2-49 omitted for brevity)
+
+Legendary Hot Slugger (Level 1-50)
+
+Level 1: @Ugd_t@FcA=8^mI^IRH1&NdZON-VxdwZ00
+
+Level 50: @Ugd_t@Fme!K^mI^IRH1&NdZON-VxdwZ00
+
+(Codes for levels 2-49 omitted for brevity)
+
+Purple Torgue Engorged Filthy Lotus (Level 1-50)
+
+Level 1: @Ugct)%FcA=8VjNIuRG/*lsNq798i^{23WJ)13WXYlT7~+B00
+
+Level 50: @Ugct)%Fme!KVjNIuRG/*lsNq798i^{23WJ)13WXYlT7~+B00
+
+(Codes for levels 2-49 omitted for brevity)
+
+</details>
