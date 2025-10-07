@@ -250,14 +250,7 @@ Level 1          00100001000101001100 0000001                             100010
 UPDATE: I tried to bitswap the "levelless" item.........
 I COULD NOT BITSWAP IT TO ANY OTHER LEVEL
 ........ wtf
-have I created a level-less item?????
-
-===
---
-
---
-
-im dumping everytime the convos in my cursor he interprets it and that E1 i told my ai dont focus on tht bl parts need to be compatible you cant just install anything on any gun mostly brand locked
+have I created a level-less item???im dumping everytime the convos in my cursor he interprets it and that E1 i told my ai dont focus on tht bl parts need to be compatible you cant just install anything on any gun mostly brand locked
 it asked to make a script to detect the parts and tommorow ill test the script to see if he can pinpoint every gun parts on the blocks 
 @Mattmab
 the end script should tell me all part detected on a seed
@@ -294,4 +287,5 @@ Working Seed 1 has 3 complete parts:
 1 barrel part (e9e9e9e9) at position 32
 Pattern Relationships:
 Barrel patterns: mzS, S59, Pmz, 9mz - these are the 2-3 character components
-Stock patterns: sCu, CuY, EsC - these combine to form complete stock parts
+Stock patterns: sCu, CuY, EsC - these combine to form complete stock parts?
+
