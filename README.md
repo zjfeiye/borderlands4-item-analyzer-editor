@@ -253,6 +253,10 @@ I COULD NOT BITSWAP IT TO ANY OTHER LEVEL
 have I created a level-less item?????
 
 ===
+--
+
+--
+
 im dumping everytime the convos in my cursor he interprets it and that E1 i told my ai dont focus on tht bl parts need to be compatible you cant just install anything on any gun mostly brand locked
 it asked to make a script to detect the parts and tommorow ill test the script to see if he can pinpoint every gun parts on the blocks 
 @Mattmab
