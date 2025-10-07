@@ -16,3 +16,4 @@ console.log('Expected: -3', '\t Got:', level('@Ugr$WBm/*(<j/i6}LXR5M`e<&*6{#ej00
 console.log('Expected: -2', '\t Got:', level('@Ugr$WBm/*<>j/i6}LXR5M`e<&*6{#ej00'));
 console.log('Expected: -1', '\t Got:', level('@Ugr$WBm/*_@j/i6}LXR5M`e<&*6{#ej00'));
 console.log('Expected: 13', '\t Got:', level('@Ugr%Scm/z+aM(zhas#5K%1KJ%;3J%l='));
+console.log('Expected: 0', '\t Got:', level('@Ugr$WBm/!4;fC!f)LXR5M`e<&*6{#ej00'));
