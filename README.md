@@ -202,7 +202,9 @@ Unit tests available here:
 
 ====
 
-# Item Level:
+# Item Level analyzing and editing (Very sought out feature I would so love to have):
+
+https://github.com/hum4nature/borderlands4-item-analyzer-editor/blob/main/READ%20ME%20Item%20Level.docx
 
 https://bookstack.nicnl.com/books/borderlands-4-item-serials/page/item-level
 
