@@ -351,6 +351,13 @@
     .dataset-close-btn:active {
         background-color: rgba(175, 80, 76, 0.7);
     }
+
+    .b02-level-bits {
+        text-decoration: underline;
+        text-decoration-color: #4CAF50;
+        text-underline-offset: 1px;
+        text-decoration-thickness: 4px;
+    }
 </style>
 
 <div id="app" class="hiddenByDefault" :class="{hasLoaded: true}">
@@ -531,7 +538,7 @@
                     <span v-if="comparisonSerials.length > 2" style="font-size: 12px;color: #888;">Match: {{Math.round(serial.statsB02.matches / serial.statsB02.total * 100)}}% / Diff: {{Math.round(serial.statsB02.differences / serial.statsB02.total * 100)}}% / Added: {{Math.round(serial.statsB02.additions / serial.statsB02.total * 100)}}% <span style="margin-left: 24px;"></span> {{ serial.description }}</span>
                     <span v-else style="font-size: 12px;color: #888;">{{ serial.description }}</span><br/>
                     <span class="serial-b02 bigger">
-                        <span v-for="(c, i) in serial.b02" :class="comparisonClass(serial.comparisonB02[i])">{{c}}</span>
+                        <span v-for="(c, i) in serial.b02" :class="[comparisonClass(serial.comparisonB02[i]), binaryComparisonSpecialClasses(serial, serial.b02, i)]">{{c}}</span>
                     </span><br/>
                 </div>
                 <br/>
@@ -563,11 +570,13 @@
         >
             <input type="checkbox" class="serial-select-checkbox" v-model="serial.selected"/>
             <input type="text" v-model="serial.description" class="serial-input-description" v-on:focus="onDescriptionFocus" v-on:blur="onDescriptionBlur(serial)">
-            <span class="confbutton" style="font-size: 14px;margin-left: 8px;padding-top: 2px;padding-bottom: 2px;">{{ 'Level: ' + (serial.itemLevel || '?') }}</span><br/>
+            <span class="confbutton" style="font-size: 14px;margin-left: 8px;padding-top: 2px;padding-bottom: 2px;">{{ 'Level: ' + ((serial.itemLevelInfo && serial.itemLevelInfo.level !== null) ? serial.itemLevelInfo.level : '?') }}</span><br/>
             <span class="serial-b85">{{ serial.b85 }}</span><br/>
             <span class="serial-b16" v-on:click.self="serial.selected = !serial.selected">{{ serial.b16 }}</span><br/>
             <span v-if="false" class="serial-b16" v-on:click.self="serial.selected = !serial.selected">{{ serial.b04 }}</span>
-            <span class="serial-b02" v-on:click.self="serial.selected = !serial.selected">{{ serial.b02 }}</span><br/>
+            <span class="serial-b02" v-on:click.self="serial.selected = !serial.selected">
+                <span v-for="(c, i) in serial.b02" :class="binarySpecialClasses(serial, i)">{{ c }}</span>
+            </span><br/>
         </div>
     </div>
 
@@ -759,6 +768,41 @@
         },
 
         methods: {
+            binarySpecialClasses(serial, i) {
+                let out = [];
+
+                // Is the bit part of the level bits?
+                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i <= serial.itemLevelInfo.lastLevelBit)
+                    out.push('b02-level-bits');
+
+                return out;
+            },
+
+            binaryComparisonSpecialClasses(serial, paddedSerial, paddedPos) {
+                // Problem: i has gaps, we need to figure out the real position in the original serial
+
+                if (!serial.itemLevelInfo) return;
+                let lastLevelBit = serial.itemLevelInfo.lastLevelBit;
+                let i = 0;
+                for (let j = 0; j < paddedPos; j++) {
+                    // If it's zero or one, it's a real bit
+                    if (paddedSerial[j] === '0' || paddedSerial[j] === '1')
+                        i++;
+
+                    if (i > lastLevelBit+5) {
+                        // We've passed the level bits, stop here
+                        break;
+                    }
+                }
+                console.log('i =', i);
+                console.log('serial =', serial);
+
+                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i <= serial.itemLevelInfo.lastLevelBit)
+                    return 'b02-level-bits';
+
+                return '';
+            },
+
             reverseBitsButton() {
                 this.reverseBits = !this.reverseBits;
             },
@@ -879,6 +923,7 @@
                             statsB16: align16.stats,
                             statsB02: align02.stats,
                             statsB04: align04.stats,
+                            itemLevelInfo: serial1.itemLevelInfo,
                         },
                         {
                             b85: align85.alignedB,
@@ -895,6 +940,7 @@
                             statsB16: align16.stats,
                             statsB02: align02.stats,
                             statsB04: align04.stats,
+                            itemLevelInfo: serial2.itemLevelInfo,
                         }
                     ];
 
@@ -974,6 +1020,7 @@
                         statsB16: compB16.stats,
                         statsB02: compB02.stats,
                         statsB04: compB04.stats,
+                        itemLevelInfo: serial.itemLevelInfo,
                     };
                 });
 
@@ -1136,7 +1183,7 @@
 
             pushSerial(serialObj, name=null) {
                 // Figure out the item level, if possible
-                let itemLevel = itemDecodeLevel(serialObj.b02);
+                let itemLevelInfo = itemDecodeLevel(serialObj.b02);
 
                 // RGB values for background
                 let color1 = randomColor(serialObj.b85, 3, 0.2);
@@ -1157,7 +1204,7 @@
                     backgroundClear,
                     selected: false,
                     description: name || 'Untitled serial ' + (this.serials.length + 1),
-                    itemLevel,
+                    itemLevelInfo,
                 });
                 // Sauvegarde après insertion (debounce) sauf si on est en cours de chargement initial
                 if (!this._loading) this.saveSerialsDebounced();
