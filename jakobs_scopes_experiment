@@ -1,0 +1,116 @@
+Scope Full Round:
+8060e084220e4609ca0aad8ca1d42a89a1e6a26e553aa1eed507f507950b75070e01
+8060e084220e4609ca0fe64ca2542a8955137516f50f950f3aa832a93ea83fa872a85ba808
+8060e084220e06092a0aa78ca1d42a8d7fa915127ea890a83aa831a83fa83ea871a85aa808
+8060e084220e46092a0b9c8ca2d42a8d47a8951a43e543cdaa6d43d5ea0faa0eea172a0f1702
+8060e084220e46092a02cf8ca2542a8d7fa9151a7ea87da83aa831a83fa83ea85fa859a808
+8060e084220e46096950660c7512a1546a3d45a8aa1eea2583aa9d5283fa83ea873a85ba00
+
+Scope Round Square Clear:
+8060e084220e4609ca0a874ca2542a89a246a26eb53aa1ee55077506350ad50a0e01
+8060e084220e4609fa0bfecca4542a8b753aa1fe350b55070e01
+
+Scope Round Square Covered:
+8060e084220e4609ca0de44ca1d42a893513751a550f950f3ba9d50f53a852a85fa85ca808
+8060e084220e46092a0da44ca2542a8d47a8751a43e543cd418d43d5429d41dd42e54295954300
+8060e084220e4609950a4a5c51aa15463ed48a8b48543fd4a0eea6d4a14aa14e21cea16a00
+8060e084220e4609950fe25c516a154648548a8da6d43fd4a14ea0eea16ea14ace2100
+
+Scope Side Long Pointy:
+8060e084220a46090a05df8ca1d42a8d7da9151a41e54da842d54285954300
+8060e084220e4609ca02edcca3542a8995137512750f550f3ca9d50f50a851a874a85ba808
+8060e084220e4609ca09c44ca3542a8935137512950f550f3ca9b50f50a851a871a85ca808
+8060e084220e4609ca098d8ca3542a89a1f2a26e953aa1ea350a1507950b750a0e01
+8060e084220e4609e50c025c512a1544ca89ba871a879a870a83ca832a85aa858700
+8060e084220e46092a03940ca2542a8d48a8b51a43fd43f541e541854285428d439d42dd00
+8060e084220e460969503c8c9516a15443d547a82a6d43cd6a142a0fea172a141c02
+
+Scope Side Long Smooth:
+8060e084220e46092a0bcc4ca3542a8d47a8751643d543cd6a0f6a6daa152a15021caa16
+
+Scope Side Short:
+8060e084220e4609ca0bd4cca3542a897513750e550f950f3da9b50f5ba855a8a87108
+8060e084220e4609ca0caf4ca3542a89b5137512550f75124ea9350f42ad41ed42fd42dd00
+8060e084220e4609ca0dcccca1d42a8955137512750f350f3ca9d50f5aa851a8a87408
+
+Scope Top Square Simple:
+8060e084220e4609fa0ce54ca1d42a8b39a9b52272a85ca8da000000
+8060e084220e4609fa0ce54ca1d42a8b39a9b52272a85ca808 // DONE
+8060e084220e4609ca0cd78ca2542a8995137516b50f350f5ca839a9a85f08 // DONE
+8060e084220e46092a0bdc0ca1d42a8d48a8b512448543f5aa0e6a75021cea16 // DONE
+8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0e6a0c221c6a17200 // DONE
+8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2353aa1e6750b75070e01 // DONE
+8060e084220e46092a09e48ca1d42a8d47a8951a43cd43dd6a0caa7d2a172a0e0225aa1c
+
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYgOyvyviz?KiBDJYGs9dOW2m
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYgOyvyviz?KiBDJYKs9dOW2m
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYgOyvyviz?KiBDJYIs9dOW2m
+DIFF POSITION                                             ^
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYgjMogxi7Hg07IhPq4>b?9sX3@zs9y*
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYgjMogxi7Hg07IhPq4>b?9sXeG%s9y*
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYgjMogxi7Hg07IhPq4>b?9sXM4#s9y*
+DIFF POSITION                                                     ^^^^
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYg4BQJUjVjck61AvE^+Sb3b!rZ(7U~=V
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYg4BQJUjVjck61AvE^+Sb3b!rc)7U~=V
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYg4BQJUjVjck61AvE^+Sb3b?OeP7U~=V
+BITSWAP  POSITION                                                ^^^^
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l34$a-qf{00
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l3q`a-qf{00
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l3S;a-qf{00
+BITSWAP  POSITION                                                  ^^
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak+@2XzZ/4gm
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak-u2XzZ/4gm
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak;Z2XzZ/4gm
+BITSWAP  POSITION                                                  ^^
+BITSWAP  POSITION                                                  ^^
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYgjN}O_jVjck8kML=-9yboeX0y<4k{Na9I7P(
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYgjN}O_jVjck8kML=-9yboeX0y<4=NWb9I7P(
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYgjN}O_jVjck8kML=-9yboeX0!V4k{Na9I7P(
+BITSWAP  POSITION                                                  ^^
+
+--------------------
+
+VANILLA  Top Square Simple:    8060e084220e4609fa0ce54ca1d42a8b39a9b52272a85ca808
+BITSWAP  Side Long Smooth:     8060e084220e4609fa0ce54ca1d42a8b3da9b52272a85ca808
+BITSWAP  Round Square Clear:   8060e084220e4609fa0ce54ca1d42a8b3ba9b52272a85ca808
+BITSWAP  POSITION                                               ^
+
+VANILLA  Top Square Simple:    8060e084220e4609ca0cd78ca2542a8995137516b50f350f5ca839a9a85f08
+BITSWAP  Side Long Smooth:     8060e084220e4609ca0cd78ca2542a8995137516b50f350f5ca83da9a85f08
+BITSWAP  Round Square Clear:   8060e084220e4609ca0cd78ca2542a8995137516b50f350f5ca83ba9a85f08
+BITSWAP  POSITION                                                                   ^
+
+VANILLA  Top Square Simple:    8060e084220e46092a0bdc0ca1d42a8d48a8b512448543f5aa0e6a75021cea16
+BITSWAP  Side Long Smooth:     8060e084220e46092a0bdc0ca1d42a8d48a8b512448543f5aa0f6a75021cea16
+BITSWAP  Round Square Clear:   8060e084220e46092a0bdc0ca1d42a8d48a8b512448543f5aa0eea75021cea16
+BITSWAP  POSITION                                                                 ^^
+
+VANILLA  Top Square Simple:    8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0e6a0c221c6a17200
+BITSWAP  Side Long Smooth:     8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0f6a0c221c6a17200
+BITSWAP  Round Square Clear:   8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0eea0c221c6a17200
+BITSWAP  POSITION                                                                ^^
+
+VANILLA  Top Square Simple:    8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2353aa1e6750b75070e01
+BITSWAP  Side Long Smooth:     8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2753aa1e6750b75070e01
+BITSWAP  Round Square Clear:   8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2b53aa1e6750b75070e01
+BITSWAP  POSITION                                                              ^
+
+VANILLA  Top Square Simple:    8060e084220e46092a09e48ca1d42a8d47a8951a43cd43dd6a0caa7d2a172a0e0225aa1c
+BITSWAP  Side Long Smooth:     8060e084220e46092a09e48ca1d42a8d47a8951a43cd43dd6a0caa7d2a172a0f0225aa1c
+BITSWAP  Round Square Clear:   8060e084220e46092a09e48ca1d42a8d47a8951a43cd43ddea0caa7d2a172a0e0225aa1c
+BITSWAP  POSITION                                                              ^              ^
+
+
+
+BITSWAP  Scope Full Round:     8060e084220e46092a09e48ca1d42a8d47a8951a43cd43dd6a0eaa7d2a172a0e0225aa1c
+
+
+0x253 = 0b 0010 0101 0110
+0x275 = 0b 0010 0111 0101
+0x2b5 = 0b 0010 1011 0101

@@ -1,0 +1,62 @@
+@Ugy3L+2}TYgjN}O_jVjck8kML=-9yboeX0!V4k{Na9I7P(
+@Ugy3L+2}Ta0Od!HYo}kjGLLI76iF(vM)I8Lu%AoF`a-qVZS/R`
+
+8060e084220e46092a09e48ca1d42a8d47a8951a43cd43ddea0caa7d2a172a0e0225aa1c
+8060e084a20e460948c2204ca8d2a09e51aa1d423dd47a89a7d43cd4a0eea0caa1c2a1725a2200
+
+
+
+      equipped:
+        slot_0:
+        - serial: '@Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l34$a-qf{00'
+          flags: 1
+          state_flags: 1
+        slot_1:
+        - serial: '@Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l3q`a-qf{00'
+          flags: 1
+
+
+
+
+ORIGINAL:            8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0e6a0c221c6a17200
+ORIGINAL + BUYBACK:  8060e084a20e4609ccc2204ca89ca0d926ea1d421f2a1e6a0c2a1eea172a0e6a6a1c02
+                     ========^========^^^^^^==^^^^^^=^^=^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+ORIGINAL:            8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0e6a0c221c6a17200
+BITSWAP:             8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0f6a0c221c6a17200
+                     ==================================================^===============
+
+ORIGINAL + BUYBACK:  8060e084a20e4609ccc2204ca89ca0d926ea1d421f2a1e6a0c2a1eea172a0e6a6a1c02
+BITSWAP  + BUYBACK:  8060e084a20e4609ccc2204ca89ca0d926ea1d421f2a1e6a0c2a1eea172a0f6a6a1c02
+                     =============================================================^========
+
+VANILLA  Buyback:               @Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l3S;a-qf{00
+
+
+
+VANILLA  Top Square Simple:    8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0e6a0c221c6a17200
+BITSWAP  Side Long Smooth:     8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0f6a0c221c6a17200
+BITSWAP  Round Square Clear:   8060e084220e4609ca0d9ccca1d42a89a1e6a26ea1eea1f2a0eea0c221c6a17200
+BITSWAP  POSITION
+
+
+
+
+-------------------
+
+VANILLA  Top Square Simple:     @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak+@2XzZ/4gm
+BITSWAP  Side Long Smooth:      @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak-u2XzZ/4gm
+BITSWAP  Round Square Clear:    @Ugy3L+2}TYgT#^cvMir`2hg#I5@}cgb=Ak;Z2XzZ/4gm
+BITSWAP  POSITION
+
+VANILLA  Top Square Simple:    8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2353aa1e6750b75070e01
+BITSWAP  Side Long Smooth:     8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2753aa1e6750b75070e01
+BITSWAP  Round Square Clear:   8060e084220e4609950a925c51aa1546a3d45a87a1eea1f2b53aa1e6750b75070e01
+BITSWAP  POSITION
+
+
+
+
