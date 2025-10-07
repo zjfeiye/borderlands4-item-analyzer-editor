@@ -211,105 +211,445 @@ https://bookstack.nicnl.com/books/borderlands-4-item-serials/page/item-level
 
 
 
-Stuff to investigate:
+============================
 
-Modified Header:
+Description of how the levels are encoded in the binary stream.
 
-1) I had a modded item
-=> high dps level 50 illegal weapon
-2) Action: I modified it to level 1
-3) Result: a big part of the header INCLUDING the "marker" for the level bits HAS DISAPPEARED!
+### 1\. Layout:
 
-Research to do: where are the level bits now?
+##### 1.1. Find the position of the level-bits:
 
+The bits governing the level are positioned seemingly randomly, see below:
 
-Reminder: level bits "marker" we use is "00000011001000001100"
+\=============================================LLLLc==============
 
+\=================================================LLLLcLLLLc=====
 
-Original
-Level 50:        @UgeU_{Fme!KvVPE@CK{7XA`1W
-                 00100001000101001100 0000001 1001000001100 01001 11000 001000100001100100110101111110000010110000010101100100010110001100100110110010010001001101000000000000
-                                      ^^^^^^^ ^^^^^^^^^^^^^ LLLLc LLLLc
-                                      marker
+\========================================LLLLcLLLLc==============
 
+We have not figured out how the header decodes, so positioning the level bits is tricky.  
+However, there is a workaround: the levels bits seems always positioned after a specific bit pattern: `00000011001000001100`  
+The level bits are always positioned after this marker.  
 
-Forged
-Level 1:         @UgeU_{Fme!KvVPE@CK{7XA`1W
-                 00100001000101001100 0000001 1001000001100 10000        001000100001100100110101111110000010110000010101100100010110001100100110110010010001001101000000000
-                                      ^^^^^^^ ^^^^^^^^^^^^^ LLLLc
-                                      marker
+marker
 
+vvvvvvvvvvvvvvvvvvvv
 
-Going in-game:   @UgeU`yFj+rnP!o;GCXodI
-Level 1          00100001000101001100 0000001                             10001000011001001101011111100000101100000101011001000101100011001001101100100100010011010000000000000
-                 ==================== =======------------- -----        --==================================================================================================---
-                                      ?????????????????????????????????????
-                                           WHERE ARE THE LEVEL BITS NOW???
+\=========================00000011001000001100LLLLcLLLLc=========
 
+^^^^^
 
-UPDATE: I tried to bitswap the "levelless" item.........
-I COULD NOT BITSWAP IT TO ANY OTHER LEVEL
-........ wtf
-have I created a level-less item???
+level bits
 
-import {itemDecodeLevel} from "./lib/item_decode_read_level.js";
-import {b85Decode} from "./lib/b85.js";
-import {hexToBin} from "./lib/hex_to_bin.js";
+##### 1.2. Read the varint:
 
-function level(serial) {
-    return itemDecodeLevel(hexToBin(b85Decode(serial)));
-}
+The level bits are encoded in a very weird format: varints.  
+Even worse: 5 bits varints, between 1 and 4 blocks.  
+Those terms are complicated, here is a quick walkthrough:
 
-console.log('Expected: 49', '\t Got:', level('@Ugct)%FmVuJXn{hb3U#POJ!&6nQ*lsxP_0lm5d'));
-console.log('Expected: 50', '\t Got:', level('@Ugy3L+2}Ta0Od!H/&7hp9LM3WZH&OXe^H7_bgUW^ag#Z'));
-console.log('Expected: 50', '\t Got:', level('@Ugy3L+2}TYg%$yC%i7M2gZldO)@}cgb!l34$a-qf{00'));
-console.log('Expected: 50', '\t Got:', level('@Ugy3L+2}Ta0Od!I{*`S=LLLKTRY91;d>K-Z#Y7QzFY8(O'));
-console.log('Expected: 13', '\t Got:', level('@UgwSAs38n)gOz#USjp~P5)S(jfsJ*DNsIaI@g+bLpr9!Pj^+J_H00'));
-console.log('Expected: -32768', '\t Got:', level('@Ugr$WBm/!4;hzOS?LXR5M`e<&*6{#ej00'));
-console.log('Expected: -3', '\t Got:', level('@Ugr$WBm/*(<j/i6}LXR5M`e<&*6{#ej00'));
-console.log('Expected: -2', '\t Got:', level('@Ugr$WBm/*<>j/i6}LXR5M`e<&*6{#ej00'));
-console.log('Expected: -1', '\t Got:', level('@Ugr$WBm/*_@j/i6}LXR5M`e<&*6{#ej00'));
-console.log('Expected: 13', '\t Got:', level('@Ugr%Scm/z+aM(zhas#5K%1KJ%;3J%l='));
+Varints are a way to store integers over a varying number of blocks, depending on the size of the integer.  
+Small integers will take only one block, other two, and others three, etc...
 
-im dumping everytime the convos in my cursor he interprets it and that E1 i told my ai dont focus on tht bl parts need to be compatible you cant just install anything on any gun mostly brand locked
-it asked to make a script to detect the parts and tommorow ill test the script to see if he can pinpoint every gun parts on the blocks 
-@Mattmab
-the end script should tell me all part detected on a seed
-im using the docu from @Nicnl
-that he meticulously document
-Ah! That's a crucial insight! You're saying that the 2-3 character sections we've been finding (like mzS59, sCuY(, dZ>3h) are actually part of a whole - they're components that make up many parts together.
-So instead of thinking:
-mzS59 = 1 barrel part
-sCuY( = 1 stock part
-dZ>3h = 1 magazine part
-It's more like:
-Multiple 2-3 character sections combine to form 1 complete barrel
-Multiple 2-3 character sections combine to form 1 complete stock
-Multiple 2-3 character sections combine to form 1 complete magazine
-This explains why:
-Our single pattern insertions aren't working properly
-We need multiple related patterns to form complete parts
-The working modded seeds probably have complete part sets
-We're inserting incomplete parts that cause malus
-So we need to:
-Identify complete part sets (multiple related patterns)
-Insert entire part sets instead of individual patterns
-Study the working modded seeds to see their complete part combinations
-Understand the part structure better
-This is a much more complex system than we initially thought! Should I create a system that analyzes complete part sets instead of individual patterns?
--
-exactly white
-when taken down to hex and binary and put in the right order parts can be sort of read. but hard to determine exactly whats going on right now. more research is needed.
-yeah i see he just wrote  an seed analyzer to chk that
--
-Key Findings:
-Working Seed 1 has 3 complete parts:
-2 stock parts (155e15ee) at positions 8 and 12
-1 barrel part (e9e9e9e9) at position 32
-Pattern Relationships:
-Barrel patterns: mzS, S59, Pmz, 9mz - these are the 2-3 character components
-Stock patterns: sCu, CuY, EsC - these combine to form complete stock parts
+They're encoded as follow:  
+  
 
+data
+
+vvvv
+
+DDDDc
+
+^
+
+continuation bit
+
+Here are a few examples:
+
+stop
+
+v
+
+10100
+
+^^^^
+
+data
+
+  
+
+\- Raw data is: 1010
+
+\- Mirrored: 0101
+
+\- To decimal: 5
+
+continue stop here
+
+v v
+
+10101 00100
+
+^^^^ ^^^^
+
+data data
+
+  
+
+\- Raw data is: 10100010
+
+\- Mirrored: 01000101
+
+\- To decimal: 69
+
+continue continue continue stop
+
+v v v v
+
+11111 11111 11111 11110
+
+^^^^ ^^^^ ^^^^ ^^^^
+
+data data data data
+
+  
+
+\- Raw data is: 1111111111111111
+
+\- Mirrored: 1111111111111111
+
+\- To decimal: -32768
+
+stop
+
+v
+
+00000
+
+^^^^
+
+data
+
+  
+
+\- Raw data is: 0000
+
+\- Mirrored: 0000
+
+\- To decimal: 0
+
+continue stop
+
+v v
+
+00001 00000
+
+^^^^ ^^^^
+
+data data
+
+  
+
+\- Raw data is: 00000000
+
+\- Mirrored: 00000000
+
+\- To decimal: 0
+
+Note: there are multiple ways to encode the integer zero.  
+The game will reserialize (collapse) the item back to the shortest one-block representation.  
+
+\=> Just apply this logic to the bits after the marker, and you'll extract the item level.
+
+### 2\. Examples:
+
+Below are a few examples of how to decode the level of actual existing items.
+
+Step 1:
+
+Raw serial: @Ugr$xKm/)}}$pj({\_X>Jcq0UExO{SqiosR~Z6aW
+
+  
+
+  
+
+Step 2: extract the first bits using the webtool:
+
+00100001101001010111000101100000000110010000011000100111000001001001001100100000010
+
+  
+
+  
+
+Step 3: workaround for finding the level bits, search for this string: 00000011001000001100
+
+Found here:
+
+00100001101001010111000101100000000110010000011000100111000001001001001100100000010
+
+^^^^^^^^^^^^^^^^^^^^
+
+  
+
+  
+
+Step 4: the level bits are right after the marker
+
+00100001101001010111000101100000000110010000011000100111000001001001001100100000010
+
+\--------------------LLLLc
+
+continuation bit=1, we must read 5 more bits -|
+
+  
+
+  
+
+Step 5: continuation bit was 1, we must continue
+
+00100001101001010111000101100000000110010000011000100111000001001001001100100000010
+
+\-------------------------LLLLc
+
+continuation bit=0, we done reading -|
+
+  
+
+  
+
+Step 4: assemble the data
+
+LLLLc LLLc: 01001 11000
+
+  
+
+Step 5: discard the continuation bit, we don't need them anymore
+
+LLLL LLLL: 0100 1100
+
+  
+
+Step 6: reverse the string:
+
+01001100 => 00110010
+
+  
+
+Step 7: binary to decimal
+
+00110010 => 50
+
+  
+
+\=> Item is level 50
+
+serial: @Ugd77\*Fg\_4rx=zp;RG}I\*T&N7HBq}9pC29=n4yqJt7iug5
+
+  
+
+search marker: 00000011001000001100
+
+  
+
+found here
+
+vvvvvvvvvvvvvvvvvvvv
+
+0010000100111000110000000011001000001100 01111 100000010001000011001011101....
+
+LLLLc LLLLc
+
+level bits: 01111 10000
+
+discard continuation bit: 0111 1000
+
+  
+
+extracted: 01111000
+
+reverse: 00011110
+
+to decimal: 30
+
+\=> Item is level 30
+
+Using this method, we have been able to take an existing serial, and forge all items from level 1 to level 50:  
+
+Item: Killshot Vivisecting Throwing Knife
+
+Level 1: @Ugr$WBm/!9x!X=5&qXxA;nj3OOD#<4R
+
+Level 2: @Ugr$WBm/!Fz!X=5&qXxA;nj3OOD#<4R
+
+Level 3: @Ugr$WBm/!L#!X=5&qXxA;nj3OOD#<4R
+
+Level 4: @Ugr$WBm/!R%!X=5&qXxA;nj3OOD#<4R
+
+Level 5: @Ugr$WBm/!X(!X=5&qXxA;nj3OOD#<4R
+
+Level 6: @Ugr$WBm/!d\*!X=5&qXxA;nj3OOD#<4R
+
+Level 7: @Ugr$WBm/!j-!X=5&qXxA;nj3OOD#<4R
+
+Level 8: @Ugr$WBm/!p<!X=5&qXxA;nj3OOD#<4R
+
+Level 9: @Ugr$WBm/!v>!X=5&qXxA;nj3OOD#<4R
+
+Level 10: @Ugr$WBm/!#@!X=5&qXxA;nj3OOD#<4R
+
+Level 11: @Ugr$WBm/!\*\_!X=5&qXxA;nj3OOD#<4R
+
+Level 12: @Ugr$WBm/!>{!X=5&qXxA;nj3OOD#<4R
+
+Level 13: @Ugr$WBm/!{}!X=5&qXxA;nj3OOD#<4R
+
+Level 14: @Ugr$WBm/#30!X=5&qXxA;nj3OOD#<4R
+
+Level 15: @Ugr$WBm/#92!X=5&qXxA;nj3OOD#<4R
+
+Level 16: @Ugr$WBm/$Qa!X=5&qXxA;nj3OOD#<4R
+
+Level 17: @Ugr$WBm/$Wc!X=5&qXxA;nj3OOD#<4R
+
+Level 18: @Ugr$WBm/$ce!X=5&qXxA;nj3OOD#<4R
+
+Level 19: @Ugr$WBm/$ig!X=5&qXxA;nj3OOD#<4R
+
+Level 20: @Ugr$WBm/$oi!X=5&qXxA;nj3OOD#<4R
+
+Level 21: @Ugr$WBm/$uk!X=5&qXxA;nj3OOD#<4R
+
+Level 22: @Ugr$WBm/$!m!X=5&qXxA;nj3OOD#<4R
+
+Level 23: @Ugr$WBm/$)o!X=5&qXxA;nj3OOD#<4R
+
+Level 24: @Ugr$WBm/$=q!X=5&qXxA;nj3OOD#<4R
+
+Level 25: @Ugr$WBm/$\`s!X=5&qXxA;nj3OOD#<4R
+
+Level 26: @Ugr$WBm/%1u!X=5&qXxA;nj3OOD#<4R
+
+Level 27: @Ugr$WBm/%7w!X=5&qXxA;nj3OOD#<4R
+
+Level 28: @Ugr$WBm/%Dy!X=5&qXxA;nj3OOD#<4R
+
+Level 29: @Ugr$WBm/%J!!X=5&qXxA;nj3OOD#<4R
+
+Level 30: @Ugr$WBm/%P$!X=5&qXxA;nj3OOD#<4R
+
+Level 31: @Ugr$WBm/%V&!X=5&qXxA;nj3OOD#<4R
+
+Level 32: @Ugr$WBm/&nF!X=5&qXxA;nj3OOD#<4R
+
+Level 33: @Ugr$WBm/&tH!X=5&qXxA;nj3OOD#<4R
+
+Level 34: @Ugr$WBm/&zJ!X=5&qXxA;nj3OOD#<4R
+
+Level 35: @Ugr$WBm/&(L!X=5&qXxA;nj3OOD#<4R
+
+Level 36: @Ugr$WBm/&<N!X=5&qXxA;nj3OOD#<4R
+
+Level 37: @Ugr$WBm/&\_P!X=5&qXxA;nj3OOD#<4R
+
+Level 38: @Ugr$WBm/(0R!X=5&qXxA;nj3OOD#<4R
+
+Level 39: @Ugr$WBm/(6T!X=5&qXxA;nj3OOD#<4R
+
+Level 40: @Ugr$WBm/(CV!X=5&qXxA;nj3OOD#<4R
+
+Level 41: @Ugr$WBm/(IX!X=5&qXxA;nj3OOD#<4R
+
+Level 42: @Ugr$WBm/(OZ!X=5&qXxA;nj3OOD#<4R
+
+Level 43: @Ugr$WBm/(Ub!X=5&qXxA;nj3OOD#<4R
+
+Level 44: @Ugr$WBm/(ad!X=5&qXxA;nj3OOD#<4R
+
+Level 45: @Ugr$WBm/(gf!X=5&qXxA;nj3OOD#<4R
+
+Level 46: @Ugr$WBm/(mh!X=5&qXxA;nj3OOD#<4R
+
+Level 47: @Ugr$WBm/(sj!X=5&qXxA;nj3OOD#<4R
+
+Level 48: @Ugr$WBm/)-\_!X=5&qXxA;nj3OOD#<4R
+
+Level 49: @Ugr$WBm/)@{!X=5&qXxA;nj3OOD#<4R
+
+Level 50: @Ugr$WBm/)}}!X=5&qXxA;nj3OOD#<4R
+
+  
+
+Note: those items between level 1 and 15 have the redundant zero-value varint mentioned.
+
+Those items are going to get reserialized/collapsed to a shorter serial when loading in-game.
+
+We were also able to generate "unholy" serials:
+
+Level 64: @Ugr$WBm/!4<fC!f)LXR5M\`e<&\*6{#ej00
+
+Note: did not spawn, game probably have a hardcoded limit.
+
+  
+
+Level 0: @Ugr$WBm/!4;fC!f)LXR5M\`e<&\*6{#ej00
+
+Note: did spawn in-game, no level shown on screen, and had less damage than its level 1 counterpart.
+
+  
+
+Level -3: @Ugr$WBm/\*(<j/i6}LXR5M\`e<&\*6{#ej00
+
+Note: did spawn in game, shown as level negative 3, and had even less damage than the level 0 and 1 combined.
+
+  
+
+Minimum value of int16: @Ugr$WBm/!4;hzOS?LXR5M\`e<&\*6{#ej00
+
+Note: DID SPAWN AS LEVEL -32768. THIS IS FUCKING UNHOLY.
+
+(See screenshot below)
+
+[![[d8777b2e19eade12dc82df82f7c90e7f_MD5.png]]](https://bookstack.nicnl.com/uploads/images/gallery/2025-10/LV1image.png)
+
+### 3\. Discovery:
+
+How did we discover this?
+
+We performed bitswapping on existing weapons to create variant with different levels.  
+We noticed that the bits governing the levels were not aligned:
+
+\=============================================!!!!1!!000=========
+
+\=================================================!!!!1!!000=====
+
+\========================================!!!!1!!000==============
+
+We didn't know why.  
+However we noticed two things:
+
+1. There was a floating "1" in the middle of the level bits, suggesting varint fuckery.
+2. A bitswapped level 3 item got reserialized to a shorter serial.
+
+Those to elements were our Rosetta stone for understanding how this 5-bit varint worked.
+
+altered level bits
+
+vvvv vv
+
+0010000110100101101000010110000000011001000001100 1100 1 00000 00100010... 10000 000
+
+0010000110100101101000010110000000011001000001100 1100 0 00100010... 10000
+
+\================================================= ====! ----- ========... ===== ---
+
+/ \\ \\ padding removed so is multiple of 8 bits
+
+/ \\
+
+"floating bit" set to zero -/ \\- block of 5 bits removed
+
+### 4\. Credits:
+
+@Nicnl for understanding the 5-bit varint logic.
 
 
 
