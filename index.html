@@ -772,7 +772,7 @@
                 let out = [];
 
                 // Is the bit part of the level bits?
-                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i <= serial.itemLevelInfo.lastLevelBit)
+                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i < serial.itemLevelInfo.lastLevelBit)
                     out.push('b02-level-bits');
 
                 return out;
@@ -797,7 +797,7 @@
                 console.log('i =', i);
                 console.log('serial =', serial);
 
-                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i <= serial.itemLevelInfo.lastLevelBit)
+                if (serial.itemLevelInfo && i >= serial.itemLevelInfo.firstLevelBit && i < serial.itemLevelInfo.lastLevelBit)
                     return 'b02-level-bits';
 
                 return '';
