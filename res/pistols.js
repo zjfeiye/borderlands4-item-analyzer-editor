@@ -1,4 +1,4 @@
-let pistols = [
+export default [
     "@UgbV{rFme!KC@oM=RG}7?s74)XC+Zw39jYCwQ*%(aP~#8",
     "@Ugb)KvFme!K=2cKmRG}7isGF#hs7i%F#X*Ha{XxA#r9=P",
     "@Ugb)KvFme!K_I*%JRG/*lsGF#hs7i%Fy+PeU<w3ndr9=P",
@@ -322,5 +322,3 @@ let pistols = [
     "@Ugb)KvFmVuJDs50{RG}J`s6#z!9_k&c9coi?P@zzNP_a-c5d",
     "@Ugb)KvFme!KxE9c8RG}8ts6;(#9_mwXP<c?VP%#k",
 ];
-
-export { pistols };

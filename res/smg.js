@@ -1,4 +1,4 @@
-let smg = [
+export default [
     "@Ugw$Yw2}TYg47UXOhbq*fh7R>Zy+o}<?L&2H4yqRF9BNnq",
     "@UgwSAs2}TYgjD`amiRy=H)S?oV4;2<w78M4y2h/Ie4mA$}",
     "@UgwSAs2}TYgTv`r/MD;@@s!{n+Wl>>KVNiQey-?{;?+^",
@@ -381,5 +381,3 @@ let smg = [
     "@UgwSAs2}TYg%$)}sjp~Ow)S@1>7c~}@sZQNNl/t=8r9;g_00",
     "@UgwSAs2}TYgjExH#jp~O=)S(vjsIjO`<w1=?<wC7P#X/r",
 ];
-
-export { smg };
