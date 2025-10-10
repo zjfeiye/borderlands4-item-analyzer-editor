@@ -1,0 +1,55 @@
+Modify this index.html file.
+Currently: the tool supports the comparison of two serials, but is limited to two maximum.
+Change it so it can supports the comparison of multiple serials at a time.
+
+Constraints:
+
+1) The "affineGapAlignment" function takes two arbitrary strings as an input.
+It returns two modified strings that are aligned (same "length") using inserted space.
+However, this function is too complicated to be modified, you will have to use it as is.
+
+2) The goal is to find a "center" serial:
+Compare each serials with each other, and try to find the "best" serial.
+This "best" serial is the one that has the "best" overall alignment score with all the other serials.
+Once that is done, align all others serials with this "best" serial.
+
+3) Each all to the "affineGapAlignment" function gives you a "comparison string".
+It's a string that contains "=+!" characters such as "======!====+++==".
+You will have to compute a "global" comparison string when aligning multiple serials.
+
+4) I cannot use npm libraries.
+
+5) There are multiple "blocks" for each base representation (base 2, base 4, base 16, base 85).
+Each block have the same layout.
+I want them like this:
+- The serial description followed by its stats (match/additions/differences). Reuse the same existing style (smaller font, gray).
+- Then the aligned strings containing the base 2/4/16/85 data (in the same order than what was printed above)
+- The overall stats of the aligment
+- Then the overall comparison string, with its overall stats above.
+
+
+
+-------
+
+
+I have a very long hexadecimal string (cafebabe...) that corresponds to structured data, serialized by a program.
+However, we know very little about the data inside.
+Basically they are hex serials describing items in the game Borderlands 4, and after experiments we think that it contains weapon parts.
+People managed to create a very long item with way more "parts" than usual.
+
+I want you to write javascript code that will process and analyze this hex string.
+What I want from you is simple:
+Write a loop that will detect every repeating patterns (from largest to smallest) and organize it into a tree.
+(array inside arrays in memory)
+Analyze the entire string with largest chunks to smallest so that you won't miss any.
+Do the same for every substrings you have splitted.
+(I don't care about computation time, I just want it done.)
+
+Each loop: when you find a pattern that matches elsewhere, go and cut every other instances in the tree.
+
+At the end, print the tree textually using indentation.
+Define a minimum size for the patterns so that small parts won't match..
+
+I guess that the algorithm will end when a full loop  has been done without any modification.
+
+Note: I don't have access to NPM, it'll have to be vanilla JS to be run in node.
